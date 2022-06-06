@@ -1,0 +1,35 @@
+
+
+sajjad@i80pc93:~$ cd Dropbox/LAB/
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-1.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session1/.
+asip-sajjad04@i80pdc's password: 
+Session-1.pdf                                 100%  366KB 365.9KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-2.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session2/.
+asip-sajjad04@i80pdc's password: 
+Session-2.pdf                                 100%   88KB  88.2KB/s   00:01    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-3.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session3/.
+asip-sajjad04@i80pdc's password: 
+Session-3.pdf                                 100%   89KB  89.2KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-4.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session4/.
+asip-sajjad04@i80pdc's password: 
+Session-4.pdf                                 100%   96KB  96.3KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-5.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session5/.
+asip-sajjad04@i80pdc's password: 
+Session-5.pdf                                 100%  245KB 244.6KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-6.pdf asip-sajjad04@i80pdc:/home/asip00/Sessions/Session6/.
+ssh: connect to host i80pdc port 22: Connection refused
+lost connection
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-6.pdf asip-sajjad04@i80pc57:/home/asip00/Sessions/Session6/.
+asip-sajjad04@i80pc57's password: 
+Session-6.pdf                                                                                                                                                             100%  240KB 240.0KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-7.pdf asip-sajjad04@i80pc57:/home/asip00/Sessions/Session7/.
+asip-sajjad04@i80pc57's password: 
+Session-7.pdf                                                                                                                                                             100%  195KB 194.7KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r Session-8.pdf asip-sajjad04@i80pc57:/home/asip00/Sessions/Session8/.
+asip-sajjad04@i80pc57's password: 
+Session-8.pdf                                                                                                                                                             100%  165KB 165.0KB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ 
+sajjad@i80pc93:~/Dropbox/LAB$ scp -r WS20_PraktikumsVorbesprechungRev1.pptx  asip-sajjad04@i80pc57:/home/asip00/Sessions/Session0/.
+asip-sajjad04@i80pc57's password: 
+WS20_PraktikumsVorbesprechungRev1.pptx                                                                                                                                    100% 1374KB   1.3MB/s   00:00    
+sajjad@i80pc93:~/Dropbox/LAB$ 
