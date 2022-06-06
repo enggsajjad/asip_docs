@@ -1,0 +1,15 @@
+5.
+a)dlxsim:   8840 cycles executed
+  modelsim: 8968 cycles executed
+  
+18.
+b)dlxsim:   4515 cycles executed
+  modelsim: 4559 cycles executed
+  
+c)Without the custom instructions, dlxsim takes 8342 cycles.
+  Modelsim takes 8428 cycles.
+  
+  This would mean a speedup of ca 1.85
+  
+d) + e) see attachement
+  

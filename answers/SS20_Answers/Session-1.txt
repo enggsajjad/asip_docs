@@ -1,0 +1,30 @@
+19.a) The pipline has 4 Steps: fetch -> decode -> exec -> memory_read/memory_write. Memory read and write are packed together in one single stage.
+   b) The function set tab lists the functions and the implementaion of the operations the ALU can perform
+   c) The GPR has 1 input port for data and 2 output ports for data
+   d) The CPU has 2 forwarding units with 3 32 bit forwarding inputs and 1 32 bit forwarding output each
+   e) We would need an additional forwarding output
+   f) Regsiter 0-7 of the register bank is used for programm navigation holding information like stack pointer and link register
+   g) The CPU uses sopecial instructions SP to perform operations without register access NOP/RETI. You can emulate the NOP with a JP instruction with offset 1.
+   h) ForwardDataFromWB:  forward data to a GPR[dest] from stage WB
+       ForwardDataFromEXE: forward data to a GPR[dest] from stage EXE
+   i) Prefetches Data from register and checks wheter a forwarded value or the register value itself shall be used.
+   j) the alu flag contains additional flags produced by the computation. The flags are carry zero sign  and overflow 
+   k) See j
+
+26. a) With this information you can determine the size of the text(instructions) and the data(compile time constants)
+      b)  0x0:    0x21080481
+          0x4:    0x294a0481
+          0x8:    0x318c0481
+          0xc:    0x00170120
+          0x10:   0x00170160
+          0x14:   0xeffc2128
+          0x18:   0xeffc2968
+          0x1c:   0xfffc2907
+          0x20:   0xfff828c7
+          0x24:   0xfff82160
+        
+          These are the instruction codes for the first 10 instructions
+
+    c) The first word indicates the stack pointer. The stack pointer shrinks while the stack itself is increasing. Or in other words, a typical stack 
+       implementation.
+    d) 775 Cycles

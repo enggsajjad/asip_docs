@@ -1,0 +1,80 @@
+Session 2
+
+1) Basic Assembly Instructions
+        a) The multiplication causes 35 cycles of the total 69 cycles. The multiplication is implemented as multicycle instruction.
+        b) Code is the instruction memory holding all encoded instructions. It has a size of 0x54 Bytes
+           Data is the memory for compile time constants. In the given application we have no compile time constants,
+           therefore the data section has size 0x00
+
+2) Memory Access
+        a) It combines the address of the given variable by accessing the high byte shfit it to the upper 16 Bit and or it with the
+           lower 16 address bits.
+        b) The upper 16 bit of the address might not be 0x0000
+        c) The nop instruction allows the access of the loaded word after this cycle. is this cyle is not existent, the pipeline
+           a Port forwarding. without the nop command the cycles increase from 30 to 53 respectively 52
+
+3) Branches
+        a) It implements an If-Else structure.
+        b) R24 = max(R21, R22)
+        c) The first nop instruction resolves the data dependency of R22. Otherwise the pipline would need to be flushed if pipline
+           forwarding is diabled
+
+4) Loops
+        a) The function computes the multiplication of the two input registers -> R23 = R21 * R22
+        b) The approach seems to be based on the Ancient Egyptian multiplication.
+        c) The loop is executed as many time as the position of the most significant bit.
+           The input needs to look like 0b1xxxxxxxxxxxxxxx where x is don´t care.                                                                  
+        d) When the nop operation is disabled and the pipeline forwarding is switched of, a branch hazard occurs since the program
+           counter is not updated before the last add occurs
+
+5) A High level structure
+        a) A Switch statement with conditional function execution. The function is chosen by the constant of R23.
+           The code between main and label1 resolves the jump address for the function.
+        b) Shift by 3 means multiplication with 8. Since the addresses are 4 byte aligned and between each jump instruction
+           at label 1 are an additional nop, the jump instructions are 8 byte appart.
+        c) Branch instruction are conditional jumps where jump instructions are not conditional.
+        
+        
+
+
+
+
+Session 3
+
+16)
+        a) See 18) O-Level -O0
+        b)
+            00000000 0017EFFC
+            00000004 00000033
+            00000008 00000034
+            0000000C 00000035
+            00000010 00000036
+            00000014 00000037
+            00000018 00000038
+            0000001C 00000039
+            00000020 0000003A                                                                                                                                                                                                                                                             
+            00000024 0000003B
+            00000028 0000003C
+            0000002C 00000001
+            00000030 00000002
+            00000034 00000003
+            00000038 00000004
+            0000003C 00000005
+            00000040 00000006
+            00000044 00000007
+            00000048 00000008
+            0000004C 00000009
+            00000050 0000000A
+            00000054 0000002D
+            ...
+
+        c) Starting at 0x00 jumps to the reset interrupt handler at 0xF000 an starts with the main program after 7 CPU-Cycles.
+
+18)
+        O-Level | Executed | Cycle count MS | Cycle count dlx |
+        -O0     |    y     |     799        |    775          |
+        -O1     |    y     |     327        |    307          |
+        -O2     |    y     |     320        |    302          |
+        -03     |    y     |     213        |    211          |
+        -04     |    y     |     213        |    211          | 
+        
