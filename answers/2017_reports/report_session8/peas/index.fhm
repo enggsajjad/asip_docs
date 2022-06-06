@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<FHM>
+  <model_name> index </model_name>
+
+  <model>
+    <design_level> behavior </design_level>
+    <version> 1.0 </version>
+    <author> <![CDATA[ Joe Random Hacker ]]> </author>
+    <affiliation> <![CDATA[ Uni Karlsruhe ]]> </affiliation>
+    <model_info> <![CDATA[ - ]]> </model_info>
+
+    <parameter>
+      <parameter_value key="bit_width">
+        <value> 4 </value>
+        <value> 8 </value>
+        <value> 16 </value>
+        <value> 32 </value>
+      </parameter_value>
+    </parameter>
+
+    <function_description>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register function definition in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+$msb = $bit_width - 1;
+
+print <<FHM_DL_FOO;
+/** addidx */
+function addidx {
+  input {
+    bit [3:0] data_in_new;
+    bit [31:0] index_in;
+  }
+  output {
+    bit [31:0] index_out;
+  }
+  control {
+    in clock_new;
+    in reset_new;
+    in enb_new;
+  }
+  protocol {
+    [enb_new == '1'] {
+      valid index_out;
+    }
+  }
+}
+FHM_DL_FOO
+
+exit (0);
+        ]]>
+      </script>
+    </function_description>
+
+    <function_conv>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register function definition in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+$msb = $bit_width - 1;
+
+print <<FHM_DL_FOO;
+/** addidx */
+function addidx {
+  input {
+    bit [3:0] data_in_new;
+    bit [31:0] index_in;
+  }
+  output {
+    bit [31:0] index_out;
+  }
+  control {
+    in bit clock_new;
+    in bit reset_new;
+    in bit enb_new;
+  }
+  protocol {
+    single_cycle_protocol {
+      enb_new = '1';
+    }
+  }
+}
+FHM_DL_FOO
+
+exit (0);
+        ]]>
+      </script>
+    </function_conv>
+
+    <function_port>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register port information in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+
+$msb = $bit_width-1;
+
+print <<FHM_DL_PORTS;
+clock_new in bit ctrl
+reset_new in bit ctrl
+enb_new in bit ctrl
+data_in_new in bit_vector 3 0 data
+index_in in bit_vector 31 0 data
+index_out out bit_vector 31 0 data
+FHM_DL_PORTS
+
+exit (0);
+        ]]>
+      </script>
+    </function_port>
+
+    <design>
+      <design_lang> vhdl </design_lang>
+
+      <instance>
+        <script>
+          <![CDATA[
+#!/usr/bin/perl
+# This script generates register instance in behavior level
+# parameter : instance_name bit_width
+
+if ($#ARGV != 1) {
+  print "number of parameters is wrong.\n";
+  print "usage : this_script instance_name bit_width\n";
+  exit (100);
+}
+
+$instance_name = $ARGV[0];
+$bit_width     = $ARGV[1];
+
+
+$msb = $bit_width - 1;
+
+$signals = <<END_SIGNALS;
+-- Your signal declaration here
+type array_type1 is array (0 to 15) of integer; 
+signal indexTable : array_type1:=( -1, -1, -1, -1, 2, 4, 6, 8,
+                                   -1, -1, -1, -1, 2, 4, 6, 8 );
+END_SIGNALS
+
+$vhdl = <<END_VHDL;
+-- Your vhdl code here
+  process (clock_new, reset_new, enb_new)
+
+  variable upper : integer := 88;
+  variable lower : integer := 0;
+  variable cmpval : STD_LOGIC_VECTOR (31 downto 0);
+
+  begin
+  
+      if (enb_new = '1') then
+  cmpval :=
+  	conv_std_logic_vector(indexTable(conv_integer(data_in_new)), 32) +
+				conv_std_logic_vector(conv_integer(index_in), 32);
+
+	  if (signed(cmpval) < lower) then
+	    index_out <= conv_std_logic_vector(lower, 32);
+	  elsif (signed(cmpval) > upper) then
+	    index_out <= conv_std_logic_vector(upper, 32);
+	  else
+	    index_out <= cmpval;
+	  end if;
+
+      end if;
+  end process;
+END_VHDL
+
+
+{
+print <<FHM_DL_COMMENTS;
+FHM_DL_COMMENTS
+}
+
+
+
+print <<FHM_DL_TOP_2;
+--   int_port : internal port
+--   ext_port : external port
+
+-- Comment :
+
+library IEEE;
+  use IEEE.std_logic_1164.all;
+  use IEEE.std_logic_arith.all;
+  use IEEE.std_logic_unsigned.all;
+
+entity $instance_name is
+  port (
+FHM_DL_TOP_2
+
+    print <<FHM_DL_PORTS;
+	clock_new    : in std_logic;
+        reset_new    : in std_logic;
+        enb_new      : in std_logic;
+        data_in_new  : in std_logic_vector(3 downto 0);
+        index_in : in std_logic_vector(31 downto 0);
+        index_out : out std_logic_vector(31 downto 0)
+        );
+FHM_DL_PORTS
+
+{
+print <<FHM_DL_ARCH;
+end $instance_name;
+
+architecture logic of $instance_name is
+$signals
+begin
+  $vhdl
+end logic;
+
+FHM_DL_ARCH
+}
+
+exit (0);
+          ]]>
+        </script>
+      </instance>
+
+      <entity>
+        <script>
+          <![CDATA[
+#!/usr/bin/perl
+# This script generates register instance in behavior level
+# parameter : instance_name bit_width
+
+if ($#ARGV != 1) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script instance_name bit_width\n";
+    exit (100);
+}
+
+$instance_name = $ARGV[0];
+$bit_width     = $ARGV[1];
+
+
+$msb = $bit_width - 1;
+
+{
+print <<FHM_DL_TOP;
+
+entity $instance_name is
+  port (
+FHM_DL_TOP
+
+}
+
+    print <<FHM_DL_PORTS;
+	clock_new    : in std_logic;
+        reset_new    : in std_logic;
+        enb_new      : in std_logic;
+        data_in_new  : in std_logic_vector(3 downto 0);
+        index_in : in std_logic_vector(31 downto 0);
+        index_out : out std_logic_vector(31 downto 0)
+        );
+FHM_DL_PORTS
+
+{
+print <<FHM_DL_BOTTOM;
+end $instance_name;
+FHM_DL_BOTTOM
+}
+exit (0);
+          ]]>
+        </script>
+      </entity>
+
+      <testvector>
+        <testvector_script>
+          <![CDATA[ ]]>
+        </testvector_script>
+      </testvector>
+
+      <synthesis>
+        <parameter></parameter>
+        <synthesis_script>
+          <script>
+            <![CDATA[
+#!/usr/bin/perl
+# This script generates register synthesis script in behavior level
+# parameter : instance_name priority bit_width
+
+if ($#ARGV != 2) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script instance_name priority bit_width\n";
+    exit (100);
+}
+
+$instance_name = $ARGV[0];
+$priority      = $ARGV[1];
+$bit_width     = $ARGV[2];
+
+
+if ($priority eq "area"){
+  $priority_const = "set_max_area 0";
+}
+elsif ($priority eq "performance"){
+  $priority_const = "set_max_delay -from all_inputs() -to all_outputs() 0";
+}
+elsif ($priority eq "power"){
+  $priority_const = "";
+}
+elsif ($priority eq "none"){
+  $priority_const = "";
+}
+else {
+    print "priority $priority is not supported.\n";
+    exit(100);
+}
+
+{
+print <<FHM_DL_END_OF_SCRIPT;
+hdlin_auto_save_templates = TRUE
+
+analyze -f vhdl $instance_name.vhd
+
+elaborate $instance_name
+uniquify
+
+$priority_const
+
+create_clock -period 10 -waveform{0 5} clock
+
+compile
+
+write -hierarchy -output $instance_name.db
+
+report_area
+report_timing
+
+quit
+FHM_DL_END_OF_SCRIPT
+}
+exit(0);
+            ]]>
+          </script>
+        </synthesis_script>
+      </synthesis>
+    </design>
+
+    <estimation>
+      <estimation_data>
+        <library name="OSAKA">
+
+          <est_type name="shape">
+            <est_index name="area">
+              <unit> mm2 </unit>
+              <translate>
+                <translate_value key="gate"> 4201.68 </translate_value>
+                <translate_value key="mm2">  1 </translate_value>
+              </translate>
+
+              <parameters name="">
+                        <max>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </max>
+                        <min>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </min>
+                        <typ>
+                                <priority name="area">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="delay">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="power">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                        </typ>
+              </parameters>
+
+            </est_index>
+
+            <est_index name="aspect_ratio">
+              <!-- Dummy yet -->
+            </est_index>
+
+            <est_index name="height">
+              <!-- Dummy yet -->
+            </est_index>
+
+            <est_index name="width">
+              <!-- Dummy yet -->
+            </est_index>
+          </est_type>
+
+          <est_type name="timing">
+            <est_index name="delay">
+              <unit> ns </unit>
+
+              <parameters name="">
+                <max>
+                  <data bit_width="4"> 0.75 </data>
+                  <data bit_width="8"> 0.75 </data>
+                  <data bit_width="16"> 0.75 </data>
+                  <data bit_width="32"> 0.75 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 0.72 </data>
+                  <data bit_width="8"> 0.72 </data>
+                  <data bit_width="16"> 0.72 </data>
+                  <data bit_width="32"> 0.72 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 0.72 </data>
+                    <data bit_width="8"> 0.72 </data>
+                    <data bit_width="16"> 0.72 </data>
+                    <data bit_width="32"> 0.72 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                </typ>
+              </parameters>
+
+            </est_index>
+
+            <est_index name="delay_fullpath">
+            <!-- Dummy yet -->
+            </est_index>
+          </est_type>
+
+          <est_type name="power">
+            <est_index name="static_power">
+              <unit> mW </unit>
+              <parameters name="">
+                 <max>
+                  <data bit_width="4"> 2.2203 </data>
+                  <data bit_width="8"> 4.4270 </data>
+                  <data bit_width="16"> 8.7214 </data>
+                  <data bit_width="32"> 17.2327 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 2.2153 </data>
+                  <data bit_width="8"> 4.3512 </data>
+                  <data bit_width="16"> 8.5400 </data>
+                  <data bit_width="32"> 17.0462 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 2.2159 </data>
+                    <data bit_width="8"> 4.4179 </data>
+                    <data bit_width="16"> 8.7033 </data>
+                    <data bit_width="32"> 17.2202 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 2.2203 </data>
+                    <data bit_width="8"> 4.4270 </data>
+                    <data bit_width="16"> 8.7214 </data>
+                    <data bit_width="32"> 17.2327 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 2.2153 </data>
+                    <data bit_width="8"> 4.3512 </data>
+                    <data bit_width="16"> 8.5400 </data>
+                    <data bit_width="32"> 17.0462 </data>
+                  </priority>
+                </typ>
+              </parameters>
+
+            </est_index>
+          </est_type>
+
+          <est_type name="function_cycle">
+            <!-- Dummy yet -->
+          </est_type>
+
+          <est_type name="function_power">
+            <!-- Dummy yet -->
+          </est_type>
+        </library>
+      </estimation_data>
+
+      <estimation_method>
+         
+        <est_type name="shape">
+
+          <est_index name="area">
+		<parameters name="">
+                        <max>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </max>
+                        <min>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </min>
+                        <typ>
+                                <priority name="area">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="delay">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="power">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                        </typ>
+		</parameters>
+
+
+          </est_index>
+
+           <est_index name="aspect_ratio">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+           <est_index name="height">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+           <est_index name="width">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+        </est_type>
+
+        <est_type name="timing">
+
+          <est_index name="delay">
+		<parameters name="">
+                <max>
+                  <data bit_width="4"> 0.75 </data>
+                  <data bit_width="8"> 0.75 </data>
+                  <data bit_width="16"> 0.75 </data>
+                  <data bit_width="32"> 0.75 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 0.72 </data>
+                  <data bit_width="8"> 0.72 </data>
+                  <data bit_width="16"> 0.72 </data>
+                  <data bit_width="32"> 0.72 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 0.72 </data>
+                    <data bit_width="8"> 0.72 </data>
+                    <data bit_width="16"> 0.72 </data>
+                    <data bit_width="32"> 0.72 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                </typ>
+		</parameters>
+
+
+          </est_index>
+
+          <est_index name="delay_fullpath">
+
+             <!-- Dummy yet -->
+
+          </est_index>
+
+        </est_type>
+
+        <est_type name="power">
+
+          <est_index name="static_power">
+
+		<parameters name="">
+                 <max>
+                  <data bit_width="4"> 2.2203 </data>
+                  <data bit_width="8"> 4.4270 </data>
+                  <data bit_width="16"> 8.7214 </data>
+                  <data bit_width="32"> 17.2327 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 2.2153 </data>
+                  <data bit_width="8"> 4.3512 </data>
+                  <data bit_width="16"> 8.5400 </data>
+                  <data bit_width="32"> 17.0462 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 2.2159 </data>
+                    <data bit_width="8"> 4.4179 </data>
+                    <data bit_width="16"> 8.7033 </data>
+                    <data bit_width="32"> 17.2202 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 2.2203 </data>
+                    <data bit_width="8"> 4.4270 </data>
+                    <data bit_width="16"> 8.7214 </data>
+                    <data bit_width="32"> 17.2327 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 2.2153 </data>
+                    <data bit_width="8"> 4.3512 </data>
+                    <data bit_width="16"> 8.5400 </data>
+                    <data bit_width="32"> 17.0462 </data>
+                  </priority>
+                </typ>
+		</parameters>
+
+
+          </est_index>
+
+        </est_type>
+
+        <est_type name="function_cycle">
+
+        </est_type>
+
+        <est_type name="function_power">
+
+        </est_type>
+
+    
+      </estimation_method>
+    </estimation>
+
+  </model>
+
+  <model>
+    <design_level> synthesis </design_level>
+    <version> 1.0 </version>
+    <author> <![CDATA[ Joe Random Hacker ]]> </author>
+    <affiliation> <![CDATA[ Uni Karlsruhe ]]> </affiliation>
+    <model_info> <![CDATA[ - ]]> </model_info>
+
+    <parameter>
+      <parameter_value key="bit_width">
+        <value> 4 </value>
+        <value> 8 </value>
+        <value> 16 </value>
+        <value> 32 </value>
+      </parameter_value>
+    </parameter>
+
+    <function_description>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register function definition in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+$msb = $bit_width - 1;
+
+print <<FHM_DL_FOO;
+/** addidx */
+function addidx {
+  input {
+    bit [3:0] data_in_new;
+    bit [31:0] index_in;
+  }
+  output {
+    bit [31:0] index_out;
+  }
+  control {
+    in clock_new;
+    in reset_new;
+    in enb_new;
+  }
+  protocol {
+    [enb_new == '1'] {
+      valid index_out;
+    }
+  }
+}
+FHM_DL_FOO
+
+exit (0);
+        ]]>
+      </script>
+    </function_description>
+
+    <function_conv>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register function definition in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+$msb = $bit_width - 1;
+
+print <<FHM_DL_FOO;
+/** addidx */
+function addidx {
+  input {
+    bit [3:0] data_in_new;
+    bit [31:0] index_in;
+  }
+  output {
+    bit [31:0] index_out;
+  }
+  control {
+    in bit clock_new;
+    in bit reset_new;
+    in bit enb_new;
+  }
+  protocol {
+    single_cycle_protocol {
+      enb_new = '1';
+    }
+  }
+}
+FHM_DL_FOO
+
+exit (0);
+        ]]>
+      </script>
+    </function_conv>
+
+    <function_port>
+      <script>
+        <![CDATA[
+#!/usr/bin/perl
+# This script generates register port information in behavior level
+# parameter : bit_width
+
+if ($#ARGV != 0) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script bit_width\n";
+    exit (100);
+}
+
+$bit_width    = $ARGV[0];
+
+$msb = $bit_width-1;
+
+print <<FHM_DL_PORTS;
+clock_new in bit ctrl
+reset_new in bit ctrl
+enb_new in bit ctrl
+data_in_new in bit_vector 3 0 data
+index_in in bit_vector 31 0 data
+index_out out bit_vector 31 0 data
+FHM_DL_PORTS
+
+exit (0);
+        ]]>
+      </script>
+    </function_port>
+
+    <design>
+      <design_lang> vhdl </design_lang>
+
+      <instance>
+        <script>
+          <![CDATA[
+#!/usr/bin/perl
+# This script generates register instance in behavior level
+# parameter : instance_name bit_width
+
+if ($#ARGV != 1) {
+  print "number of parameters is wrong.\n";
+  print "usage : this_script instance_name bit_width\n";
+  exit (100);
+}
+
+$instance_name = $ARGV[0];
+$bit_width     = $ARGV[1];
+
+
+$msb = $bit_width - 1;
+
+$signals = <<END_SIGNALS;
+-- Your signal declaration here
+type array_type1 is array (0 to 15) of integer; 
+signal indexTable : array_type1:=( -1, -1, -1, -1, 2, 4, 6, 8,
+                                   -1, -1, -1, -1, 2, 4, 6, 8 );
+END_SIGNALS
+
+$vhdl = <<END_VHDL;
+-- Your vhdl code here
+  process (clock_new, reset_new, enb_new)
+
+  variable upper : integer := 88;
+  variable lower : integer := 0;
+  variable cmpval : STD_LOGIC_VECTOR (31 downto 0);
+
+  begin
+  
+      if (enb_new = '1') then
+  cmpval :=
+  	conv_std_logic_vector(indexTable(conv_integer(data_in_new)), 32) +
+				conv_std_logic_vector(conv_integer(index_in), 32);
+
+	  if (signed(cmpval) < lower) then
+	    index_out <= conv_std_logic_vector(lower, 32);
+	  elsif (signed(cmpval) > upper) then
+	    index_out <= conv_std_logic_vector(upper, 32);
+	  else
+	    index_out <= cmpval;
+	  end if;
+
+      end if;
+  end process;
+END_VHDL
+
+
+{
+print <<FHM_DL_COMMENTS;
+FHM_DL_COMMENTS
+}
+
+
+
+print <<FHM_DL_TOP_2;
+--   int_port : internal port
+--   ext_port : external port
+
+-- Comment :
+
+library IEEE;
+  use IEEE.std_logic_1164.all;
+  use IEEE.std_logic_arith.all;
+  use IEEE.std_logic_unsigned.all;
+
+entity $instance_name is
+  port (
+FHM_DL_TOP_2
+
+    print <<FHM_DL_PORTS;
+	clock_new    : in std_logic;
+        reset_new    : in std_logic;
+        enb_new      : in std_logic;
+        data_in_new  : in std_logic_vector(3 downto 0);
+        index_in : in std_logic_vector(31 downto 0);
+        index_out : out std_logic_vector(31 downto 0)
+        );
+FHM_DL_PORTS
+
+{
+print <<FHM_DL_ARCH;
+end $instance_name;
+
+architecture logic of $instance_name is
+$signals
+begin
+  $vhdl
+end logic;
+
+FHM_DL_ARCH
+}
+
+exit (0);
+          ]]>
+        </script>
+      </instance>
+
+      <entity>
+        <script>
+          <![CDATA[
+#!/usr/bin/perl
+# This script generates register instance in behavior level
+# parameter : instance_name bit_width
+
+if ($#ARGV != 1) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script instance_name bit_width\n";
+    exit (100);
+}
+
+$instance_name = $ARGV[0];
+$bit_width     = $ARGV[1];
+
+
+$msb = $bit_width - 1;
+
+{
+print <<FHM_DL_TOP;
+
+entity $instance_name is
+  port (
+FHM_DL_TOP
+
+}
+
+    print <<FHM_DL_PORTS;
+	clock_new    : in std_logic;
+        reset_new    : in std_logic;
+        enb_new      : in std_logic;
+        data_in_new  : in std_logic_vector(3 downto 0);
+        index_in : in std_logic_vector(31 downto 0);
+        index_out : out std_logic_vector(31 downto 0)
+        );
+FHM_DL_PORTS
+
+{
+print <<FHM_DL_BOTTOM;
+end $instance_name;
+FHM_DL_BOTTOM
+}
+exit (0);
+          ]]>
+        </script>
+      </entity>
+
+      <testvector>
+        <testvector_script>
+          <![CDATA[ ]]>
+        </testvector_script>
+      </testvector>
+
+      <synthesis>
+        <parameter></parameter>
+        <synthesis_script>
+          <script>
+            <![CDATA[
+#!/usr/bin/perl
+# This script generates register synthesis script in behavior level
+# parameter : instance_name priority bit_width
+
+if ($#ARGV != 2) {
+    print "number of parameters is wrong.\n";
+    print "usage : this_script instance_name priority bit_width\n";
+    exit (100);
+}
+
+$instance_name = $ARGV[0];
+$priority      = $ARGV[1];
+$bit_width     = $ARGV[2];
+
+
+if ($priority eq "area"){
+  $priority_const = "set_max_area 0";
+}
+elsif ($priority eq "performance"){
+  $priority_const = "set_max_delay -from all_inputs() -to all_outputs() 0";
+}
+elsif ($priority eq "power"){
+  $priority_const = "";
+}
+elsif ($priority eq "none"){
+  $priority_const = "";
+}
+else {
+    print "priority $priority is not supported.\n";
+    exit(100);
+}
+
+{
+print <<FHM_DL_END_OF_SCRIPT;
+hdlin_auto_save_templates = TRUE
+
+analyze -f vhdl $instance_name.vhd
+
+elaborate $instance_name
+uniquify
+
+$priority_const
+
+create_clock -period 10 -waveform{0 5} clock
+
+compile
+
+write -hierarchy -output $instance_name.db
+
+report_area
+report_timing
+
+quit
+FHM_DL_END_OF_SCRIPT
+}
+exit(0);
+            ]]>
+          </script>
+        </synthesis_script>
+      </synthesis>
+    </design>
+
+    <estimation>
+      <estimation_data>
+        <library name="OSAKA">
+
+          <est_type name="shape">
+            <est_index name="area">
+              <unit> mm2 </unit>
+              <translate>
+                <translate_value key="gate"> 4201.68 </translate_value>
+                <translate_value key="mm2">  1 </translate_value>
+              </translate>
+
+              <parameters name="">
+                        <max>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </max>
+                        <min>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </min>
+                        <typ>
+                                <priority name="area">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="delay">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="power">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                        </typ>
+              </parameters>
+
+            </est_index>
+
+            <est_index name="aspect_ratio">
+              <!-- Dummy yet -->
+            </est_index>
+
+            <est_index name="height">
+              <!-- Dummy yet -->
+            </est_index>
+
+            <est_index name="width">
+              <!-- Dummy yet -->
+            </est_index>
+          </est_type>
+
+          <est_type name="timing">
+            <est_index name="delay">
+              <unit> ns </unit>
+
+              <parameters name="">
+                <max>
+                  <data bit_width="4"> 0.75 </data>
+                  <data bit_width="8"> 0.75 </data>
+                  <data bit_width="16"> 0.75 </data>
+                  <data bit_width="32"> 0.75 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 0.72 </data>
+                  <data bit_width="8"> 0.72 </data>
+                  <data bit_width="16"> 0.72 </data>
+                  <data bit_width="32"> 0.72 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 0.72 </data>
+                    <data bit_width="8"> 0.72 </data>
+                    <data bit_width="16"> 0.72 </data>
+                    <data bit_width="32"> 0.72 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                </typ>
+              </parameters>
+
+            </est_index>
+
+            <est_index name="delay_fullpath">
+            <!-- Dummy yet -->
+            </est_index>
+          </est_type>
+
+          <est_type name="power">
+            <est_index name="static_power">
+              <unit> mW </unit>
+              <parameters name="">
+                 <max>
+                  <data bit_width="4"> 2.2203 </data>
+                  <data bit_width="8"> 4.4270 </data>
+                  <data bit_width="16"> 8.7214 </data>
+                  <data bit_width="32"> 17.2327 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 2.2153 </data>
+                  <data bit_width="8"> 4.3512 </data>
+                  <data bit_width="16"> 8.5400 </data>
+                  <data bit_width="32"> 17.0462 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 2.2159 </data>
+                    <data bit_width="8"> 4.4179 </data>
+                    <data bit_width="16"> 8.7033 </data>
+                    <data bit_width="32"> 17.2202 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 2.2203 </data>
+                    <data bit_width="8"> 4.4270 </data>
+                    <data bit_width="16"> 8.7214 </data>
+                    <data bit_width="32"> 17.2327 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 2.2153 </data>
+                    <data bit_width="8"> 4.3512 </data>
+                    <data bit_width="16"> 8.5400 </data>
+                    <data bit_width="32"> 17.0462 </data>
+                  </priority>
+                </typ>
+              </parameters>
+
+            </est_index>
+          </est_type>
+
+          <est_type name="function_cycle">
+            <!-- Dummy yet -->
+          </est_type>
+
+          <est_type name="function_power">
+            <!-- Dummy yet -->
+          </est_type>
+        </library>
+      </estimation_data>
+
+      <estimation_method>
+         
+        <est_type name="shape">
+
+          <est_index name="area">
+		<parameters name="">
+                        <max>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </max>
+                        <min>
+                                <data bit_width="4"> 0.1 </data>
+                                <data bit_width="8"> 0.1 </data>
+                                <data bit_width="16"> 0.1 </data>
+                                <data bit_width="32"> 0.1 </data>
+                        </min>
+                        <typ>
+                                <priority name="area">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="delay">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                                <priority name="power">
+                                        <data bit_width="4"> 0.001 </data>
+                                        <data bit_width="8"> 0.01 </data>
+                                        <data bit_width="16"> 0.1 </data>
+                                        <data bit_width="32"> 0.1 </data>
+                                </priority>
+                        </typ>
+		</parameters>
+
+
+          </est_index>
+
+           <est_index name="aspect_ratio">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+           <est_index name="height">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+           <est_index name="width">
+
+             <!-- Dummy yet -->
+
+           </est_index>
+                
+        </est_type>
+
+        <est_type name="timing">
+
+          <est_index name="delay">
+		<parameters name="">
+                <max>
+                  <data bit_width="4"> 0.75 </data>
+                  <data bit_width="8"> 0.75 </data>
+                  <data bit_width="16"> 0.75 </data>
+                  <data bit_width="32"> 0.75 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 0.72 </data>
+                  <data bit_width="8"> 0.72 </data>
+                  <data bit_width="16"> 0.72 </data>
+                  <data bit_width="32"> 0.72 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 0.72 </data>
+                    <data bit_width="8"> 0.72 </data>
+                    <data bit_width="16"> 0.72 </data>
+                    <data bit_width="32"> 0.72 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 0.75 </data>
+                    <data bit_width="8"> 0.75 </data>
+                    <data bit_width="16"> 0.75 </data>
+                    <data bit_width="32"> 0.75 </data>
+                  </priority>
+                </typ>
+		</parameters>
+
+
+          </est_index>
+
+          <est_index name="delay_fullpath">
+
+             <!-- Dummy yet -->
+
+          </est_index>
+
+        </est_type>
+
+        <est_type name="power">
+
+          <est_index name="static_power">
+
+		<parameters name="">
+                 <max>
+                  <data bit_width="4"> 2.2203 </data>
+                  <data bit_width="8"> 4.4270 </data>
+                  <data bit_width="16"> 8.7214 </data>
+                  <data bit_width="32"> 17.2327 </data>
+                </max>
+                <min>
+                  <data bit_width="4"> 2.2153 </data>
+                  <data bit_width="8"> 4.3512 </data>
+                  <data bit_width="16"> 8.5400 </data>
+                  <data bit_width="32"> 17.0462 </data>
+                </min>
+                <typ>
+                  <priority name="area">
+                    <data bit_width="4"> 2.2159 </data>
+                    <data bit_width="8"> 4.4179 </data>
+                    <data bit_width="16"> 8.7033 </data>
+                    <data bit_width="32"> 17.2202 </data>
+                  </priority>
+                  <priority name="delay">
+                    <data bit_width="4"> 2.2203 </data>
+                    <data bit_width="8"> 4.4270 </data>
+                    <data bit_width="16"> 8.7214 </data>
+                    <data bit_width="32"> 17.2327 </data>
+                  </priority>
+                  <priority name="power">
+                    <data bit_width="4"> 2.2153 </data>
+                    <data bit_width="8"> 4.3512 </data>
+                    <data bit_width="16"> 8.5400 </data>
+                    <data bit_width="32"> 17.0462 </data>
+                  </priority>
+                </typ>
+		</parameters>
+
+
+          </est_index>
+
+        </est_type>
+
+        <est_type name="function_cycle">
+
+        </est_type>
+
+        <est_type name="function_power">
+
+        </est_type>
+
+    
+      </estimation_method>
+    </estimation>
+
+  </model>
+
+</FHM>

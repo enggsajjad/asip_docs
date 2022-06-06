@@ -1,0 +1,12 @@
+copy the following at the end of the .pdb file from the old version of ASIPmeister.
+after this, it can be opened.
+
+ASM_Generation{
+ ASMmodel{
+  Complete{
+   ON
+  }
+
+ }
+
+}
