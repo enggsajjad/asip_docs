@@ -1,0 +1,56 @@
+#------------------------------------------------------------
+# Connection to Small Peripheral Board
+#------------------------------------------------------------
+#Knop Switch, UART and Reset
+NET "serial0_out" 		LOC = H33 | IOSTANDARD = LVCMOS33 ;
+NET  "knop[0]" 			LOC=  F34  | PULLDOWN  | IOSTANDARD = LVCMOS33 ; 
+NET "serial0_in" 			LOC = H34 | IOSTANDARD = LVCMOS33 ;
+NET  "knop[3]" 			LOC=  G33  | PULLDOWN  | IOSTANDARD = LVCMOS33 ; 
+NET  "knop[2]" 			LOC=  G32  | PULLDOWN  | IOSTANDARD = LVCMOS33 ;   
+NET "reset" 				LOC = H32 | PULLDOWN |IOSTANDARD = LVCMOS33 ;
+NET  "knop[1]" 			LOC=  J32  | PULLDOWN  | IOSTANDARD = LVCMOS33 ; 
+#------------------------------------------------------------
+#AUDIO
+NET "AudioL_Out" 			LOC =   J34  | IOSTANDARD = LVCMOS33 ;
+NET "AudioR_Out" 			LOC =   L33  | IOSTANDARD = LVCMOS33 ;
+
+#------------------------------------------------------------
+#Leds on Small Board
+NET "led_user[0]" 		LOC =  M32 | IOSTANDARD = LVCMOS33 ; #GREEN
+NET "led_user[1]"  		LOC =  P34 | IOSTANDARD = LVCMOS33 ; #Yellow
+NET "led_user[2]"  		LOC =  N34 | IOSTANDARD = LVCMOS33 ; # RED 
+
+#------------------------------------------------------------
+# I2C (LCD)    
+NET "pca9564_reset"      LOC = "AL33" | IOSTANDARD = LVCMOS33 | SLEW = FAST;
+NET "pca9564_data<0>"    LOC = "AL34" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_int"        LOC = "AK32"  | IOSTANDARD = LVCMOS33 ;
+NET "pca9564_data<1>"    LOC = "AJ32"  | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP; 
+NET "pca9564_address<1>" LOC = "AK33"  | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_data<2>"    LOC = "AK34" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_data<3>"    LOC = "AH32" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_address<0>" LOC = "AG32" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP; #| IOSTANDARD = LVCMOS33 
+NET "pca9564_data<4>"    LOC = "AE32" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_ce"         LOC = "AH34" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_data<5>"    LOC = "W32" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_rd"         LOC = "Y32" | IOSTANDARD = LVCMOS33 | SLEW = FAST;
+NET "pca9564_data<6>"    LOC = "Y34" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+NET "pca9564_wr"         LOC = "AD32" | IOSTANDARD = LVCMOS33 | SLEW = FAST;
+NET "pca9564_data<7>"    LOC = "AA34" | IOSTANDARD = LVCMOS33 | SLEW = FAST   | PULLUP;
+
+
+#------------------------------------------------------------
+# Connection to Virtex5 Board
+#------------------------------------------------------------
+
+NET "clk_in" 				LOC = AH15;
+NET "clk_in" 				TNM_NET = "clk_in";
+TIMESPEC "TS_clk" = PERIOD "clk_in" 100 MHz HIGH 50 %;
+NET "clock_33" 			LOC = AH17 ; # 33MHZ
+
+
+#Built in LEDs
+NET "led_buildin[0]" 	LOC = H18;
+NET "led_buildin[1]" 	LOC = L18;
+NET "led_buildin[2]" 	LOC = G15;
+NET "led_buildin[3]" 	LOC = AD26;

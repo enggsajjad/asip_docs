@@ -1,0 +1,1 @@
+Inside the main folder and inside the "Application" folder there are README files to help you recognise the different files 

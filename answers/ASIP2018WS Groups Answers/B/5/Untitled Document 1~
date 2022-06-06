@@ -1,0 +1,11 @@
+we have found that if we want to optimize the code by replacing  
+    ;eltu   
+    ;brz   
+
+by
+    bgeu   
+
+we should chenge it to bg without equal, we can do this by delete '=' in the Implementation of 'bgeu'
+
+
+another thing I would like to mention, the .Lx with '.' will not work. it should be replaced by _Lx.

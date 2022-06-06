@@ -1,0 +1,165 @@
+#-----------------------------------------------------------
+# PlanAhead v13.2
+# Build 131561 by hdbuild on Thu Jun 16 16:53:31 PDT 2011
+# Start of session at: Tue Jan 29 12:42:45 2019
+# Process ID: 6930
+# Log file: /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/planAhead_run_1/planAhead.log
+# Journal file: /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common-78] Attempting to get a license: PlanAhead
+INFO: [Common-82] Got a license: PlanAhead
+INFO: [Common-86] Your PlanAhead license expires in -881 day(s)
+INFO: [ArchReader-0] Loading parts and site information from /Software/xilinx/13.2/ISE_DS/PlanAhead/parts/arch.xml
+Parsing RTL primitives file [/Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/pa.fromNetlist.tcl
+# create_project -name ISE_Framework_S8_AO -dir "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/planAhead_run_2" -part xc5vlx110tff1136-2
+Parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/verilog.xml].
+Finished parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/verilog.xml].
+Parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/vhdl.xml].
+Finished parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/vhdl.xml].
+Parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/ucf.xml].
+Finished parsing template File [/Software/xilinx/13.2/ISE_DS/ISE/data/projnav/templates/ucf.xml].
+create_project: Time (s): 4.890u 0.730s 6.910w. Memory (MB): 747.555p 19.012g
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/dlx_toplevel.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO} }
+# set_param project.paUcfFile  "dlx_toplevel.ucf"
+# add_files "dlx_toplevel.ucf" -fileset [get_property constrset [current_run]]
+# open_netlist_design
+INFO: Design is defaulting to active srcset 'sources_1'
+INFO: Design is defaulting to active constrset 'constrs_1'
+INFO: Design is defaulting to constrset part: xc5vlx110tff1136-2
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design dlx_toplevel.ngc ...
+WARNING:NetListWriters:298 - No output is written to dlx_toplevel.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus CPU0/UA_CTRL/UA_CW_EXE/DOUT<53 : 0> on
+   block dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus CPU0/UA_CTRL/UA_CW_WB/DOUT<13 : 0> on
+   block dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus CPU0/UA_CTRL/decout_ctrl_word_ID<53 : 0>
+   on block dlx_toplevel is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus CPU0/UF_DIV/conv_a/not_data_in<31 : 0>
+   on block dlx_toplevel is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus CPU0/UF_SFTvar/int1<30 : 1> on block
+   dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus CPU0/UF_SFTvar/int8<31 : 8> on block
+   dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus Mtridata_datadbi_ports<7 : 0> on block
+   dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus dataack_ports<4 : 0> on block
+   dlx_toplevel is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file dlx_toplevel.edif ...
+ngc2edif: Total memory usage is 32036 kilobytes
+
+Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/dlx_toplevel.edif]
+Finished Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/dlx_toplevel.edif]
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design fifo_generator_v2_1.ngc ...
+WARNING:NetListWriters:298 - No output is written to fifo_generator_v2_1.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fifo_generator_v2_1.edif ...
+ngc2edif: Total memory usage is 22992 kilobytes
+
+Reading core file '/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/fifo_generator_v2_1.ngc' for (cell view 'fifo_generator_v2_1', library 'dlx_toplevel_lib', file 'dlx_toplevel.ngc')
+Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/fifo_generator_v2_1.edif]
+Finished Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/fifo_generator_v2_1.edif]
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design bram_dm.ngc ...
+WARNING:NetListWriters:298 - No output is written to bram_dm.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file bram_dm.edif ...
+ngc2edif: Total memory usage is 28112 kilobytes
+
+Reading core file '/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/bram_dm.ngc' for (cell view 'bram_dm', library 'dlx_toplevel_lib', file 'dlx_toplevel.ngc')
+Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/bram_dm.edif]
+Finished Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/bram_dm.edif]
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design audio_out_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to audio_out_fifo.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file audio_out_fifo.edif ...
+ngc2edif: Total memory usage is 23044 kilobytes
+
+Reading core file '/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/audio_out_fifo.ngc' for (cell view 'audio_out_fifo', library 'dlx_toplevel_lib', file 'dlx_toplevel.ngc')
+Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/audio_out_fifo.edif]
+Finished Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/audio_out_fifo.edif]
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Release 13.2 - ngc2edif O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design brom_im.ngc ...
+WARNING:NetListWriters:298 - No output is written to brom_im.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file brom_im.edif ...
+ngc2edif: Total memory usage is 23228 kilobytes
+
+Reading core file '/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/brom_im.ngc' for (cell view 'brom_im', library 'dlx_toplevel_lib', file 'dlx_toplevel.ngc')
+Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/brom_im.edif]
+Finished Parsing EDIF File [./.Xil-PlanAhead-6930-i80pc57/ngc2edif/brom_im.edif]
+INFO: [ArchReader-18] Reading macro library /Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/virtex5lx/hd_int_macros.edn
+Parsing EDIF File [/Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/virtex5lx/hd_int_macros.edn]
+Finished Parsing EDIF File [/Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/virtex5lx/hd_int_macros.edn]
+WARNING: [Netlist-3] Netlist 'dlx_toplevel' is not ideal for floorplanning, since the cellview 'dlx_toplevel' defined in file 'dlx_toplevel.ngc' contains large number of primitives. Please consider enabling hierarchy in synthesis before floorplan. You can enable hierarchy in XST by setting '-keep_hierarchy=yes' or '-netlist_hierarchy=rebuilt' flags.
+INFO: [ArchReader-15] Reading bus macro file /Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/pr_bus_macros.xml
+INFO: [ArchReader-7] Loading clock regions from /Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/virtex5/virtex5lxt/xc5vlx110t/ClockRegion.xml
+INFO: [ArchReader-8] Loading clock buffers from /Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/virtex5/virtex5lxt/xc5vlx110t/ClockBuffers.xml
+INFO: [ArchReader-3] Loading package from /Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/virtex5/virtex5lxt/xc5vlx110t/ff1136/Package.xml
+INFO: [ArchReader-4] Loading io standards from /Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/IOStandards.xml
+INFO: [ArchReader-5] Loading pkg sso from /Software/xilinx/13.2/ISE_DS/PlanAhead/parts/xilinx/virtex5/virtex5lxt/xc5vlx110t/ff1136/SSORules.xml
+INFO: [GDRC-0] Loading list of drcs for the architecture : /Software/xilinx/13.2/ISE_DS/PlanAhead/./parts/xilinx/virtex5/drc.xml
+Parsing UCF File [/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/dlx_toplevel.ucf]
+Finished Parsing UCF File [/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/dlx_toplevel.ucf]
+INFO: [Project-5] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+open_netlist_design: Time (s): 26.890u 1.250s 30.570w. Memory (MB): 845.836p 95.383g
+exit
+stop_gui
+INFO: [PlanAhead-261] Exiting PlanAhead...
+INFO: [Common-83] Releasing license: PlanAhead

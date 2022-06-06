@@ -1,0 +1,10 @@
+NET "clk_in" LOC = AH15;
+
+NET "clk_in" TNM_NET = "clk_in";
+TIMESPEC "TS_clk" = PERIOD "clk_in" 100 MHz HIGH 50 %;
+
+#NET "reset" LOC = AJ6;
+
+NET "reset" LOC = U8;
+
+NET "dummy_out" LOC = H18;

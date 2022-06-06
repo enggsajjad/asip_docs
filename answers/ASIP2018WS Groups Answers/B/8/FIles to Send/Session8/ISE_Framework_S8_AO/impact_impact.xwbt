@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/impact.xsl
+OUTFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO
+LICENSE=iMPACT
+USER_INFO=iMPACT

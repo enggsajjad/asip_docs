@@ -1,0 +1,10656 @@
+Version{
+ 2.0
+}
+FileType{
+ Design
+}
+Database{
+ path{
+  ./
+ }
+ sufix{
+  pdb
+ }
+ type{
+  ASIP Meister DataFile
+ }
+
+}
+Preference{
+ Version{
+  1.0
+ }
+
+}
+AbsLevelArch{
+ Complete{
+  ON
+ }
+ CPUtype{
+  midTitle{
+   CPU_type
+  }
+  label{
+   CPU type
+  }
+  method{
+   radiobutton  Pipeline
+  }
+  select{
+   Pipeline
+  }
+  Pipeline{
+   midTitle{
+    Pipeline_architecture
+   }
+   StageNum{
+    midTitle{
+     Number_of_stages
+    }
+    label{
+     Num. of Stages
+    }
+    method{
+     factor stage
+    }
+    unit{
+     
+    }
+    select{
+     5
+    }
+
+   }
+   CommonStageNum{
+    midTitle{
+     Number_of_common_stages
+    }
+    label{
+     Num. of Common Stages
+    }
+    method{
+     integer
+    }
+    unit{
+     
+    }
+    select{
+     0
+    }
+
+   }
+   DecodeStage{
+    midTitle{
+     
+    }
+    label{
+     Decode Stage
+    }
+    method{
+     integer
+    }
+    unit{
+     [-th]
+    }
+    select{
+     2
+    }
+
+   }
+   StageDef{
+    midTitle{
+     Stage_Definition
+    }
+    method{
+     dylist stage
+    }
+    stage{
+     midTitle{
+      stage
+     }
+     1{
+      midTitle{
+       stage1
+      }
+      label{
+       1
+      }
+      method{
+       specified
+      }
+      unit{
+       [cycle]
+      }
+      select{
+       IF,1,fetch
+      }
+
+     }
+     2{
+      midTitle{
+       stage2
+      }
+      label{
+       2
+      }
+      method{
+       specified
+      }
+      unit{
+       [cycle]
+      }
+      select{
+       ID,1,decode
+      }
+
+     }
+     3{
+      midTitle{
+       stage3
+      }
+      label{
+       3
+      }
+      method{
+       specified
+      }
+      unit{
+       [cycle]
+      }
+      select{
+       EXE,1,exec
+      }
+
+     }
+     4{
+      midTitle{
+       stage4
+      }
+      label{
+       4
+      }
+      method{
+       specified
+      }
+      unit{
+       [cycle]
+      }
+      select{
+       MEM,1,memory_read & memory_write
+      }
+
+     }
+     5{
+      midTitle{
+       stage5
+      }
+      label{
+       5
+      }
+      method{
+       specified
+      }
+      unit{
+       [cycle]
+      }
+      select{
+       WB,1,register_write
+      }
+
+     }
+
+    }
+
+   }
+   MultiscInterlock{
+    midTitle{
+     Multi_cycle_interlock
+    }
+    label{
+     Multi cycle interlock
+    }
+    method{
+     radiobutton Yes No
+    }
+    select{
+     Yes
+    }
+    enable{
+     false
+    }
+
+   }
+   DataHazInterlock{
+    midTitle{
+     Data_hazard_interlock
+    }
+    label{
+     Data hazard interlock
+    }
+    method{
+     radiobutton Yes No
+    }
+    select{
+     Yes
+    }
+    enable{
+     false
+    }
+
+   }
+   RegBypass{
+    midTitle{
+     Register_bypass
+    }
+    label{
+     Register Bypass
+    }
+    method{
+     radiobutton Yes No
+    }
+    select{
+     Yes
+    }
+    enable{
+     false
+    }
+
+   }
+   DlydBranch{
+    midTitle{
+     Delayed_branch
+    }
+    label{
+     Delayed branch
+    }
+    method{
+     radiobutton Yes No
+    }
+    select{
+     Yes
+    }
+    Yes{
+     midTitle{
+      Number_of_exec_delayed_slot
+     }
+     DelaySlot{
+      midTitle{
+       number
+      }
+      label{
+       Num. of delayed slot
+      }
+      method{
+       integer
+      }
+      unit{
+       [instruction]
+      }
+      select{
+       1
+      }
+
+     }
+
+    }
+
+   }
+
+  }
+
+ }
+ MAXInstBitWidth{
+  midTitle{
+   MAX_instruction_bit_width
+  }
+  label{
+   Max inst. bit width
+  }
+  method{
+   integer
+  }
+  unit{
+   [bit]
+  }
+  select{
+   32
+  }
+
+ }
+ Projectname{
+  midTitle{
+   
+  }
+  label{
+   Project name
+  }
+  method{
+   entry
+  }
+  select{
+   DLX Basis CPU
+  }
+
+ }
+ FhmWorkname{
+  midTitle{
+   Fhm_workname
+  }
+  label{
+   Fhm workname
+  }
+  method{
+   entry
+  }
+  select{
+   peas
+  }
+  enable{
+   false
+  }
+
+ }
+ Revision{
+  midTitle{
+   
+  }
+  label{
+   Revision No.
+  }
+  method{
+   message
+  }
+  select{
+   ver 1.0
+  }
+
+ }
+ DesignConst{
+  midTitle{
+   
+  }
+  method{
+   list Design_Goal
+  }
+  Design_Goal{
+   midTitle{
+    construciton
+   }
+   Area{
+    midTitle{
+     Goal_area
+    }
+    label{
+     Goal Area
+    }
+    method{
+     integer
+    }
+    unit{
+     [gates]
+    }
+    select{
+     60000
+    }
+
+   }
+   Delay{
+    midTitle{
+     Goal_delay
+    }
+    label{
+     Goal Delay
+    }
+    method{
+     integer
+    }
+    unit{
+     [ns]
+    }
+    select{
+     13
+    }
+
+   }
+   PowerS{
+    midTitle{
+     Goal_power_S
+    }
+    label{
+     Goal Power S
+    }
+    method{
+     integer
+    }
+    unit{
+     [uW/MHz]
+    }
+    select{
+     10000
+    }
+
+   }
+
+  }
+
+ }
+ Priority{
+  midTitle{
+   Priority
+  }
+  label{
+   Design Priority
+  }
+  method{
+   radiobutton Area Performance Power
+  }
+  select{
+   Performance
+  }
+
+ }
+ MAXDataBitWidth{
+  midTitle{
+   MAX_data_width
+  }
+  label{
+   Max data bit width
+  }
+  method{
+   integer
+  }
+  unit{
+   [bit]
+  }
+  select{
+   32
+  }
+
+ }
+
+}
+EntityDecl{
+ Complete{
+  ON
+ }
+ ComponentName{
+  CPU
+ }
+ Entity{
+  1{
+   valid{
+    true
+   }
+   name{
+    CLK
+   }
+   type{
+    in
+   }
+   entity{
+    std_logic
+   }
+   attribute{
+    clock
+   }
+
+  }
+  2{
+   valid{
+    true
+   }
+   name{
+    Reset
+   }
+   type{
+    in
+   }
+   entity{
+    std_logic
+   }
+   attribute{
+    reset
+   }
+
+  }
+  3{
+   valid{
+    true
+   }
+   name{
+    instAB
+   }
+   type{
+    out
+   }
+   entity{
+    std_logic_vector(31 downto 0)
+   }
+   attribute{
+    instruction_memory_address_bus
+   }
+
+  }
+  4{
+   valid{
+    true
+   }
+   name{
+    instDB
+   }
+   type{
+    in
+   }
+   entity{
+    std_logic_vector(31 downto 0)
+   }
+   attribute{
+    instruction_memory_data_bus
+   }
+
+  }
+  5{
+   valid{
+    true
+   }
+   name{
+    DataAB
+   }
+   type{
+    out
+   }
+   entity{
+    std_logic_vector(31 downto 0)
+   }
+   attribute{
+    data_memory_address_bus
+   }
+
+  }
+  6{
+   valid{
+    true
+   }
+   name{
+    DataDB
+   }
+   type{
+    inout
+   }
+   entity{
+    std_logic_vector(31 downto 0)
+   }
+   attribute{
+    data_memory_data_bus
+   }
+
+  }
+  7{
+   valid{
+    true
+   }
+   name{
+    DataReq
+   }
+   type{
+    out
+   }
+   entity{
+    std_logic
+   }
+   attribute{
+    data_memory_request_bus
+   }
+
+  }
+  8{
+   valid{
+    true
+   }
+   name{
+    DataAck
+   }
+   type{
+    in
+   }
+   entity{
+    std_logic
+   }
+   attribute{
+    data_memory_acknowledge_bus
+   }
+
+  }
+  9{
+   valid{
+    true
+   }
+   name{
+    dataWin
+   }
+   type{
+    out
+   }
+   entity{
+    std_logic_vector(3 downto 0)
+   }
+   attribute{
+    data_memory_write_mode_bus
+   }
+
+  }
+
+ }
+
+}
+ResourceDecl{
+ Complete{
+  ON
+ }
+ Instance{
+  PC{
+   valid{
+    true
+   }
+   class{
+    name{
+     pcu
+    }
+    modelpath{
+     /workdb/peas/
+    }
+    use{
+     Prog. Counter
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     increment_step{
+      1
+     }
+     adder_algorithm{
+      rca
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  IR{
+   valid{
+    true
+   }
+   class{
+    name{
+     register
+    }
+    modelpath{
+     /basicfhmdb/storage/
+    }
+    use{
+     Inst. Register
+    }
+    parameter{
+     bit_width{
+      32
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  IMAU{
+   valid{
+    true
+   }
+   class{
+    name{
+     imau
+    }
+    modelpath{
+     /workdb/peas/
+    }
+    use{
+     Inst. Memory
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     address_space{
+      32
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  DMAU{
+   valid{
+    true
+   }
+   class{
+    name{
+     dmau
+    }
+    modelpath{
+     /workdb/peas/
+    }
+    use{
+     Data Memory
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     address_space{
+      32
+     }
+     access_width{
+      8
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  GPR{
+   valid{
+    true
+   }
+   class{
+    name{
+     registerfile
+    }
+    modelpath{
+     /basicfhmdb/storage/
+    }
+    use{
+     Register File
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     num_register{
+      32
+     }
+     num_read_port{
+      2
+     }
+     num_write_port{
+      1
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  ALU0{
+   valid{
+    true
+   }
+   class{
+    name{
+     alu
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     algorithm{
+      cla
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  EXT0{
+   valid{
+    true
+   }
+   class{
+    name{
+     extender
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      16
+     }
+     bit_width_out{
+      32
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  MUL0{
+   valid{
+    true
+   }
+   class{
+    name{
+     multiplier
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     algorithm{
+      seq
+     }
+     adder_algorithm{
+      cla
+     }
+     data_type{
+      two_complement
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  DIV0{
+   valid{
+    true
+   }
+   class{
+    name{
+     divider
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     algorithm{
+      seq
+     }
+     adder_algorithm{
+      cla
+     }
+     data_type{
+      two_complement
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  SFT0{
+   valid{
+    true
+   }
+   class{
+    name{
+     shifter
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      32
+     }
+     amount{
+      variable
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+  EXT1{
+   valid{
+    true
+   }
+   class{
+    name{
+     extender
+    }
+    modelpath{
+     /basicfhmdb/computational/
+    }
+    use{
+     (unspecified)
+    }
+    parameter{
+     bit_width{
+      28
+     }
+     bit_width_out{
+      32
+     }
+
+    }
+
+   }
+   Simulation{
+    Behavior
+   }
+   Synthesis{
+    Gate
+   }
+   Comment{
+    
+   }
+
+  }
+
+ }
+
+}
+StorageSpec{
+ Complete{
+  ON
+ }
+ RegisterFile{
+  Before{
+   0{
+    Name{
+     GPR[asc]
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     [bin-asc]
+    }
+
+   }
+
+  }
+  After{
+   0{
+    Name{
+     GPR0
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     0
+    }
+    Usage{
+     zero-reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00000
+    }
+
+   }
+   1{
+    Name{
+     GPR1
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     1
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00001
+    }
+
+   }
+   2{
+    Name{
+     GPR2
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     2
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00010
+    }
+
+   }
+   3{
+    Name{
+     GPR3
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     3
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00011
+    }
+
+   }
+   4{
+    Name{
+     GPR4
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     4
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00100
+    }
+
+   }
+   5{
+    Name{
+     GPR5
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     5
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00101
+    }
+
+   }
+   6{
+    Name{
+     GPR6
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     6
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00110
+    }
+
+   }
+   7{
+    Name{
+     GPR7
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     7
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     00111
+    }
+
+   }
+   8{
+    Name{
+     GPR8
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     8
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01000
+    }
+
+   }
+   9{
+    Name{
+     GPR9
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     9
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01001
+    }
+
+   }
+   10{
+    Name{
+     GPR10
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     10
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01010
+    }
+
+   }
+   11{
+    Name{
+     GPR11
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     11
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01011
+    }
+
+   }
+   12{
+    Name{
+     GPR12
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     12
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01100
+    }
+
+   }
+   13{
+    Name{
+     GPR13
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     13
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01101
+    }
+
+   }
+   14{
+    Name{
+     GPR14
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     14
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01110
+    }
+
+   }
+   15{
+    Name{
+     GPR15
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     15
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     01111
+    }
+
+   }
+   16{
+    Name{
+     GPR16
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     16
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10000
+    }
+
+   }
+   17{
+    Name{
+     GPR17
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     17
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10001
+    }
+
+   }
+   18{
+    Name{
+     GPR18
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     18
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10010
+    }
+
+   }
+   19{
+    Name{
+     GPR19
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     19
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10011
+    }
+
+   }
+   20{
+    Name{
+     GPR20
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     20
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10100
+    }
+
+   }
+   21{
+    Name{
+     GPR21
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     21
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10101
+    }
+
+   }
+   22{
+    Name{
+     GPR22
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     22
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10110
+    }
+
+   }
+   23{
+    Name{
+     GPR23
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     23
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     10111
+    }
+
+   }
+   24{
+    Name{
+     GPR24
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     24
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     11000
+    }
+
+   }
+   25{
+    Name{
+     GPR25
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     25
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     11001
+    }
+
+   }
+   26{
+    Name{
+     GPR26
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     26
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     11010
+    }
+
+   }
+   27{
+    Name{
+     GPR27
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     27
+    }
+    Usage{
+     reg
+    }
+    Location{
+     original
+    }
+    Binary{
+     11011
+    }
+
+   }
+   28{
+    Name{
+     GPR28
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     28
+    }
+    Usage{
+     return
+    }
+    Location{
+     original
+    }
+    Binary{
+     11100
+    }
+
+   }
+   29{
+    Name{
+     GPR29
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     29
+    }
+    Usage{
+     sp
+    }
+    Location{
+     original
+    }
+    Binary{
+     11101
+    }
+
+   }
+   30{
+    Name{
+     GPR30
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     30
+    }
+    Usage{
+     fp
+    }
+    Location{
+     original
+    }
+    Binary{
+     11110
+    }
+
+   }
+   31{
+    Name{
+     GPR31
+    }
+    Class{
+     GPR
+    }
+    Resource{
+     GPR
+    }
+    Width{
+     32
+    }
+    Num{
+     31
+    }
+    Usage{
+     link
+    }
+    Location{
+     original
+    }
+    Binary{
+     11111
+    }
+
+   }
+
+  }
+
+ }
+ Register{
+  0{
+   Name{
+    PC
+   }
+   Resource{
+    PC
+   }
+   Width{
+    32
+   }
+   Usage{
+    pc
+   }
+   Location{
+    original
+   }
+
+  }
+  1{
+   Name{
+    IR
+   }
+   Resource{
+    IR
+   }
+   Width{
+    32
+   }
+   Usage{
+    ireg
+   }
+   Location{
+    original
+   }
+
+  }
+
+ }
+ Memory{
+  0{
+   Name{
+    IMEM
+   }
+   Resource{
+    IMAU
+   }
+   Width{
+    32
+   }
+   Usage{
+    i-memory
+   }
+   Access{
+    8
+   }
+
+  }
+  1{
+   Name{
+    DMEM
+   }
+   Resource{
+    DMAU
+   }
+   Width{
+    32
+   }
+   Usage{
+    d-memory
+   }
+   Access{
+    8
+   }
+
+  }
+
+ }
+
+}
+InstructionDecl{
+ Complete{
+  ON
+ }
+ MaxInstId{
+  144
+ }
+ InstructionType{
+  R_R  #1{
+   Valid{
+    true
+   }
+   Name{
+    R_R
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs0
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rs0
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      16
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs1
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rs1
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    4{
+     MSB{
+      15
+     }
+     LSB{
+      11
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rd
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rd
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    5{
+     MSB{
+      10
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      func
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  R_I  #1{
+   Valid{
+    true
+   }
+   Name{
+    R_I
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs0
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rs0
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      16
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rd
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rd
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    4{
+     MSB{
+      15
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      const
+     }
+     Addr_mode{
+      Immediate_data
+     }
+     Operand_Name{
+      const
+     }
+     Element{
+      Immediate
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  L_S  #1{
+   Valid{
+    true
+   }
+   Name{
+    L_S
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs0
+     }
+     Addr_mode{
+      RIwDisp
+     }
+     Operand_Name{
+      addr
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      16
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rd
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rd
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    4{
+     MSB{
+      15
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      const
+     }
+     Addr_mode{
+      RIwDisp
+     }
+     Operand_Name{
+      addr
+     }
+     Element{
+      Displacement
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  B  #1{
+   Valid{
+    true
+   }
+   Name{
+    B
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs0
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rs0
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      16
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      binary
+     }
+     Value{
+      00000
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    4{
+     MSB{
+      15
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      const
+     }
+     Addr_mode{
+      PCrelative_address
+     }
+     Operand_Name{
+      const
+     }
+     Element{
+      Symbol
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  J  #1{
+   Valid{
+    true
+   }
+   Name{
+    J
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      const
+     }
+     Addr_mode{
+      PCrelative_address
+     }
+     Operand_Name{
+      const
+     }
+     Element{
+      Symbol
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  JR  #1{
+   Valid{
+    true
+   }
+   Name{
+    JR
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      binary
+     }
+     Value{
+      000000
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rs0
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rs0
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      11
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      binary
+     }
+     Value{
+      0000000000
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    4{
+     MSB{
+      10
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      func
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+  LHI  #1{
+   Valid{
+    true
+   }
+   Name{
+    LHI
+   }
+   Entity{
+    1{
+     MSB{
+      31
+     }
+     LSB{
+      26
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      opecode
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    2{
+     MSB{
+      25
+     }
+     LSB{
+      21
+     }
+     FieldType{
+      OP-code
+     }
+     FieldAttr{
+      binary
+     }
+     Value{
+      00000
+     }
+     Addr_mode{
+      
+     }
+     Operand_Name{
+      
+     }
+     Element{
+      
+     }
+     Reg_class{
+      
+     }
+
+    }
+    3{
+     MSB{
+      20
+     }
+     LSB{
+      16
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      rd
+     }
+     Addr_mode{
+      RDirect
+     }
+     Operand_Name{
+      rd
+     }
+     Element{
+      Resource
+     }
+     Reg_class{
+      GPR
+     }
+
+    }
+    4{
+     MSB{
+      15
+     }
+     LSB{
+      0
+     }
+     FieldType{
+      Operand
+     }
+     FieldAttr{
+      name
+     }
+     Value{
+      const
+     }
+     Addr_mode{
+      Immediate_data
+     }
+     Operand_Name{
+      const
+     }
+     Element{
+      Immediate
+     }
+     Reg_class{
+      
+     }
+
+    }
+
+   }
+
+  }
+
+ }
+ Instruction{
+  add  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    add
+   }
+   Id{
+    56
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100000
+    }
+
+   }
+   Format{
+    add rd rs0 rs1
+   }
+
+  }
+  addu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    addu
+   }
+   Id{
+    57
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100001
+    }
+
+   }
+   Format{
+    addu rd rs0 rs1
+   }
+
+  }
+  addi  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    addi
+   }
+   Id{
+    58
+   }
+   EditField{
+    1{
+     001000
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    addi rd rs0 const
+   }
+
+  }
+  addui  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    addui
+   }
+   Id{
+    59
+   }
+   EditField{
+    1{
+     001001
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    addui rd rs0 const
+   }
+
+  }
+  sub  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sub
+   }
+   Id{
+    60
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100010
+    }
+
+   }
+   Format{
+    sub rd rs0 rs1
+   }
+
+  }
+  subu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    subu
+   }
+   Id{
+    61
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100011
+    }
+
+   }
+   Format{
+    subu rd rs0 rs1
+   }
+
+  }
+  subi  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    subi
+   }
+   Id{
+    62
+   }
+   EditField{
+    1{
+     001010
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    subi rd rs0 const
+   }
+
+  }
+  subui  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    subui
+   }
+   Id{
+    63
+   }
+   EditField{
+    1{
+     001011
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    subui rd rs0 const
+   }
+
+  }
+  mult  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    mult
+   }
+   Id{
+    64
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011000
+    }
+
+   }
+   Format{
+    mult rd rs0 rs1
+   }
+
+  }
+  multu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    multu
+   }
+   Id{
+    65
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011001
+    }
+
+   }
+   Format{
+    multu rd rs0 rs1
+   }
+
+  }
+  div  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    div
+   }
+   Id{
+    66
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011010
+    }
+
+   }
+   Format{
+    div rd rs0 rs1
+   }
+
+  }
+  divu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    divu
+   }
+   Id{
+    67
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011011
+    }
+
+   }
+   Format{
+    divu rd rs0 rs1
+   }
+
+  }
+  and  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    and
+   }
+   Id{
+    68
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100100
+    }
+
+   }
+   Format{
+    and rd rs0 rs1
+   }
+
+  }
+  andi  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    andi
+   }
+   Id{
+    69
+   }
+   EditField{
+    1{
+     001100
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    andi rd rs0 const
+   }
+
+  }
+  or  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    or
+   }
+   Id{
+    70
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100101
+    }
+
+   }
+   Format{
+    or rd rs0 rs1
+   }
+
+  }
+  ori  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    ori
+   }
+   Id{
+    71
+   }
+   EditField{
+    1{
+     001101
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    ori rd rs0 const
+   }
+
+  }
+  xor  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    xor
+   }
+   Id{
+    72
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000100110
+    }
+
+   }
+   Format{
+    xor rd rs0 rs1
+   }
+
+  }
+  xori  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    xori
+   }
+   Id{
+    73
+   }
+   EditField{
+    1{
+     001110
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    xori rd rs0 const
+   }
+
+  }
+  sll  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sll
+   }
+   Id{
+    74
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000000000
+    }
+
+   }
+   Format{
+    sll rd rs0 rs1
+   }
+
+  }
+  srl  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    srl
+   }
+   Id{
+    75
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000000010
+    }
+
+   }
+   Format{
+    srl rd rs0 rs1
+   }
+
+  }
+  sra  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sra
+   }
+   Id{
+    76
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000000011
+    }
+
+   }
+   Format{
+    sra rd rs0 rs1
+   }
+
+  }
+  slli  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    slli
+   }
+   Id{
+    77
+   }
+   EditField{
+    1{
+     010000
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    slli rd rs0 const
+   }
+
+  }
+  srli  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    srli
+   }
+   Id{
+    78
+   }
+   EditField{
+    1{
+     010001
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    srli rd rs0 const
+   }
+
+  }
+  srai  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    srai
+   }
+   Id{
+    79
+   }
+   EditField{
+    1{
+     010010
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    srai rd rs0 const
+   }
+
+  }
+  slt  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    slt
+   }
+   Id{
+    80
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101010
+    }
+
+   }
+   Format{
+    slt rd rs0 rs1
+   }
+
+  }
+  sgt  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sgt
+   }
+   Id{
+    81
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101011
+    }
+
+   }
+   Format{
+    sgt rd rs0 rs1
+   }
+
+  }
+  sle  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sle
+   }
+   Id{
+    82
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101100
+    }
+
+   }
+   Format{
+    sle rd rs0 rs1
+   }
+
+  }
+  sge  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sge
+   }
+   Id{
+    83
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101101
+    }
+
+   }
+   Format{
+    sge rd rs0 rs1
+   }
+
+  }
+  seq  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    seq
+   }
+   Id{
+    84
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101110
+    }
+
+   }
+   Format{
+    seq rd rs0 rs1
+   }
+
+  }
+  sne  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sne
+   }
+   Id{
+    85
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000101111
+    }
+
+   }
+   Format{
+    sne rd rs0 rs1
+   }
+
+  }
+  slti  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    slti
+   }
+   Id{
+    86
+   }
+   EditField{
+    1{
+     011010
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    slti rd rs0 const
+   }
+
+  }
+  sgti  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sgti
+   }
+   Id{
+    87
+   }
+   EditField{
+    1{
+     011011
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    sgti rd rs0 const
+   }
+
+  }
+  slei  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    slei
+   }
+   Id{
+    88
+   }
+   EditField{
+    1{
+     011100
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    slei rd rs0 const
+   }
+
+  }
+  sgei  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sgei
+   }
+   Id{
+    89
+   }
+   EditField{
+    1{
+     011101
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    sgei rd rs0 const
+   }
+
+  }
+  seqi  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    seqi
+   }
+   Id{
+    90
+   }
+   EditField{
+    1{
+     011110
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    seqi rd rs0 const
+   }
+
+  }
+  snei  #1{
+   Type{
+    R_I  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    snei
+   }
+   Id{
+    91
+   }
+   EditField{
+    1{
+     011111
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    snei rd rs0 const
+   }
+
+  }
+  lhi  #1{
+   Type{
+    LHI  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lhi
+   }
+   Id{
+    109
+   }
+   EditField{
+    1{
+     001111
+    }
+    2{
+     00000
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lhi rd const
+   }
+
+  }
+  lb  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lb
+   }
+   Id{
+    93
+   }
+   EditField{
+    1{
+     100000
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lb rd addr
+   }
+
+  }
+  lh  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lh
+   }
+   Id{
+    94
+   }
+   EditField{
+    1{
+     100001
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lh rd addr
+   }
+
+  }
+  lw  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lw
+   }
+   Id{
+    95
+   }
+   EditField{
+    1{
+     100011
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lw rd addr
+   }
+
+  }
+  lbu  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lbu
+   }
+   Id{
+    96
+   }
+   EditField{
+    1{
+     100100
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lbu rd addr
+   }
+
+  }
+  lhu  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    lhu
+   }
+   Id{
+    97
+   }
+   EditField{
+    1{
+     100101
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    lhu rd addr
+   }
+
+  }
+  sb  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sb
+   }
+   Id{
+    98
+   }
+   EditField{
+    1{
+     101000
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    sb addr rd
+   }
+
+  }
+  sh  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sh
+   }
+   Id{
+    99
+   }
+   EditField{
+    1{
+     101001
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    sh addr rd
+   }
+
+  }
+  sw  #1{
+   Type{
+    L_S  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sw
+   }
+   Id{
+    100
+   }
+   EditField{
+    1{
+     101011
+    }
+    2{
+     rs0
+    }
+    3{
+     rd
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    sw addr rd
+   }
+
+  }
+  beqz  #1{
+   Type{
+    B  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    beqz
+   }
+   Id{
+    121
+   }
+   EditField{
+    1{
+     000100
+    }
+    2{
+     rs0
+    }
+    3{
+     00000
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    beqz rs0 const
+   }
+
+  }
+  bnez  #1{
+   Type{
+    B  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    bnez
+   }
+   Id{
+    122
+   }
+   EditField{
+    1{
+     000101
+    }
+    2{
+     rs0
+    }
+    3{
+     00000
+    }
+    4{
+     const
+    }
+
+   }
+   Format{
+    bnez rs0 const
+   }
+
+  }
+  j  #1{
+   Type{
+    J  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    j
+   }
+   Id{
+    103
+   }
+   EditField{
+    1{
+     000010
+    }
+    2{
+     const
+    }
+
+   }
+   Format{
+    j const
+   }
+
+  }
+  jal  #1{
+   Type{
+    J  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    jal
+   }
+   Id{
+    104
+   }
+   EditField{
+    1{
+     000011
+    }
+    2{
+     const
+    }
+
+   }
+   Format{
+    jal const
+   }
+
+  }
+  jr  #1{
+   Type{
+    JR  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    jr
+   }
+   Id{
+    107
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     0000000000
+    }
+    4{
+     00000001000
+    }
+
+   }
+   Format{
+    jr rs0
+   }
+
+  }
+  jalr  #1{
+   Type{
+    JR  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    jalr
+   }
+   Id{
+    108
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     0000000000
+    }
+    4{
+     00000001001
+    }
+
+   }
+   Format{
+    jalr rs0
+   }
+
+  }
+  MOD  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    MOD
+   }
+   Id{
+    111
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011100
+    }
+
+   }
+   Format{
+    MOD rd rs0 rs1
+   }
+
+  }
+  modu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    modu
+   }
+   Id{
+    112
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000011110
+    }
+
+   }
+   Format{
+    modu rd rs0 rs1
+   }
+
+  }
+  sltu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sltu
+   }
+   Id{
+    113
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000111010
+    }
+
+   }
+   Format{
+    sltu rd rs0 rs1
+   }
+
+  }
+  sgtu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sgtu
+   }
+   Id{
+    114
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000111011
+    }
+
+   }
+   Format{
+    sgtu rd rs0 rs1
+   }
+
+  }
+  sleu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sleu
+   }
+   Id{
+    115
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000111100
+    }
+
+   }
+   Format{
+    sleu rd rs0 rs1
+   }
+
+  }
+  sgeu  #1{
+   Type{
+    R_R  #1
+   }
+   Valid{
+    true
+   }
+   Name{
+    sgeu
+   }
+   Id{
+    116
+   }
+   EditField{
+    1{
+     000000
+    }
+    2{
+     rs0
+    }
+    3{
+     rs1
+    }
+    4{
+     rd
+    }
+    5{
+     00000111101
+    }
+
+   }
+   Format{
+    sgeu rd rs0 rs1
+   }
+
+  }
+
+ }
+
+}
+OperationDesc{
+ Complete{
+  ON
+ }
+ InstBehavior{
+  add  #1{
+   id{
+    56
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 + rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  addu  #1{
+   id{
+    57
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 + rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  addi  #1{
+   id{
+    58
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 + const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  addui  #1{
+   id{
+    59
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 + const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sub  #1{
+   id{
+    60
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 - rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  subu  #1{
+   id{
+    61
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 - rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  subi  #1{
+   id{
+    62
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 - const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  subui  #1{
+   id{
+    63
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 - const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  mult  #1{
+   id{
+    64
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 * rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  multu  #1{
+   id{
+    65
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 * rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  div  #1{
+   id{
+    66
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 / rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  divu  #1{
+   id{
+    67
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 / rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  and  #1{
+   id{
+    68
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 & rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  andi  #1{
+   id{
+    69
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 & const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  or  #1{
+   id{
+    70
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 | rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  ori  #1{
+   id{
+    71
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 | const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  xor  #1{
+   id{
+    72
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 ^ rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  xori  #1{
+   id{
+    73
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 ^ const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  sll  #1{
+   id{
+    74
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 << rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  srl  #1{
+   id{
+    75
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >>> rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sra  #1{
+   id{
+    76
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >> rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  slli  #1{
+   id{
+    77
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 << const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  srli  #1{
+   id{
+    78
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >>> const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  srai  #1{
+   id{
+    79
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >> const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  slt  #1{
+   id{
+    80
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 < rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sgt  #1{
+   id{
+    81
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 > rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sle  #1{
+   id{
+    82
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 <= rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sge  #1{
+   id{
+    83
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >= rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  seq  #1{
+   id{
+    84
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 == rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  sne  #1{
+   id{
+    85
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 != rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  slti  #1{
+   id{
+    86
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 < const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sgti  #1{
+   id{
+    87
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 > const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  slei  #1{
+   id{
+    88
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 <= const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sgei  #1{
+   id{
+    89
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >= const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  seqi  #1{
+   id{
+    90
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 == const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  snei  #1{
+   id{
+    91
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 != const;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  lhi  #1{
+   id{
+    109
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = const << 16;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      const
+     }
+     usage{
+      Immediate
+     }
+     addrmode{
+      Immediate
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  lb  #1{
+   id{
+    93
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = *addr;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      SInt7to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt7to0
+     }
+
+    }
+
+   }
+
+  }
+  lh  #1{
+   id{
+    94
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = *addr;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+
+   }
+
+  }
+  lw  #1{
+   id{
+    95
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = *addr;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  lbu  #1{
+   id{
+    96
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = *addr;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      UInt7to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt7to0
+     }
+
+    }
+
+   }
+
+  }
+  lhu  #1{
+   id{
+    97
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = *addr;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+    2{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt15to0
+     }
+
+    }
+
+   }
+
+  }
+  sb  #1{
+   id{
+    98
+   }
+   cycle{
+    1
+   }
+   description{
+    *addr = rd;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int7to0
+     }
+
+    }
+    2{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      Int7to0
+     }
+
+    }
+
+   }
+
+  }
+  sh  #1{
+   id{
+    99
+   }
+   cycle{
+    1
+   }
+   description{
+    *addr = rd;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int15to0
+     }
+
+    }
+    2{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      Int15to0
+     }
+
+    }
+
+   }
+
+  }
+  sw  #1{
+   id{
+    100
+   }
+   cycle{
+    1
+   }
+   description{
+    *addr = rd;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      addr
+     }
+     usage{
+      d-memory
+     }
+     addrmode{
+      [GPR,disp]:DMEM
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+
+   }
+
+  }
+  beqz  #1{
+   id{
+    121
+   }
+   cycle{
+    1
+   }
+   description{
+    if (rs0==0) \{
+  PC = PC + const;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      label
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  bnez  #1{
+   id{
+    122
+   }
+   cycle{
+    1
+   }
+   description{
+    if (rs0 != 0) \{
+  PC = PC + const;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      Int31to0
+     }
+
+    }
+    2{
+     opname{
+      const
+     }
+     usage{
+      label
+     }
+     addrmode{
+      
+     }
+     datatype{
+      SInt15to0
+     }
+
+    }
+    3{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  j  #1{
+   id{
+    103
+   }
+   cycle{
+    1
+   }
+   description{
+    if ( always ) \{
+  PC = const;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      const
+     }
+     usage{
+      label
+     }
+     addrmode{
+      
+     }
+     datatype{
+      label
+     }
+
+    }
+    2{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      any
+     }
+
+    }
+
+   }
+
+  }
+  jal  #1{
+   id{
+    104
+   }
+   cycle{
+    1
+   }
+   description{
+    if ( always ) \{
+  LINK = Next(PC);
+  PC = const;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      const
+     }
+     usage{
+      label
+     }
+     addrmode{
+      
+     }
+     datatype{
+      label
+     }
+
+    }
+    2{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      any
+     }
+
+    }
+    3{
+     opname{
+      LINK
+     }
+     usage{
+      link
+     }
+     addrmode{
+      GPR31
+     }
+     datatype{
+      any
+     }
+
+    }
+
+   }
+
+  }
+  jr  #1{
+   id{
+    107
+   }
+   cycle{
+    1
+   }
+   description{
+    if ( always ) \{
+  PC = rs0;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      any
+     }
+
+    }
+    2{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      any
+     }
+
+    }
+
+   }
+
+  }
+  jalr  #1{
+   id{
+    108
+   }
+   cycle{
+    1
+   }
+   description{
+    if ( always ) \{
+  LINK = Next(PC);
+  PC = rs0;
+\}
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      any
+     }
+
+    }
+    2{
+     opname{
+      PC
+     }
+     usage{
+      pc
+     }
+     addrmode{
+      PC
+     }
+     datatype{
+      any
+     }
+
+    }
+    3{
+     opname{
+      LINK
+     }
+     usage{
+      link
+     }
+     addrmode{
+      GPR31
+     }
+     datatype{
+      any
+     }
+
+    }
+
+   }
+
+  }
+  MOD  #1{
+   id{
+    111
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 % rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      SInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  modu  #1{
+   id{
+    112
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 % rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sltu  #1{
+   id{
+    113
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 < rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sgtu  #1{
+   id{
+    114
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 > rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sleu  #1{
+   id{
+    115
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 <= rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+  sgeu  #1{
+   id{
+    116
+   }
+   cycle{
+    1
+   }
+   description{
+    rd = rs0 >= rs1;
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   Operand{
+    1{
+     opname{
+      rs0
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    2{
+     opname{
+      rs1
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+    3{
+     opname{
+      rd
+     }
+     usage{
+      reg
+     }
+     addrmode{
+      GPR
+     }
+     datatype{
+      UInt31to0
+     }
+
+    }
+
+   }
+
+  }
+
+ }
+ ExceptionBehavior{
+  reset{
+   valid{
+    true
+   }
+   type{
+    Reset
+   }
+   cycle{
+    1
+   }
+   description{
+    
+   }
+   assertion{
+    
+   }
+   comment{
+    
+   }
+   condition{
+    condition_type{
+     Unselected
+    }
+    Reset{
+     valid{
+      true
+     }
+     active_value{
+      1
+     }
+
+    }
+
+   }
+   mask{
+    maskable{
+     NO
+    }
+    register_name{
+     Unselected
+    }
+    position{
+     
+    }
+    register_value{
+     
+    }
+
+   }
+
+  }
+
+ }
+
+}
+CdefinitionDecl{
+ Complete{
+  ON
+ }
+ C_data_type{
+  0{
+   type{
+    char
+   }
+   alignment{
+    8
+   }
+   size{
+    8
+   }
+
+  }
+  1{
+   type{
+    short
+   }
+   alignment{
+    16
+   }
+   size{
+    16
+   }
+
+  }
+  2{
+   type{
+    int
+   }
+   alignment{
+    32
+   }
+   size{
+    32
+   }
+
+  }
+  3{
+   type{
+    long
+   }
+   alignment{
+    32
+   }
+   size{
+    32
+   }
+
+  }
+  4{
+   type{
+    float
+   }
+   alignment{
+    32
+   }
+   size{
+    32
+   }
+
+  }
+  5{
+   type{
+    double
+   }
+   alignment{
+    64
+   }
+   size{
+    64
+   }
+
+  }
+  6{
+   type{
+    pointer
+   }
+   alignment{
+    32
+   }
+   size{
+    32
+   }
+
+  }
+  7{
+   type{
+    struct
+   }
+   alignment{
+    8
+   }
+   size{
+    none
+   }
+
+  }
+  8{
+   type{
+    stack
+   }
+   alignment{
+    32
+   }
+   size{
+    none
+   }
+
+  }
+  9{
+   type{
+    data
+   }
+   alignment{
+    8
+   }
+   size{
+    none
+   }
+
+  }
+
+ }
+ Data_macro{
+  Int7to0,
+SInt7to0,
+UInt7to0,
+Int15to0,
+SInt15to0,
+UInt15to0,
+Int31to0,
+SInt31to0,
+UInt31to0,
+Int63to0,
+SInt63to0,
+UInt63to0,
+ }
+ C_struct_dec{
+  a{
+   0{
+    type{
+     int
+    }
+    pointer{
+     no
+    }
+    member_name{
+     a
+    }
+
+   }
+
+  }
+
+ }
+ C_ckf_prototype{
+  0{
+   ckfname{
+    
+   }
+   return_type{
+    
+   }
+   parameter{
+    
+   }
+
+  }
+
+ }
+
+}
+MOD{
+ Complete{
+  ON
+ }
+ Common{
+  COMMON{
+   
+  }
+
+ }
+ Instruction{
+  add  #1{
+   id{
+    56
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(add, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  addu  #1{
+   id{
+    57
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(addu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  addi  #1{
+   id{
+    58
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    ALUEXEC(add, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  addui  #1{
+   id{
+    59
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    ALUEXEC(addu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  sub  #1{
+   id{
+    60
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(sub, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  subu  #1{
+   id{
+    61
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(subu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  subi  #1{
+   id{
+    62
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    ALUEXEC(sub, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  subui  #1{
+   id{
+    63
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    ALUEXEC(subu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  mult  #1{
+   id{
+    64
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    MUL(mul, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  multu  #1{
+   id{
+    65
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    MUL(mulu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  div  #1{
+   id{
+    66
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    DIVIDE(div, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  divu  #1{
+   id{
+    67
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    DIVIDE(divu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  and  #1{
+   id{
+    68
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(and, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  andi  #1{
+   id{
+    69
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    ALUEXEC(and, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  or  #1{
+   id{
+    70
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(or, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  ori  #1{
+   id{
+    71
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    ALUEXEC(or, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  xor  #1{
+   id{
+    72
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    ALUEXEC(xor, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  xori  #1{
+   id{
+    73
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    ALUEXEC(or, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  sll  #1{
+   id{
+    74
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    SHIFT(sll, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  srl  #1{
+   id{
+    75
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    SHIFT(srl, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  sra  #1{
+   id{
+    76
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    SHIFT(sra, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  slli  #1{
+   id{
+    77
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    SHIFT(sll, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  srli  #1{
+   id{
+    78
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    SHIFT(srl, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  srai  #1{
+   id{
+    79
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1CONST(rs0, const)
+   }
+   3{
+    SHIFT(sra, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  slt  #1{
+   id{
+    80
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    LT(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sgt  #1{
+   id{
+    81
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    GT(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sle  #1{
+   id{
+    82
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    LE(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sge  #1{
+   id{
+    83
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    GE(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  seq  #1{
+   id{
+    84
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    EQ()
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sne  #1{
+   id{
+    85
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    NE()
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  slti  #1{
+   id{
+    86
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LT(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sgti  #1{
+   id{
+    87
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    GT(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  slei  #1{
+   id{
+    88
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LE(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sgei  #1{
+   id{
+    89
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    GE(cmp)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  seqi  #1{
+   id{
+    90
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    EQ()
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  snei  #1{
+   id{
+    91
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    NE()
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  lhi  #1{
+   id{
+    109
+   }
+   variable{
+    wire [31:0]  result;
+   }
+   1{
+    FETCH()
+   }
+   2{
+    wire [15:0] zero16;
+
+zero16 = \"0000000000000000\";
+result = <const, zero16>;
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  lb  #1{
+   id{
+    93
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LOAD(lb)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  lh  #1{
+   id{
+    94
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LOAD(lh)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  lw  #1{
+   id{
+    95
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LOAD(load)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  lbu  #1{
+   id{
+    96
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LOAD(lbu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  lhu  #1{
+   id{
+    97
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR1READ1EXT(rs0, const)
+   }
+   3{
+    LOAD(lhu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sb  #1{
+   id{
+    98
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    STORE(sb)
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sh  #1{
+   id{
+    99
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    STORE(sh)
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sw  #1{
+   id{
+    100
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    STORE(store)
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  beqz  #1{
+   id{
+    121
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    BRANCH(==)
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  bnez  #1{
+   id{
+    122
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    BRANCH(!=)
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  j  #1{
+   id{
+    103
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    JUMPADDR()
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  jal  #1{
+   id{
+    104
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    JUMPADDR()
+WRITELINKREG()
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  jr  #1{
+   id{
+    107
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    JUMP()
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  jalr  #1{
+   id{
+    108
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    JUMP()
+WRITELINKREG()
+   }
+   3{
+    
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  MOD  #1{
+   id{
+    111
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    MODULO(div, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  modu  #1{
+   id{
+    112
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    MODULO(divu, source0, source1)
+   }
+   4{
+    
+   }
+   5{
+    WRITEBACK(rd, result)
+   }
+
+  }
+  sltu  #1{
+   id{
+    113
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    LT(cmpu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sgtu  #1{
+   id{
+    114
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    GT(cmpu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sleu  #1{
+   id{
+    115
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    LE(cmpu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+  sgeu  #1{
+   id{
+    116
+   }
+   variable{
+    
+   }
+   1{
+    FETCH()
+   }
+   2{
+    GPR2READ(rs0, rs1)
+   }
+   3{
+    GE(cmpu)
+   }
+   4{
+    
+   }
+   5{
+    
+   }
+
+  }
+
+ }
+ Exception{
+  reset{
+   variable{
+    
+   }
+   1{
+    null = PC.reset();
+null = IR.reset();
+null = DMAU.reset();
+null = GPR.reset();
+null = MUL0.reset();
+null = DIV0.reset();
+   }
+
+  }
+
+ }
+ Macro{
+  FETCH(){
+   variable{
+    wire [31:0] current_pc;
+   }
+   1{
+    wire [31:0]  inst;
+
+current_pc = PC.read();
+inst = IMAU.read(current_pc);
+null = IR.write(inst);
+null = PC.inc();
+   }
+
+  }
+  GPR2READ(arg1,arg2){
+   variable{
+    wire [31:0]  source0;
+wire [31:0]  source1;
+   }
+   1{
+    source0 = GPR.read0(arg1);
+source1 = GPR.read1(arg2);
+   }
+
+  }
+  GPR1READ1EXT(arg1,arg2){
+   variable{
+    wire [31:0] source0;
+wire [31:0] source1;
+   }
+   1{
+    source0 = GPR.read0(arg1);
+source1 = EXT0.sign(arg2);
+   }
+
+  }
+  GPR1READ1CONST(arg1,arg2){
+   variable{
+    wire [31:0] source0;
+wire [31:0] source1;
+   }
+   1{
+    wire [15:0] zero_16;
+
+source0 = GPR.read0(arg1);
+zero_16 = \"0000000000000000\";
+source1 = <zero_16, arg2>;
+   }
+
+  }
+  SHIFT(ope,src1,src2){
+   variable{
+    wire [31:0]  result;
+   }
+   1{
+    wire [4:0]  shamt;
+
+shamt = src2[4:0];
+result = SFT0.ope(src1, shamt);
+   }
+
+  }
+  WRITEBACK(arg1,arg2){
+   variable{
+    
+   }
+   1{
+    null = GPR.write0(arg1, arg2);
+   }
+
+  }
+  JUMP(){
+   variable{
+    wire [31:0]  target;
+   }
+   1{
+    target = GPR.read0(rs0);
+   }
+   2{
+    null = PC.write(target);
+   }
+
+  }
+  WRITELINKREG(){
+   variable{
+    wire [31:0]  link;
+   }
+   1{
+    link = PC.read();
+   }
+   2{
+    
+   }
+   3{
+    
+   }
+   4{
+    wire [4:0]  reg_num;
+
+reg_num = \"11111\";
+null = GPR.write0(reg_num, link);
+   }
+
+  }
+  MUL(ope,arg1,arg2){
+   variable{
+    wire [31:0]  result;
+   }
+   1{
+    wire [63:0]  tmp_result;
+
+tmp_result = MUL0.ope(arg1, arg2);
+result = tmp_result[31:0];
+   }
+
+  }
+  DIVIDE(ope,arg1,arg2){
+   variable{
+    wire [31:0]  result;
+wire [31:0]  mod_result;
+   }
+   1{
+    wire div_flag;
+
+<result, mod_result, div_flag> = DIV0.ope(arg1, arg2);
+   }
+
+  }
+  ALUEXEC(ope,arg1,arg2){
+   variable{
+    wire [31:0]  result;
+   }
+   1{
+    wire [3:0]  flag;
+
+<result, flag> = ALU0.ope(arg1, arg2);
+   }
+
+  }
+  COMP(){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.cmp(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire [2:0]   tmp_flag;
+wire           cond1;
+wire           cond2;
+wire           cond3;
+wire           cond4;
+wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+wire [2:0]   tmp_flag1;
+wire           tmp_flag2;
+wire [1:0]   tmp_flag3;
+wire [2:0]   tmp_flag4;
+
+zero31 = \"0000000000000000000000000000000\";
+   }
+
+  }
+  JUMPADDR(){
+   variable{
+    wire [31:0]  offset;
+   }
+   1{
+    wire [1:0]  zero2;
+wire [27:0]  ext_const;
+wire [31:0]  temp_offset;
+wire [1:0] first;
+wire [29:0] second;
+
+zero2 = \"00\";
+ext_const = <const, zero2>;
+temp_offset = EXT1.sign(ext_const);
+first = temp_offset[31:30];
+second = temp_offset [31:2];
+
+offset = <first, second>;
+   }
+   2{
+    wire [31:0]  target;
+wire [3:0]  flag;
+
+<target, flag> = ALU0.add(current_pc, offset);
+null = PC.write(target);
+   }
+
+  }
+  BRANCH(ope){
+   variable{
+    wire [31:0] offset;
+wire [31:0] source0;
+   }
+   1{
+    source0           = GPR.read0(rs0);
+offset              = EXT0.sign(const);
+   }
+   2{
+    wire           cond;
+wire [31:0] target;
+wire [3:0]   flag;
+
+cond    = source0 ope \"00000000000000000000000000000000\";
+<target,flag>   = ALU0.add(current_pc, offset);
+null      = [cond] PC.write(target);
+   }
+
+  }
+  LOAD(ope){
+   variable{
+    wire [31:0] addr;
+wire [31:0] result;
+   }
+   1{
+    wire [3:0] flag;
+
+<addr,flag> = ALU0.add(source0,source1);
+   }
+   2{
+    wire addr_err;
+
+<result, addr_err> = DMAU.ope(addr);
+  /* result is 32bit data. already extended*/
+   }
+   3{
+    null = GPR.write0(rd, result);
+   }
+
+  }
+  STORE(ope){
+   variable{
+    wire [31:0] data;
+wire [31:0] base;
+wire [31:0] offset;
+wire [31:0] addr;
+   }
+   1{
+    data   = GPR.read0(rd);
+base   = GPR.read1(rs0);
+offset = EXT0.sign(const);
+   }
+   2{
+    wire [3:0] flag;
+
+<addr, flag> = ALU0.add(base,offset);
+   }
+   3{
+    wire addr_err;
+
+addr_err = DMAU.ope(addr,data);
+   }
+
+  }
+  EQ(){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.cmp(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+
+zero31 = \"0000000000000000000000000000000\";
+
+cond  = flag  == \"1100\";
+result = <zero31, cond>;
+null    = GPR.write0(rd,result);
+   }
+
+  }
+  NE(){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.cmp(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+
+zero31 = \"0000000000000000000000000000000\";
+
+cond  = flag  != \"1100\";
+result = <zero31, cond>;
+null    = GPR.write0(rd,result);
+   }
+
+  }
+  MODULO(ope,arg1,arg2){
+   variable{
+    wire [31:0]  result;
+wire [31:0]  div_result;
+   }
+   1{
+    wire div_flag;
+
+<div_result, result, div_flag> = DIV0.ope(arg1, arg2);
+   }
+
+  }
+  LT(ope){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.ope(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire [2:0]   tmp_flag;
+wire           cond1;
+wire           cond2;
+wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+
+zero31 = \"0000000000000000000000000000000\";
+
+tmp_flag = flag[2:0];
+cond1 = tmp_flag == \"010\";
+cond2 = flag         == \"1001\";
+cond   = cond1 | cond2;
+result = <zero31, cond>;
+null  = GPR.write0(rd, result);
+   }
+
+  }
+  GT(ope){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.ope(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire [2:0]   tmp_flag;
+wire           cond1;
+wire           cond2;
+wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+
+zero31 = \"0000000000000000000000000000000\";
+
+tmp_flag = flag[2:0];
+cond1 = tmp_flag == \"000\";
+cond2 = flag         == \"0011\";
+cond   = cond1 | cond2;
+result = <zero31, cond>;
+null  = GPR.write0(rd, result);
+   }
+
+  }
+  LE(ope){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.ope(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire [2:0]   tmp_flag;
+wire           cond1;
+wire           cond2;
+wire           cond3;
+wire           cond4;
+wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+
+zero31 = \"0000000000000000000000000000000\";
+
+tmp_flag = flag[2:0];
+cond1 = tmp_flag == \"010\";
+cond2 = flag         == \"1001\";
+cond3 = flag         == \"1100\";
+cond4 = cond1 | cond2;
+cond   = cond3 | cond4;
+result = <zero31, cond>;
+null    = GPR.write0(rd,result);
+   }
+
+  }
+  GE(ope){
+   variable{
+    wire [3:0] flag;
+   }
+   1{
+    flag = ALU0.ope(source0,source1);
+   }
+   2{
+    
+   }
+   3{
+    wire           cond1;
+wire           cond2;
+wire           cond3;
+wire           cond4;
+wire           cond;
+wire [30:0] zero31;
+wire [31:0] result;
+wire [2:0]   tmp_flag1;
+wire           tmp_flag2;
+wire [1:0]   tmp_flag3;
+wire [2:0]   tmp_flag4;
+
+zero31 = \"0000000000000000000000000000000\";
+
+tmp_flag1 = flag[2:0];
+tmp_flag2 = flag[3];
+tmp_flag3 = flag[1:0];
+tmp_flag4 = <tmp_flag2,tmp_flag3>;
+cond1 = tmp_flag1 == \"000\";
+cond2 = tmp_flag4 == \"100\";
+cond3 = flag           == \"0011\";
+cond4 = cond1 | cond2;
+cond   = cond3 | cond4;
+result = <zero31, cond>;
+null    = GPR.write0(rd,result);
+   }
+
+  }
+
+ }
+
+}
+Estimation{
+ ArchLevel{
+  Complete{
+   ON
+  }
+
+ }
+ BehaviorLevel{
+  Complete{
+   OFF
+  }
+
+ }
+ RTLevel{
+  Complete{
+   OFF
+  }
+
+ }
+
+}
+Generation{
+ ISSmodel{
+  Complete{
+   OFF
+  }
+
+ }
+ Model{
+  Complete{
+   ON
+  }
+
+ }
+
+}
+SW_Generation{
+ SWmodel{
+  Complete{
+   ON
+  }
+
+ }
+
+}

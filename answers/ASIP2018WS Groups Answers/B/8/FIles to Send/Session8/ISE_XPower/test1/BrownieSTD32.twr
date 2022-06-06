@@ -1,0 +1,236 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/Software/xilinx/13.2/ISE_DS/ISE/bin/lin/unwrapped/trce -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml BrownieSTD32.twx BrownieSTD32.ncd -o BrownieSTD32.twr
+BrownieSTD32.pcf
+
+Design file:              BrownieSTD32.ncd
+Physical constraint file: BrownieSTD32.pcf
+Device,package,speed:     xc5vlx110t,ff1136,-2 (PRODUCTION 1.73 2011-06-20, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK
+----------------+------------+------------+------------------+--------+
+                |Max Setup to|Max Hold to |                  | Clock  |
+Source          | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+----------------+------------+------------+------------------+--------+
+DMEM_ACK_IN     |    5.996(R)|    0.975(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<0> |    2.800(R)|    1.787(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<1> |    2.741(R)|    2.091(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<2> |    1.386(R)|    1.758(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<3> |    1.933(R)|    1.983(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<4> |    1.996(R)|    1.715(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<5> |    2.615(R)|    2.112(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<6> |    1.387(R)|    2.626(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<7> |    2.263(R)|    1.879(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<8> |    1.863(R)|    2.381(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<9> |    2.613(R)|    2.342(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<10>|    2.339(R)|    1.937(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<11>|    2.224(R)|    2.097(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<12>|    2.558(R)|    1.699(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<13>|    2.263(R)|    1.915(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<14>|    2.632(R)|    2.284(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<15>|    1.450(R)|    2.576(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<16>|    2.608(R)|    2.263(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<17>|    2.912(R)|    1.975(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<18>|    2.413(R)|    2.296(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<19>|    2.857(R)|    1.895(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<20>|    1.974(R)|    2.273(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<21>|    2.667(R)|    1.951(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<22>|    2.822(R)|    2.034(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<23>|    2.999(R)|    1.669(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<24>|    1.936(R)|    2.194(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<25>|    2.769(R)|    1.382(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<26>|    2.322(R)|    1.505(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<27>|    2.532(R)|    1.794(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<28>|    1.903(R)|    2.213(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<29>|    2.678(R)|    1.617(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<30>|    2.324(R)|    2.177(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_IN<31>|    2.761(R)|    1.791(R)|CLK_BUFGP         |   0.000|
+EXTINT_IN       |    3.949(R)|    1.643(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<0> |    1.413(R)|    0.886(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<1> |    1.385(R)|    0.890(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<2> |    1.208(R)|    0.913(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<3> |    1.364(R)|    0.760(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<4> |    1.158(R)|    1.171(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<5> |    1.344(R)|    1.160(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<6> |    0.666(R)|    1.423(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<7> |    0.982(R)|    1.133(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<8> |    0.786(R)|    1.329(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<9> |    0.511(R)|    1.581(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<10>|    0.431(R)|    1.653(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<11>|    0.397(R)|    1.685(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<12>|    0.787(R)|    1.321(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<13>|    0.441(R)|    1.637(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<14>|    0.062(R)|    1.985(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<15>|    0.838(R)|    1.272(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<16>|    0.555(R)|    1.537(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<17>|    0.467(R)|    1.617(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<18>|   -0.040(R)|    2.088(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<19>|    0.254(R)|    1.815(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<20>|    0.432(R)|    1.646(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<21>|    0.521(R)|    1.564(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<22>|    0.256(R)|    1.806(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<23>|    0.195(R)|    1.863(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<24>|    0.318(R)|    1.761(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<25>|    0.140(R)|    1.927(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<26>|    0.188(R)|    1.880(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<27>|    0.269(R)|    1.807(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<28>|    0.336(R)|    1.740(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<29>|    0.307(R)|    1.767(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<30>|   -0.240(R)|    2.269(R)|CLK_BUFGP         |   0.000|
+IMEM_DATA_IN<31>|    0.042(R)|    2.008(R)|CLK_BUFGP         |   0.000|
+RESET           |    6.046(R)|    0.793(R)|CLK_BUFGP         |   0.000|
+----------------+------------+------------+------------------+--------+
+
+Clock CLK to Pad
+-----------------+------------+------------------+--------+
+                 | clk (edge) |                  | Clock  |
+Destination      |   to PAD   |Internal Clock(s) | Phase  |
+-----------------+------------+------------------+--------+
+DMEM_ADDR_OUT<0> |    8.434(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<1> |    8.388(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<2> |    8.112(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<3> |    8.116(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<4> |    8.146(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<5> |    8.166(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<6> |    8.143(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<7> |    8.272(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<8> |    8.138(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<9> |    8.189(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<10>|    8.338(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<11>|    8.175(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<12>|    8.471(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<13>|    8.335(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<14>|    8.471(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<15>|    8.349(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<16>|    8.522(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<17>|    8.348(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<18>|    8.530(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<19>|    8.356(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<20>|    8.138(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<21>|    8.122(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<22>|    8.300(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<23>|    8.157(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<24>|    8.965(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<25>|    8.794(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<26>|    8.531(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<27>|    8.860(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<28>|    8.775(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<29>|    8.814(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<30>|    9.047(R)|CLK_BUFGP         |   0.000|
+DMEM_ADDR_OUT<31>|    8.824(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<0> |    7.943(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<1> |    7.967(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<2> |    8.090(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<3> |    8.097(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<4> |    8.072(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<5> |    7.949(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<6> |    8.119(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<7> |    8.141(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<8> |    7.976(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<9> |    7.932(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<10>|    7.988(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<11>|    8.091(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<12>|    8.094(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<13>|    7.970(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<14>|    8.117(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<15>|    8.145(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<16>|    7.899(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<17>|    7.883(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<18>|    7.758(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<19>|    7.904(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<20>|    7.854(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<21>|    7.840(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<22>|    7.889(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<23>|    7.730(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<24>|    7.900(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<25>|    7.881(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<26>|    7.722(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<27>|    7.883(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<28>|    8.161(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<29>|    8.044(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<30>|    7.572(R)|CLK_BUFGP         |   0.000|
+DMEM_DATA_OUT<31>|    7.568(R)|CLK_BUFGP         |   0.000|
+DMEM_EMODE_OUT   |   10.389(R)|CLK_BUFGP         |   0.000|
+DMEM_REQ_OUT     |   10.525(R)|CLK_BUFGP         |   0.000|
+DMEM_RW_OUT      |   10.407(R)|CLK_BUFGP         |   0.000|
+DMEM_WMODE_OUT<0>|   10.478(R)|CLK_BUFGP         |   0.000|
+DMEM_WMODE_OUT<1>|   10.501(R)|CLK_BUFGP         |   0.000|
+EXTCATCH_OUT     |   10.847(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<0> |    8.704(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<1> |    8.417(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<2> |    8.227(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<3> |    8.492(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<4> |    8.224(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<5> |    8.246(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<6> |    8.536(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<7> |    8.529(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<8> |    8.080(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<9> |    8.431(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<10>|    8.346(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<11>|    8.486(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<12>|    9.242(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<13>|    8.388(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<14>|    8.740(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<15>|    8.350(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<16>|    8.350(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<17>|    8.344(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<18>|    8.320(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<19>|    8.506(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<20>|    8.510(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<21>|    8.379(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<22>|    8.991(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<23>|    8.217(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<24>|    8.369(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<25>|    8.256(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<26>|    8.400(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<27>|    8.223(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<28>|    8.477(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<29>|    9.734(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<30>|    8.419(R)|CLK_BUFGP         |   0.000|
+IMEM_ADDR_OUT<31>|    8.546(R)|CLK_BUFGP         |   0.000|
+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    8.923|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Fri Jan 25 14:37:28 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 322 MB
+
+
+

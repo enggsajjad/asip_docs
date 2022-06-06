@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_NO/dlx_toplevel.xst" -ofn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_NO/dlx_toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc dlx_toplevel.ucf -bm blockram.bmm -p xc5vlx110t-ff1136-2 dlx_toplevel.ngc dlx_toplevel.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o dlx_toplevel_map.ncd dlx_toplevel.ngd dlx_toplevel.pcf 
+par -w -intstyle ise -ol high -mt off dlx_toplevel_map.ncd dlx_toplevel.ncd dlx_toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml dlx_toplevel.twx dlx_toplevel.ncd -o dlx_toplevel.twr dlx_toplevel.pcf -ucf dlx_toplevel.ucf 
+bitgen -intstyle ise -f dlx_toplevel.ut dlx_toplevel.ncd 
+xst -intstyle ise -ifn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_NO/dlx_toplevel.xst" -ofn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_NO/dlx_toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc dlx_toplevel.ucf -bm blockram.bmm -p xc5vlx110t-ff1136-2 dlx_toplevel.ngc dlx_toplevel.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o dlx_toplevel_map.ncd dlx_toplevel.ngd dlx_toplevel.pcf 
+par -w -intstyle ise -ol high -mt off dlx_toplevel_map.ncd dlx_toplevel.ncd dlx_toplevel.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml dlx_toplevel.twx dlx_toplevel.ncd -o dlx_toplevel.twr dlx_toplevel.pcf -ucf dlx_toplevel.ucf 
+bitgen -intstyle ise -f dlx_toplevel.ut dlx_toplevel.ncd 

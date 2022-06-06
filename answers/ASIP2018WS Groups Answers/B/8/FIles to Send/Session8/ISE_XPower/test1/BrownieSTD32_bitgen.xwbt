@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/BrownieSTD32.ncd
+OUTFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/BrownieSTD32.bit
+FAMILY=Virtex5
+PART=xc5vlx110t-2ff1136
+WORKINGDIR=/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1
+LICENSE=ISE
+USER_INFO=174111760_174111761_210611273_445

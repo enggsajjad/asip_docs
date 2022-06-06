@@ -1,0 +1,1554 @@
+Release 13.2 - xst O.61xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: BrownieSTD32.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "BrownieSTD32.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "BrownieSTD32"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-2-ff1136
+
+---- Source Options
+Top Module Name                    : BrownieSTD32
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_proc_fsm.vhd" in Library work.
+Entity <rtg_proc_fsm> compiled.
+Entity <rtg_proc_fsm> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w1.vhd" in Library work.
+Entity <rtg_register_w1> compiled.
+Entity <rtg_register_w1> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w2.vhd" in Library work.
+Entity <rtg_register_w2> compiled.
+Entity <rtg_register_w2> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w32.vhd" in Library work.
+Entity <rtg_register_w32> compiled.
+Entity <rtg_register_w32> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w64.vhd" in Library work.
+Entity <rtg_register_w64> compiled.
+Entity <rtg_register_w64> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w14.vhd" in Library work.
+Entity <rtg_register_w14> compiled.
+Entity <rtg_register_w14> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_pcu_w32.vhd" in Library work.
+Entity <fhm_pcu_w32_add32> compiled.
+Entity <fhm_pcu_w32_add32> (Architecture <synthesis>) compiled.
+Entity <fhm_pcu_w32_reg32> compiled.
+Entity <fhm_pcu_w32_reg32> (Architecture <synthesis>) compiled.
+Entity <fhm_pcu_w32> compiled.
+Entity <fhm_pcu_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_register_w32.vhd" in Library work.
+Entity <fhm_register_w32> compiled.
+Entity <fhm_register_w32> (Architecture <logic>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_mifu_w32_00.vhd" in Library work.
+Entity <fhm_mifu_w32_00> compiled.
+Entity <fhm_mifu_w32_00> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_mifu_w32_01.vhd" in Library work.
+Entity <fhm_mifu_w32_01> compiled.
+Entity <fhm_mifu_w32_01> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_alu_w32.vhd" in Library work.
+Entity <fhm_alu_w32_add> compiled.
+Entity <fhm_alu_w32_add> (Architecture <synthesis>) compiled.
+Entity <fhm_alu_w32> compiled.
+Entity <fhm_alu_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd" in Library work.
+Entity <fhm_multiplier_w32_reg1> compiled.
+Entity <fhm_multiplier_w32_reg1> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_add32> compiled.
+Entity <fhm_multiplier_w32_add32> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_add64> compiled.
+Entity <fhm_multiplier_w32_add64> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_reg32> compiled.
+Entity <fhm_multiplier_w32_reg32> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_reg64> compiled.
+Entity <fhm_multiplier_w32_reg64> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_smul> compiled.
+Entity <fhm_multiplier_w32_smul> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_tconv32> compiled.
+Entity <fhm_multiplier_w32_tconv32> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32_tconv64> compiled.
+Entity <fhm_multiplier_w32_tconv64> (Architecture <synthesis>) compiled.
+Entity <fhm_multiplier_w32> compiled.
+Entity <fhm_multiplier_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd" in Library work.
+Entity <fhm_divider_w32_add32> compiled.
+Entity <fhm_divider_w32_add32> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32_reg32> compiled.
+Entity <fhm_divider_w32_reg32> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32_reg1> compiled.
+Entity <fhm_divider_w32_reg1> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32_lsftreg32> compiled.
+Entity <fhm_divider_w32_lsftreg32> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32_sdiv32> compiled.
+Entity <fhm_divider_w32_sdiv32> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32_tconv32> compiled.
+Entity <fhm_divider_w32_tconv32> (Architecture <synthesis>) compiled.
+Entity <fhm_divider_w32> compiled.
+Entity <fhm_divider_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w8.vhd" in Library work.
+Entity <fhm_extender_w8> compiled.
+Entity <fhm_extender_w8> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w16.vhd" in Library work.
+Entity <fhm_extender_w16> compiled.
+Entity <fhm_extender_w16> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w26.vhd" in Library work.
+Entity <fhm_extender_w26> compiled.
+Entity <fhm_extender_w26> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_shifter_w32.vhd" in Library work.
+Entity <fhm_shifter_w32> compiled.
+Entity <fhm_shifter_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_wire_in_w1.vhd" in Library work.
+Entity <fhm_wire_in_w1> compiled.
+Entity <fhm_wire_in_w1> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_wire_out_w1.vhd" in Library work.
+Entity <fhm_wire_out_w1> compiled.
+Entity <fhm_wire_out_w1> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_fwu_w32.vhd" in Library work.
+Entity <fhm_fwu_w32> compiled.
+Entity <fhm_fwu_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_dummy_register_w32.vhd" in Library work.
+Entity <fhm_dummy_register_w32> compiled.
+Entity <fhm_dummy_register_w32> (Architecture <logic>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_browregfile_w32.vhd" in Library work.
+Entity <flag_reg5> compiled.
+Entity <flag_reg5> (Architecture <synthesis>) compiled.
+Entity <status_reg27> compiled.
+Entity <status_reg27> (Architecture <synthesis>) compiled.
+Entity <fhm_browregfile_w32_reg32> compiled.
+Entity <fhm_browregfile_w32_reg32> (Architecture <synthesis>) compiled.
+Entity <fhm_browregfile_w32> compiled.
+Entity <fhm_browregfile_w32> (Architecture <synthesis>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_controller.vhd" in Library work.
+Entity <rtg_controller> compiled.
+Entity <rtg_controller> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux2to1_w32.vhd" in Library work.
+Entity <rtg_mux2to1_w32> compiled.
+Entity <rtg_mux2to1_w32> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux3to1_w32.vhd" in Library work.
+Entity <rtg_mux3to1_w32> compiled.
+Entity <rtg_mux3to1_w32> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux2to1_w5.vhd" in Library work.
+Entity <rtg_mux2to1_w5> compiled.
+Entity <rtg_mux2to1_w5> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux12to1_w32.vhd" in Library work.
+Entity <rtg_mux12to1_w32> compiled.
+Entity <rtg_mux12to1_w32> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux5to1_w5.vhd" in Library work.
+Entity <rtg_mux5to1_w5> compiled.
+Entity <rtg_mux5to1_w5> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux3to1_w5.vhd" in Library work.
+Entity <rtg_mux3to1_w5> compiled.
+Entity <rtg_mux3to1_w5> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w5.vhd" in Library work.
+Entity <rtg_register_w5> compiled.
+Entity <rtg_register_w5> (Architecture <RTL>) compiled.
+Compiling vhdl file "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/BrownieSTD32.vhd" in Library work.
+Entity <BrownieSTD32> compiled.
+Entity <BrownieSTD32> (Architecture <RTL>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <BrownieSTD32> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <fhm_pcu_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_register_w32> in library <work> (architecture <logic>).
+
+Analyzing hierarchy for entity <fhm_mifu_w32_00> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_mifu_w32_01> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_alu_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_extender_w8> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_extender_w16> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_extender_w26> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_shifter_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_wire_in_w1> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_wire_out_w1> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_fwu_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_dummy_register_w32> in library <work> (architecture <logic>).
+
+Analyzing hierarchy for entity <fhm_browregfile_w32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <rtg_controller> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux2to1_w32> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux3to1_w32> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux2to1_w5> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux12to1_w32> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux5to1_w5> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_mux3to1_w5> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w32> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w5> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <fhm_pcu_w32_add32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_pcu_w32_reg32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_alu_w32_add> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_reg1> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_tconv32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_smul> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_tconv64> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_tconv32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_sdiv32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_reg1> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <flag_reg5> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <status_reg27> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_browregfile_w32_reg32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <rtg_proc_fsm> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w1> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w2> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w64> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <rtg_register_w14> in library <work> (architecture <RTL>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_add32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_reg32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_add64> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_multiplier_w32_reg64> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_add32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_lsftreg32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_reg32> in library <work> (architecture <synthesis>).
+
+Analyzing hierarchy for entity <fhm_divider_w32_reg1> in library <work> (architecture <synthesis>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <BrownieSTD32> in library <work> (Architecture <RTL>).
+Entity <BrownieSTD32> analyzed. Unit <BrownieSTD32> generated.
+
+Analyzing Entity <fhm_pcu_w32> in library <work> (Architecture <synthesis>).
+WARNING:Xst:753 - "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_pcu_w32.vhd" line 165: Unconnected output port 'cout' of component 'fhm_pcu_w32_add32'.
+Entity <fhm_pcu_w32> analyzed. Unit <fhm_pcu_w32> generated.
+
+Analyzing Entity <fhm_pcu_w32_add32> in library <work> (Architecture <synthesis>).
+Entity <fhm_pcu_w32_add32> analyzed. Unit <fhm_pcu_w32_add32> generated.
+
+Analyzing Entity <fhm_pcu_w32_reg32> in library <work> (Architecture <synthesis>).
+Entity <fhm_pcu_w32_reg32> analyzed. Unit <fhm_pcu_w32_reg32> generated.
+
+Analyzing Entity <fhm_register_w32> in library <work> (Architecture <logic>).
+Entity <fhm_register_w32> analyzed. Unit <fhm_register_w32> generated.
+
+Analyzing Entity <fhm_mifu_w32_00> in library <work> (Architecture <synthesis>).
+Entity <fhm_mifu_w32_00> analyzed. Unit <fhm_mifu_w32_00> generated.
+
+Analyzing Entity <fhm_mifu_w32_01> in library <work> (Architecture <synthesis>).
+Entity <fhm_mifu_w32_01> analyzed. Unit <fhm_mifu_w32_01> generated.
+
+Analyzing Entity <fhm_alu_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_alu_w32> analyzed. Unit <fhm_alu_w32> generated.
+
+Analyzing Entity <fhm_alu_w32_add> in library <work> (Architecture <synthesis>).
+Entity <fhm_alu_w32_add> analyzed. Unit <fhm_alu_w32_add> generated.
+
+Analyzing Entity <fhm_multiplier_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32> analyzed. Unit <fhm_multiplier_w32> generated.
+
+Analyzing Entity <fhm_multiplier_w32_reg1> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_reg1> analyzed. Unit <fhm_multiplier_w32_reg1> generated.
+
+Analyzing Entity <fhm_multiplier_w32_tconv32> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_tconv32> analyzed. Unit <fhm_multiplier_w32_tconv32> generated.
+
+Analyzing Entity <fhm_multiplier_w32_add32> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_add32> analyzed. Unit <fhm_multiplier_w32_add32> generated.
+
+Analyzing Entity <fhm_multiplier_w32_smul> in library <work> (Architecture <synthesis>).
+WARNING:Xst:753 - "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd" line 350: Unconnected output port 'cout' of component 'fhm_multiplier_w32_add64'.
+Entity <fhm_multiplier_w32_smul> analyzed. Unit <fhm_multiplier_w32_smul> generated.
+
+Analyzing Entity <fhm_multiplier_w32_reg32> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_reg32> analyzed. Unit <fhm_multiplier_w32_reg32> generated.
+
+Analyzing Entity <fhm_multiplier_w32_add64> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_add64> analyzed. Unit <fhm_multiplier_w32_add64> generated.
+
+Analyzing Entity <fhm_multiplier_w32_reg64> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_reg64> analyzed. Unit <fhm_multiplier_w32_reg64> generated.
+
+Analyzing Entity <fhm_multiplier_w32_tconv64> in library <work> (Architecture <synthesis>).
+Entity <fhm_multiplier_w32_tconv64> analyzed. Unit <fhm_multiplier_w32_tconv64> generated.
+
+Analyzing Entity <fhm_divider_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32> analyzed. Unit <fhm_divider_w32> generated.
+
+Analyzing Entity <fhm_divider_w32_tconv32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_tconv32> analyzed. Unit <fhm_divider_w32_tconv32> generated.
+
+Analyzing Entity <fhm_divider_w32_add32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_add32> analyzed. Unit <fhm_divider_w32_add32> generated.
+
+Analyzing Entity <fhm_divider_w32_sdiv32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_sdiv32> analyzed. Unit <fhm_divider_w32_sdiv32> generated.
+
+Analyzing Entity <fhm_divider_w32_lsftreg32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_lsftreg32> analyzed. Unit <fhm_divider_w32_lsftreg32> generated.
+
+Analyzing Entity <fhm_divider_w32_reg32> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_reg32> analyzed. Unit <fhm_divider_w32_reg32> generated.
+
+Analyzing Entity <fhm_divider_w32_reg1> in library <work> (Architecture <synthesis>).
+Entity <fhm_divider_w32_reg1> analyzed. Unit <fhm_divider_w32_reg1> generated.
+
+Analyzing Entity <fhm_extender_w8> in library <work> (Architecture <synthesis>).
+Entity <fhm_extender_w8> analyzed. Unit <fhm_extender_w8> generated.
+
+Analyzing Entity <fhm_extender_w16> in library <work> (Architecture <synthesis>).
+Entity <fhm_extender_w16> analyzed. Unit <fhm_extender_w16> generated.
+
+Analyzing Entity <fhm_extender_w26> in library <work> (Architecture <synthesis>).
+Entity <fhm_extender_w26> analyzed. Unit <fhm_extender_w26> generated.
+
+Analyzing Entity <fhm_shifter_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_shifter_w32> analyzed. Unit <fhm_shifter_w32> generated.
+
+Analyzing Entity <fhm_wire_in_w1> in library <work> (Architecture <synthesis>).
+Entity <fhm_wire_in_w1> analyzed. Unit <fhm_wire_in_w1> generated.
+
+Analyzing Entity <fhm_wire_out_w1> in library <work> (Architecture <synthesis>).
+Entity <fhm_wire_out_w1> analyzed. Unit <fhm_wire_out_w1> generated.
+
+Analyzing Entity <fhm_fwu_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_fwu_w32> analyzed. Unit <fhm_fwu_w32> generated.
+
+Analyzing Entity <fhm_dummy_register_w32> in library <work> (Architecture <logic>).
+Entity <fhm_dummy_register_w32> analyzed. Unit <fhm_dummy_register_w32> generated.
+
+Analyzing Entity <fhm_browregfile_w32> in library <work> (Architecture <synthesis>).
+Entity <fhm_browregfile_w32> analyzed. Unit <fhm_browregfile_w32> generated.
+
+Analyzing Entity <flag_reg5> in library <work> (Architecture <synthesis>).
+Entity <flag_reg5> analyzed. Unit <flag_reg5> generated.
+
+Analyzing Entity <status_reg27> in library <work> (Architecture <synthesis>).
+Entity <status_reg27> analyzed. Unit <status_reg27> generated.
+
+Analyzing Entity <fhm_browregfile_w32_reg32> in library <work> (Architecture <synthesis>).
+Entity <fhm_browregfile_w32_reg32> analyzed. Unit <fhm_browregfile_w32_reg32> generated.
+
+Analyzing Entity <rtg_controller> in library <work> (Architecture <RTL>).
+Entity <rtg_controller> analyzed. Unit <rtg_controller> generated.
+
+Analyzing Entity <rtg_proc_fsm> in library <work> (Architecture <RTL>).
+INFO:Xst:1561 - "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_proc_fsm.vhd" line 86: Mux is complete : default of case is discarded
+Entity <rtg_proc_fsm> analyzed. Unit <rtg_proc_fsm> generated.
+
+Analyzing Entity <rtg_register_w1> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w1> analyzed. Unit <rtg_register_w1> generated.
+
+Analyzing Entity <rtg_register_w2> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w2> analyzed. Unit <rtg_register_w2> generated.
+
+Analyzing Entity <rtg_register_w64> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w64> analyzed. Unit <rtg_register_w64> generated.
+
+Analyzing Entity <rtg_register_w14> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w14> analyzed. Unit <rtg_register_w14> generated.
+
+Analyzing Entity <rtg_mux2to1_w32> in library <work> (Architecture <RTL>).
+Entity <rtg_mux2to1_w32> analyzed. Unit <rtg_mux2to1_w32> generated.
+
+Analyzing Entity <rtg_mux3to1_w32> in library <work> (Architecture <RTL>).
+Entity <rtg_mux3to1_w32> analyzed. Unit <rtg_mux3to1_w32> generated.
+
+Analyzing Entity <rtg_mux2to1_w5> in library <work> (Architecture <RTL>).
+Entity <rtg_mux2to1_w5> analyzed. Unit <rtg_mux2to1_w5> generated.
+
+Analyzing Entity <rtg_mux12to1_w32> in library <work> (Architecture <RTL>).
+Entity <rtg_mux12to1_w32> analyzed. Unit <rtg_mux12to1_w32> generated.
+
+Analyzing Entity <rtg_mux5to1_w5> in library <work> (Architecture <RTL>).
+Entity <rtg_mux5to1_w5> analyzed. Unit <rtg_mux5to1_w5> generated.
+
+Analyzing Entity <rtg_mux3to1_w5> in library <work> (Architecture <RTL>).
+Entity <rtg_mux3to1_w5> analyzed. Unit <rtg_mux3to1_w5> generated.
+
+Analyzing Entity <rtg_register_w32> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w32> analyzed. Unit <rtg_register_w32> generated.
+
+Analyzing Entity <rtg_register_w5> in library <work> (Architecture <RTL>).
+Entity <rtg_register_w5> analyzed. Unit <rtg_register_w5> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fhm_register_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_register_w32.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <fhm_register_w32> synthesized.
+
+
+Synthesizing Unit <fhm_mifu_w32_00>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_mifu_w32_00.vhd".
+Unit <fhm_mifu_w32_00> synthesized.
+
+
+Synthesizing Unit <fhm_mifu_w32_01>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_mifu_w32_01.vhd".
+Unit <fhm_mifu_w32_01> synthesized.
+
+
+Synthesizing Unit <fhm_extender_w8>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w8.vhd".
+Unit <fhm_extender_w8> synthesized.
+
+
+Synthesizing Unit <fhm_extender_w16>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w16.vhd".
+Unit <fhm_extender_w16> synthesized.
+
+
+Synthesizing Unit <fhm_extender_w26>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_extender_w26.vhd".
+Unit <fhm_extender_w26> synthesized.
+
+
+Synthesizing Unit <fhm_shifter_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_shifter_w32.vhd".
+Unit <fhm_shifter_w32> synthesized.
+
+
+Synthesizing Unit <fhm_wire_in_w1>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_wire_in_w1.vhd".
+Unit <fhm_wire_in_w1> synthesized.
+
+
+Synthesizing Unit <fhm_wire_out_w1>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_wire_out_w1.vhd".
+Unit <fhm_wire_out_w1> synthesized.
+
+
+Synthesizing Unit <fhm_fwu_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_fwu_w32.vhd".
+    Found 5-bit comparator equal for signal <data_out$cmp_eq0004> created at line 45.
+    Found 5-bit comparator equal for signal <data_out$cmp_eq0005> created at line 45.
+    Summary:
+	inferred   2 Comparator(s).
+Unit <fhm_fwu_w32> synthesized.
+
+
+Synthesizing Unit <fhm_dummy_register_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_dummy_register_w32.vhd".
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <async_reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <enb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clock> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <fhm_dummy_register_w32> synthesized.
+
+
+Synthesizing Unit <rtg_mux2to1_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux2to1_w32.vhd".
+Unit <rtg_mux2to1_w32> synthesized.
+
+
+Synthesizing Unit <rtg_mux3to1_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux3to1_w32.vhd".
+Unit <rtg_mux3to1_w32> synthesized.
+
+
+Synthesizing Unit <rtg_mux2to1_w5>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux2to1_w5.vhd".
+Unit <rtg_mux2to1_w5> synthesized.
+
+
+Synthesizing Unit <rtg_mux12to1_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux12to1_w32.vhd".
+    Found 32-bit 12-to-1 multiplexer for signal <DOUT>.
+    Summary:
+	inferred  32 Multiplexer(s).
+Unit <rtg_mux12to1_w32> synthesized.
+
+
+Synthesizing Unit <rtg_mux5to1_w5>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux5to1_w5.vhd".
+    Found 5-bit 5-to-1 multiplexer for signal <DOUT>.
+    Summary:
+	inferred   5 Multiplexer(s).
+Unit <rtg_mux5to1_w5> synthesized.
+
+
+Synthesizing Unit <rtg_mux3to1_w5>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_mux3to1_w5.vhd".
+Unit <rtg_mux3to1_w5> synthesized.
+
+
+Synthesizing Unit <rtg_register_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w32.vhd".
+    Found 32-bit register for signal <DOUT>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <rtg_register_w32> synthesized.
+
+
+Synthesizing Unit <rtg_register_w5>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w5.vhd".
+    Found 5-bit register for signal <DOUT>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <rtg_register_w5> synthesized.
+
+
+Synthesizing Unit <fhm_pcu_w32_add32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_pcu_w32.vhd".
+    Found 33-bit adder for signal <int_result$add0000> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fhm_pcu_w32_add32> synthesized.
+
+
+Synthesizing Unit <fhm_pcu_w32_reg32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_pcu_w32.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <fhm_pcu_w32_reg32> synthesized.
+
+
+Synthesizing Unit <fhm_alu_w32_add>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_alu_w32.vhd".
+    Found 33-bit adder carry in for signal <int_result$add0000> created at line 28.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fhm_alu_w32_add> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_reg1>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 1-bit register for signal <data_out>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <fhm_multiplier_w32_reg1> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_add32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 33-bit adder for signal <int_result$add0000> created at line 88.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fhm_multiplier_w32_add32> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_reg32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <fhm_multiplier_w32_reg32> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_add64>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 65-bit adder carry in for signal <int_result$add0000> created at line 131.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fhm_multiplier_w32_add64> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_reg64>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 64-bit register for signal <data_out>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <fhm_multiplier_w32_reg64> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_reg1>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+    Found 1-bit register for signal <data_out>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <fhm_divider_w32_reg1> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_add32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+    Found 33-bit adder carry in for signal <int_result$add0000> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <fhm_divider_w32_add32> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_reg32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <fhm_divider_w32_reg32> synthesized.
+
+
+Synthesizing Unit <flag_reg5>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_browregfile_w32.vhd".
+    Found 5-bit register for signal <data_out>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <flag_reg5> synthesized.
+
+
+Synthesizing Unit <status_reg27>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_browregfile_w32.vhd".
+    Found 27-bit register for signal <data_out>.
+    Summary:
+	inferred  27 D-type flip-flop(s).
+Unit <status_reg27> synthesized.
+
+
+Synthesizing Unit <fhm_browregfile_w32_reg32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_browregfile_w32.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <fhm_browregfile_w32_reg32> synthesized.
+
+
+Synthesizing Unit <rtg_proc_fsm>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_proc_fsm.vhd".
+    Found finite state machine <FSM_0> for signal <cur_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RST                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <rtg_proc_fsm> synthesized.
+
+
+Synthesizing Unit <rtg_register_w1>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w1.vhd".
+    Found 1-bit register for signal <DOUT>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <rtg_register_w1> synthesized.
+
+
+Synthesizing Unit <rtg_register_w2>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w2.vhd".
+    Found 2-bit register for signal <DOUT>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <rtg_register_w2> synthesized.
+
+
+Synthesizing Unit <rtg_register_w64>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w64.vhd".
+    Found 64-bit register for signal <DOUT>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <rtg_register_w64> synthesized.
+
+
+Synthesizing Unit <rtg_register_w14>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_register_w14.vhd".
+    Found 14-bit register for signal <DOUT>.
+    Summary:
+	inferred  14 D-type flip-flop(s).
+Unit <rtg_register_w14> synthesized.
+
+
+Synthesizing Unit <fhm_pcu_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_pcu_w32.vhd".
+WARNING:Xst:1780 - Signal <cout> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <fhm_pcu_w32> synthesized.
+
+
+Synthesizing Unit <fhm_alu_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_alu_w32.vhd".
+    Found 32-bit xor2 for signal <pre_result$xor0000> created at line 219.
+    Found 1-bit xor2 for signal <unsigned_clipped>.
+Unit <fhm_alu_w32> synthesized.
+
+
+Synthesizing Unit <fhm_browregfile_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_browregfile_w32.vhd".
+WARNING:Xst:647 - Input <do_swap> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <next_bank> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <current_bank> is never assigned. Tied to value 0.
+WARNING:Xst:647 - Input <status_in<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <w_enb_tmp0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_in_tmp1<4:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <data_in_tmp0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit 32-to-1 multiplexer for signal <data_out0>.
+    Found 32-bit 32-to-1 multiplexer for signal <data_out1>.
+    Summary:
+	inferred  64 Multiplexer(s).
+Unit <fhm_browregfile_w32> synthesized.
+
+
+Synthesizing Unit <rtg_controller>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/rtg_controller.vhd".
+WARNING:Xst:647 - Input <DATAIN_IR_DATA_OUT<31:22>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <DATAIN_DUMMY_STREG_DATA_OUT<31:10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <DATAIN_DUMMY_STREG_DATA_OUT<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <pipereg_enb_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_saved_pc_in_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_saved_pc_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_req_in_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_ds_offset_in_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_ds_offset_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_code_in_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <intrpipe_code_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <intr_code_detected_WB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <intr_code_detected_IF> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <intr_code_detected_ID> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <first_cycle_IF> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <first_cycle_ID> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <decoded_NOP> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <branch_history_in_IF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <any_intr_req_WB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <any_intr_req_IF> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <any_intr_req_ID> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <any_intr_req_EXE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <any_branch_WB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4x2-bit ROM for signal <resctrl_UA_MUX01_SEL_intr>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <rtg_controller> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_tconv32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+WARNING:Xst:646 - Signal <tmp_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <fhm_multiplier_w32_tconv32> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_smul>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Using one-hot encoding for signal <current_state>.
+    Found 35-bit register for signal <current_state>.
+Unit <fhm_multiplier_w32_smul> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32_tconv64>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+WARNING:Xst:646 - Signal <tmp_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <fhm_multiplier_w32_tconv64> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_tconv32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+WARNING:Xst:646 - Signal <tmp_cout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <fhm_divider_w32_tconv32> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_lsftreg32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+Unit <fhm_divider_w32_lsftreg32> synthesized.
+
+
+Synthesizing Unit <fhm_multiplier_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_multiplier_w32.vhd".
+    Found 1-bit xor2 for signal <result_tconv_conv>.
+Unit <fhm_multiplier_w32> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32_sdiv32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+    Using one-hot encoding for signal <current_state>.
+    Found 35-bit register for signal <current_state>.
+Unit <fhm_divider_w32_sdiv32> synthesized.
+
+
+Synthesizing Unit <fhm_divider_w32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/fhm_divider_w32.vhd".
+    Found 1-bit xor2 for signal <q_tconv_conv>.
+Unit <fhm_divider_w32> synthesized.
+
+
+Synthesizing Unit <BrownieSTD32>.
+    Related source file is "/home/asip02/Schreibtisch/Session8/brownie2/ISE_XPower/test1/BrownieSTD32.vhd".
+WARNING:Xst:646 - Signal <unused_07> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <unused_06> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <unused_05> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <unused_04> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <unused_03> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <unused_02> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <unused_01> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <unused_00> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <uf_mul_result<63:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ua_preg05_dout<14>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ua_preg05_dout<9:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <BrownieSTD32> synthesized.
+
+WARNING:Xst:524 - All outputs of the instance <UA_PREV_STALL_IF> of the block <rtg_register_w1> are unconnected in block <rtg_controller>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <UA_FIRST_ID> of the block <rtg_register_w1> are unconnected in block <rtg_controller>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <UA_BRANCH_HISTORY_ID> of the block <rtg_register_w1> are unconnected in block <rtg_controller>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <UA_BRANCH_HISTORY_EXE> of the block <rtg_register_w1> are unconnected in block <rtg_controller>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <UA_BRANCH_HISTORY_WB> of the block <rtg_register_w1> are unconnected in block <rtg_controller>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <UF_EXTINT> of the block <fhm_wire_in_w1> are unconnected in block <BrownieSTD32>.
+   This instance will be removed from the design along with all underlying logic
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x2-bit ROM                                           : 1
+# Adders/Subtractors                                   : 11
+ 33-bit adder                                          : 3
+ 33-bit adder carry in                                 : 6
+ 65-bit adder carry in                                 : 2
+# Registers                                            : 89
+ 1-bit register                                        : 16
+ 14-bit register                                       : 1
+ 2-bit register                                        : 4
+ 27-bit register                                       : 1
+ 32-bit register                                       : 53
+ 35-bit register                                       : 2
+ 5-bit register                                        : 10
+ 64-bit register                                       : 2
+# Comparators                                          : 4
+ 5-bit comparator equal                                : 4
+# Multiplexers                                         : 9
+ 32-bit 12-to-1 multiplexer                            : 5
+ 32-bit 32-to-1 multiplexer                            : 2
+ 5-bit 5-to-1 multiplexer                              : 2
+# Xors                                                 : 4
+ 1-bit xor2                                            : 3
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <UA_CTRL/UA_PROCFSM/cur_state/FSM> on signal <cur_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+WARNING:Xst:1290 - Hierarchical block <UA_INTRPIPE_DSOFFSET_ID> is unconnected in block <UA_CTRL>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <UA_INTRPIPE_DSOFFSET_EXE> is unconnected in block <UA_CTRL>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <UA_INTRPIPE_DSOFFSET_WB> is unconnected in block <UA_CTRL>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <UA_INTRPIPE_DSOFFSET_LAST> is unconnected in block <UA_CTRL>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <data_out_4> (without init value) has a constant value of 0 in block <FLAG_REG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_1> (without init value) has a constant value of 0 in block <UA_INTRPIPE_CODE_ID>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_1> (without init value) has a constant value of 0 in block <UA_INTRPIPE_CODE_EXE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DOUT_61> (without init value) has a constant value of 0 in block <UA_CW_EXE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <DOUT_0> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_1> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_2> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_3> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_4> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_8> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_9> of sequential type is unconnected in block <UA_PREG05>.
+WARNING:Xst:2677 - Node <DOUT_14> of sequential type is unconnected in block <UA_PREG05>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 4x2-bit ROM                                           : 1
+# Adders/Subtractors                                   : 11
+ 33-bit adder                                          : 3
+ 33-bit adder carry in                                 : 6
+ 65-bit adder carry in                                 : 2
+# Registers                                            : 2009
+ Flip-Flops                                            : 2009
+# Comparators                                          : 4
+ 5-bit comparator equal                                : 4
+# Multiplexers                                         : 9
+ 32-bit 12-to-1 multiplexer                            : 5
+ 32-bit 32-to-1 multiplexer                            : 2
+ 5-bit 5-to-1 multiplexer                              : 2
+# Xors                                                 : 4
+ 1-bit xor2                                            : 3
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <DOUT_2> in Unit <rtg_register_w64> is equivalent to the following 2 FFs/Latches, which will be removed : <DOUT_3> <DOUT_5> 
+INFO:Xst:2261 - The FF/Latch <DOUT_28> in Unit <rtg_register_w64> is equivalent to the following FF/Latch, which will be removed : <DOUT_37> 
+INFO:Xst:2261 - The FF/Latch <DOUT_20> in Unit <rtg_register_w64> is equivalent to the following FF/Latch, which will be removed : <DOUT_50> 
+INFO:Xst:2261 - The FF/Latch <DOUT_19> in Unit <rtg_register_w64> is equivalent to the following FF/Latch, which will be removed : <DOUT_54> 
+INFO:Xst:2261 - The FF/Latch <DOUT_1> in Unit <rtg_register_w64> is equivalent to the following 4 FFs/Latches, which will be removed : <DOUT_4> <DOUT_6> <DOUT_55> <DOUT_56> 
+INFO:Xst:2261 - The FF/Latch <DOUT_11> in Unit <rtg_register_w64> is equivalent to the following 2 FFs/Latches, which will be removed : <DOUT_12> <DOUT_13> 
+INFO:Xst:2261 - The FF/Latch <DOUT_14> in Unit <rtg_register_w64> is equivalent to the following 2 FFs/Latches, which will be removed : <DOUT_16> <DOUT_21> 
+INFO:Xst:2261 - The FF/Latch <DOUT_15> in Unit <rtg_register_w64> is equivalent to the following 2 FFs/Latches, which will be removed : <DOUT_17> <DOUT_22> 
+INFO:Xst:2261 - The FF/Latch <UA_INTRPIPE_DSOFFSET_ID/DOUT> in Unit <rtg_controller> is equivalent to the following FF/Latch, which will be removed : <UA_INTRPIPE_CODE_ID/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_INTRPIPE_DSOFFSET_EXE/DOUT> in Unit <rtg_controller> is equivalent to the following FF/Latch, which will be removed : <UA_INTRPIPE_CODE_EXE/DOUT_1> 
+WARNING:Xst:1710 - FF/Latch <DOUT_61> (without init value) has a constant value of 0 in block <rtg_register_w64>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <UA_INTRPIPE_DSOFFSET_ID/DOUT> (without init value) has a constant value of 0 in block <rtg_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <UA_INTRPIPE_DSOFFSET_EXE/DOUT> (without init value) has a constant value of 0 in block <rtg_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <UA_INTRPIPE_DSOFFSET_WB/DOUT> (without init value) has a constant value of 0 in block <rtg_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <UA_INTRPIPE_DSOFFSET_LAST/DOUT> (without init value) has a constant value of 0 in block <rtg_controller>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <BrownieSTD32> ...
+
+Optimizing unit <fhm_shifter_w32> ...
+
+Optimizing unit <fhm_register_w32> ...
+
+Optimizing unit <fhm_fwu_w32> ...
+
+Optimizing unit <rtg_register_w32> ...
+
+Optimizing unit <fhm_pcu_w32_reg32> ...
+
+Optimizing unit <fhm_multiplier_w32_reg32> ...
+
+Optimizing unit <fhm_multiplier_w32_reg64> ...
+
+Optimizing unit <fhm_divider_w32_reg32> ...
+
+Optimizing unit <flag_reg5> ...
+
+Optimizing unit <status_reg27> ...
+
+Optimizing unit <rtg_register_w64> ...
+
+Optimizing unit <rtg_register_w14> ...
+
+Optimizing unit <fhm_pcu_w32> ...
+
+Optimizing unit <fhm_alu_w32> ...
+
+Optimizing unit <fhm_browregfile_w32> ...
+
+Optimizing unit <rtg_controller> ...
+
+Optimizing unit <fhm_multiplier_w32_tconv32> ...
+
+Optimizing unit <fhm_multiplier_w32_smul> ...
+
+Optimizing unit <fhm_multiplier_w32_tconv64> ...
+
+Optimizing unit <fhm_divider_w32_tconv32> ...
+
+Optimizing unit <fhm_divider_w32_lsftreg32> ...
+
+Optimizing unit <fhm_multiplier_w32> ...
+
+Optimizing unit <fhm_divider_w32_sdiv32> ...
+
+Optimizing unit <fhm_divider_w32> ...
+WARNING:Xst:1710 - FF/Latch <UF_GPR/FLAG_REG/data_out_4> (without init value) has a constant value of 0 in block <BrownieSTD32>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_14> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_9> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_8> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_4> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_3> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_2> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_1> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UA_PREG05/DOUT_0> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_63> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_62> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_61> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_60> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_59> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_58> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_57> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_56> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_55> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_54> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_53> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_52> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_51> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_50> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_49> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_48> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_47> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_46> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_45> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_44> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_43> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_42> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_41> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_40> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_39> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_38> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_37> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_36> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_35> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_34> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_33> of sequential type is unconnected in block <BrownieSTD32>.
+WARNING:Xst:2677 - Node <UF_MUL/mulu/reg_64/data_out_32> of sequential type is unconnected in block <BrownieSTD32>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <UA_PREG14/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_PREG10/DOUT_0> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG14/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_PREG10/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG14/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_PREG10/DOUT_2> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG14/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_PREG10/DOUT_3> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG14/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_PREG10/DOUT_4> 
+INFO:Xst:2261 - The FF/Latch <UF_TRAP_HAND_REG/data_out_31> in Unit <BrownieSTD32> is equivalent to the following 5 FFs/Latches, which will be removed : <UF_TRAP_HAND_REG/data_out_30> <UF_TRAP_HAND_REG/data_out_29> <UF_TRAP_HAND_REG/data_out_28> <UF_TRAP_HAND_REG/data_out_27> <UF_TRAP_HAND_REG/data_out_26> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_WB/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_WB/DOUT_4> <UA_CTRL/UA_CW_WB/DOUT_6> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_WB/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_WB/DOUT_3> <UA_CTRL/UA_CW_WB/DOUT_5> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG17/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG15/DOUT_0> <UA_PREG11/DOUT_0> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG17/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG15/DOUT_1> <UA_PREG11/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG17/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG15/DOUT_2> <UA_PREG11/DOUT_2> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG17/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG15/DOUT_3> <UA_PREG11/DOUT_3> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG17/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG15/DOUT_4> <UA_PREG11/DOUT_4> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_WB/DOUT_11> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_WB/DOUT_12> <UA_CTRL/UA_CW_WB/DOUT_13> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_EXE/DOUT_24> in Unit <BrownieSTD32> is equivalent to the following 4 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_EXE/DOUT_29> <UA_CTRL/UA_CW_EXE/DOUT_33> <UA_CTRL/UA_CW_EXE/DOUT_38> <UA_CTRL/UA_CW_EXE/DOUT_42> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_EXE/DOUT_25> in Unit <BrownieSTD32> is equivalent to the following 4 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_EXE/DOUT_30> <UA_CTRL/UA_CW_EXE/DOUT_34> <UA_CTRL/UA_CW_EXE/DOUT_39> <UA_CTRL/UA_CW_EXE/DOUT_43> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_EXE/DOUT_26> in Unit <BrownieSTD32> is equivalent to the following 4 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_EXE/DOUT_31> <UA_CTRL/UA_CW_EXE/DOUT_35> <UA_CTRL/UA_CW_EXE/DOUT_40> <UA_CTRL/UA_CW_EXE/DOUT_44> 
+INFO:Xst:2261 - The FF/Latch <UA_CTRL/UA_CW_EXE/DOUT_27> in Unit <BrownieSTD32> is equivalent to the following 4 FFs/Latches, which will be removed : <UA_CTRL/UA_CW_EXE/DOUT_32> <UA_CTRL/UA_CW_EXE/DOUT_36> <UA_CTRL/UA_CW_EXE/DOUT_41> <UA_CTRL/UA_CW_EXE/DOUT_45> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG18/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG16/DOUT_0> <UA_PREG12/DOUT_0> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG18/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG16/DOUT_1> <UA_PREG12/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG18/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG16/DOUT_2> <UA_PREG12/DOUT_2> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG18/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG16/DOUT_3> <UA_PREG12/DOUT_3> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG18/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG16/DOUT_4> <UA_PREG12/DOUT_4> 
+Found area constraint ratio of 100 (+ 5) on block BrownieSTD32, actual ratio is 5.
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_10> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_10> <UA_PREG09/DOUT_10> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_11> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_11> <UA_PREG09/DOUT_11> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_12> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_12> <UA_PREG09/DOUT_12> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_13> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_13> <UA_PREG09/DOUT_13> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_14> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_14> <UA_PREG09/DOUT_14> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_15> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_15> <UA_PREG09/DOUT_15> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_20> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_20> <UA_PREG09/DOUT_20> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_16> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_16> <UA_PREG09/DOUT_16> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_21> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_21> <UA_PREG09/DOUT_21> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_17> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_17> <UA_PREG09/DOUT_17> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_22> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_22> <UA_PREG09/DOUT_22> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_18> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_18> <UA_PREG09/DOUT_18> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_23> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_23> <UA_PREG09/DOUT_23> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_19> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_19> <UA_PREG09/DOUT_19> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_24> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_24> <UA_PREG09/DOUT_24> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_25> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_25> <UA_PREG09/DOUT_25> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_30> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_30> <UA_PREG09/DOUT_30> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_26> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_26> <UA_PREG09/DOUT_26> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_31> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_31> <UA_PREG09/DOUT_31> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_27> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_27> <UA_PREG09/DOUT_27> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_28> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_28> <UA_PREG09/DOUT_28> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_29> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_29> <UA_PREG09/DOUT_29> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_0> <UA_PREG09/DOUT_0> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_1> <UA_PREG09/DOUT_1> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_2> <UA_PREG09/DOUT_2> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_3> <UA_PREG09/DOUT_3> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_4> <UA_PREG09/DOUT_4> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_5> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_5> <UA_PREG09/DOUT_5> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_6> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_6> <UA_PREG09/DOUT_6> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_7> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_7> <UA_PREG09/DOUT_7> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_10> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_10> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_11> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_11> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_12> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_12> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_13> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_13> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_14> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_14> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_20> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_20> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_15> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_15> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_16> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_16> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_21> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_21> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_17> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_17> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_22> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_22> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_18> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_18> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_23> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_23> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_19> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_19> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_24> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_24> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_30> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_30> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_25> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_25> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_26> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_26> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_31> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_31> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_27> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_27> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_28> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_28> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_29> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_29> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_8> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_8> <UA_PREG09/DOUT_8> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG19/DOUT_9> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches : <UA_PREG13/DOUT_9> <UA_PREG09/DOUT_9> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_0> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_1> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_2> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_3> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_4> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_5> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_5> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_6> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_6> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_7> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_7> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_8> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_8> 
+INFO:Xst:2260 - The FF/Latch <UA_PREG00/DOUT_9> in Unit <BrownieSTD32> is equivalent to the following FF/Latch : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_9> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_10> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_10> <UA_PREG09/DOUT_10> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_11> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_11> <UA_PREG09/DOUT_11> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_12> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_12> <UA_PREG09/DOUT_12> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_13> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_13> <UA_PREG09/DOUT_13> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_14> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_14> <UA_PREG09/DOUT_14> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_15> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_15> <UA_PREG09/DOUT_15> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_20> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_20> <UA_PREG09/DOUT_20> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_16> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_16> <UA_PREG09/DOUT_16> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_21> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_21> <UA_PREG09/DOUT_21> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_17> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_17> <UA_PREG09/DOUT_17> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_22> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_22> <UA_PREG09/DOUT_22> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_18> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_18> <UA_PREG09/DOUT_18> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_23> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_23> <UA_PREG09/DOUT_23> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_19> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_19> <UA_PREG09/DOUT_19> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_24> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_24> <UA_PREG09/DOUT_24> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_25> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_25> <UA_PREG09/DOUT_25> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_30> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_30> <UA_PREG09/DOUT_30> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_26> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_26> <UA_PREG09/DOUT_26> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_31> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_31> <UA_PREG09/DOUT_31> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_27> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_27> <UA_PREG09/DOUT_27> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_28> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_28> <UA_PREG09/DOUT_28> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_29> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_29> <UA_PREG09/DOUT_29> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_0> <UA_PREG09/DOUT_0> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_1> <UA_PREG09/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_2> <UA_PREG09/DOUT_2> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_3> <UA_PREG09/DOUT_3> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_4> <UA_PREG09/DOUT_4> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_5> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_5> <UA_PREG09/DOUT_5> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_6> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_6> <UA_PREG09/DOUT_6> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_7> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_7> <UA_PREG09/DOUT_7> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_10> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_10> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_11> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_11> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_12> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_12> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_13> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_13> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_14> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_14> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_20> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_20> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_15> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_15> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_16> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_16> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_21> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_21> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_17> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_17> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_22> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_22> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_18> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_18> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_23> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_23> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_19> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_19> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_24> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_24> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_30> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_30> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_25> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_25> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_26> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_26> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_31> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_31> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_27> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_27> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_28> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_28> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_29> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_29> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_8> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_8> <UA_PREG09/DOUT_8> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG19/DOUT_9> in Unit <BrownieSTD32> is equivalent to the following 2 FFs/Latches, which will be removed : <UA_PREG13/DOUT_9> <UA_PREG09/DOUT_9> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_0> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_0> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_1> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_1> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_2> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_2> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_3> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_3> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_4> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_4> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_5> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_5> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_6> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_6> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_7> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_7> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_8> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_8> 
+INFO:Xst:2261 - The FF/Latch <UA_PREG00/DOUT_9> in Unit <BrownieSTD32> is equivalent to the following FF/Latch, which will be removed : <UA_CTRL/UA_INTRPIPE_SAVEDPC_ID/DOUT_9> 
+FlipFlop UA_CTRL/UA_CW_EXE/DOUT_59 has been replicated 2 time(s)
+FlipFlop UA_CTRL/UA_CW_EXE/DOUT_60 has been replicated 1 time(s)
+FlipFlop UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_0 has been replicated 2 time(s)
+FlipFlop UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_1 has been replicated 2 time(s)
+FlipFlop UF_IR/data_out_0 has been replicated 1 time(s)
+FlipFlop UF_IR/data_out_1 has been replicated 1 time(s)
+FlipFlop UF_IR/data_out_2 has been replicated 1 time(s)
+FlipFlop UF_IR/data_out_3 has been replicated 1 time(s)
+FlipFlop UF_IR/data_out_4 has been replicated 1 time(s)
+FlipFlop UF_IR/data_out_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1813
+ Flip-Flops                                            : 1813
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : BrownieSTD32.ngr
+Top Level Output File Name         : BrownieSTD32
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 173
+
+Cell Usage :
+# BELS                             : 3697
+#      GND                         : 1
+#      INV                         : 223
+#      LUT1                        : 29
+#      LUT2                        : 55
+#      LUT3                        : 105
+#      LUT4                        : 165
+#      LUT5                        : 572
+#      LUT6                        : 1669
+#      MUXCY                       : 340
+#      MUXF7                       : 164
+#      MUXF8                       : 24
+#      VCC                         : 1
+#      XORCY                       : 349
+# FlipFlops/Latches                : 1813
+#      FDC                         : 100
+#      FDCE                        : 1711
+#      FDP                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 170
+#      IBUF                        : 67
+#      OBUF                        : 103
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1813  out of  69120     2%  
+ Number of Slice LUTs:                 2818  out of  69120     4%  
+    Number used as Logic:              2818  out of  69120     4%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3946
+   Number with an unused Flip Flop:    2133  out of   3946    54%  
+   Number with an unused LUT:          1128  out of   3946    28%  
+   Number of fully used LUT-FF pairs:   685  out of   3946    17%  
+   Number of unique control sets:        44
+
+IO Utilization: 
+ Number of IOs:                         173
+ Number of bonded IOBs:                 171  out of    640    26%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 1813  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+RESET                              | IBUF                   | 1813  |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.609ns (Maximum Frequency: 151.302MHz)
+   Minimum input arrival time before clock: 5.333ns
+   Maximum output required time after clock: 3.768ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 6.609ns (frequency: 151.302MHz)
+  Total number of paths / destination ports: 856862 / 3425
+-------------------------------------------------------------------------
+Delay:               6.609ns (Levels of Logic = 35)
+  Source:            UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_0_1 (FF)
+  Destination:       UA_PREG06/DOUT_16 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_0_1 to UA_PREG06/DOUT_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.396   0.901  UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_0_1 (UA_CTRL/UA_INTRPIPE_CODE_LAST/DOUT_0_1)
+     LUT6:I0->O           33   0.086   0.520  UF_ALU/bin<0>21 (UF_ALU/N106)
+     LUT6:I5->O            1   0.086   0.000  UF_ALU/a0/Madd_int_result_add0000_lut<0> (UF_ALU/a0/Madd_int_result_add0000_lut<0>)
+     MUXCY:S->O            1   0.305   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<0> (UF_ALU/a0/Madd_int_result_add0000_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<1> (UF_ALU/a0/Madd_int_result_add0000_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<2> (UF_ALU/a0/Madd_int_result_add0000_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<3> (UF_ALU/a0/Madd_int_result_add0000_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<4> (UF_ALU/a0/Madd_int_result_add0000_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<5> (UF_ALU/a0/Madd_int_result_add0000_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<6> (UF_ALU/a0/Madd_int_result_add0000_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<7> (UF_ALU/a0/Madd_int_result_add0000_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<8> (UF_ALU/a0/Madd_int_result_add0000_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<9> (UF_ALU/a0/Madd_int_result_add0000_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<10> (UF_ALU/a0/Madd_int_result_add0000_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<11> (UF_ALU/a0/Madd_int_result_add0000_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<12> (UF_ALU/a0/Madd_int_result_add0000_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<13> (UF_ALU/a0/Madd_int_result_add0000_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<14> (UF_ALU/a0/Madd_int_result_add0000_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<15> (UF_ALU/a0/Madd_int_result_add0000_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<16> (UF_ALU/a0/Madd_int_result_add0000_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<17> (UF_ALU/a0/Madd_int_result_add0000_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<18> (UF_ALU/a0/Madd_int_result_add0000_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<19> (UF_ALU/a0/Madd_int_result_add0000_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<20> (UF_ALU/a0/Madd_int_result_add0000_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<21> (UF_ALU/a0/Madd_int_result_add0000_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<22> (UF_ALU/a0/Madd_int_result_add0000_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<23> (UF_ALU/a0/Madd_int_result_add0000_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<24> (UF_ALU/a0/Madd_int_result_add0000_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  UF_ALU/a0/Madd_int_result_add0000_cy<25> (UF_ALU/a0/Madd_int_result_add0000_cy<25>)
+     XORCY:CI->O           1   0.300   0.412  UF_ALU/a0/Madd_int_result_add0000_xor<26> (UF_ALU/sum<26>)
+     LUT6:I5->O            5   0.086   0.837  UF_ALU/pre_result<26> (uf_alu_result<26>)
+     LUT5:I0->O            2   0.086   0.416  UF_ALU/Z_cmp_eq0000226 (UF_ALU/Z_cmp_eq0000226)
+     LUT6:I5->O            2   0.086   0.416  UF_ALU/Z_cmp_eq0000269 (uf_alu_flag<2>)
+     LUT6:I5->O            6   0.086   0.435  UA_MUX13/Mmux_DOUT_5_f7 (UA_MUX13/Mmux_DOUT_5_f7)
+     LUT6:I5->O            2   0.086   0.416  UA_MUX02/DOUT<16>1_SW0 (uf_fwu0_data_out<0>)
+     LUT6:I5->O            1   0.086   0.000  UA_MUX02/DOUT<16>1 (ua_mux02_dout<16>)
+     FDCE:D                   -0.022          UA_PREG06/DOUT_16
+    ----------------------------------------
+    Total                      6.609ns (2.258ns logic, 4.352ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 5720 / 2752
+-------------------------------------------------------------------------
+Offset:              5.333ns (Levels of Logic = 8)
+  Source:            DMEM_ACK_IN (PAD)
+  Destination:       UF_IR/data_out_31 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: DMEM_ACK_IN to UF_IR/data_out_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.694   0.519  DMEM_ACK_IN_IBUF (DMEM_ACK_IN_IBUF)
+     LUT3:I1->O           10   0.086   0.641  UA_CTRL/multcyc_DMAU_req_out_stall_WB1 (UA_CTRL/multcyc_DMAU_req_out_stall_WB)
+     LUT6:I3->O           11   0.086   0.533  UA_CTRL/stall_nreq_EXE1 (UA_CTRL/stall_nreq_EXE)
+     LUT6:I4->O            1   0.086   0.412  UA_CTRL/intr_acc_IF_SW0 (N1176)
+     LUT6:I5->O            3   0.086   0.421  UA_CTRL/intr_acc_IF (UA_CTRL/intr_acc_IF)
+     LUT5:I4->O            1   0.086   0.412  UA_CTRL/advance_stage_IF_SW0 (N1174)
+     LUT6:I5->O           32   0.086   0.520  UA_CTRL/advance_stage_IF (UA_CTRL/advance_stage_IF)
+     LUT5:I4->O           38   0.086   0.395  UF_IR/data_out_not00011 (UF_IR/data_out_not0001)
+     FDCE:CE                   0.185          UF_IR/data_out_0
+    ----------------------------------------
+    Total                      5.333ns (1.481ns logic, 3.852ns route)
+                                       (27.8% logic, 72.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 117 / 102
+-------------------------------------------------------------------------
+Offset:              3.768ns (Levels of Logic = 2)
+  Source:            UA_CTRL/UA_CW_WB/DOUT_0 (FF)
+  Destination:       DMEM_REQ_OUT (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: UA_CTRL/UA_CW_WB/DOUT_0 to DMEM_REQ_OUT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.396   0.856  UA_CTRL/UA_CW_WB/DOUT_0 (UA_CTRL/UA_CW_WB/DOUT_0)
+     LUT5:I0->O            1   0.086   0.286  UA_CTRL/CTRLOUT_DMAU_REQ_OUT1 (uf_dmau_req_out)
+     OBUF:I->O                 2.144          DMEM_REQ_OUT_OBUF (DMEM_REQ_OUT)
+    ----------------------------------------
+    Total                      3.768ns (2.626ns logic, 1.142ns route)
+                                       (69.7% logic, 30.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 130.00 secs
+Total CPU time to Xst completion: 108.91 secs
+ 
+--> 
+
+
+Total memory usage is 236128 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  119 (   0 filtered)
+Number of infos    :  162 (   0 filtered)
+

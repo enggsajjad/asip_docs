@@ -1,0 +1,2916 @@
+Release 13.2 Map O.61xd (lin)
+Xilinx Mapping Report File for Design 'dlx_toplevel'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx110t-ff1136-2 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr
+off -lc off -power off -o dlx_toplevel_map.ncd dlx_toplevel.ngd dlx_toplevel.pcf
+ 
+Target Device  : xc5vlx110t
+Target Package : ff1136
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Tue Jan 29 12:13:51 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:  294
+Slice Logic Utilization:
+  Number of Slice Registers:                 3,579 out of  69,120    5%
+    Number used as Flip Flops:               3,545
+    Number used as Latches:                     32
+    Number used as Latch-thrus:                  2
+  Number of Slice LUTs:                      5,181 out of  69,120    7%
+    Number used as logic:                    5,136 out of  69,120    7%
+      Number using O6 output only:           4,112
+      Number using O5 output only:             461
+      Number using O5 and O6:                  563
+    Number used as Memory:                      20 out of  17,920    1%
+      Number used as Shift Register:            20
+        Number using O6 output only:            20
+    Number used as exclusive route-thru:        25
+  Number of route-thrus:                       488
+    Number using O6 output only:               486
+    Number using O5 output only:                 2
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 2,598 out of  17,280   15%
+  Number of LUT Flip Flop pairs used:        6,847
+    Number with an unused Flip Flop:         3,268 out of   6,847   47%
+    Number with an unused LUT:               1,666 out of   6,847   24%
+    Number of fully used LUT-FF pairs:       1,913 out of   6,847   27%
+    Number of unique control sets:             151
+    Number of slice register sites lost
+      to control set restrictions:             199 out of  69,120    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        33 out of     640    5%
+    Number of LOCed IOBs:                       33 out of      33  100%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                     147 out of     148   99%
+    Number using BlockRAM only:                147
+    Total primitives used:
+      Number of 36k BlockRAM used:             144
+      Number of 18k BlockRAM used:               5
+    Total Memory used (KB):                  5,274 out of   5,328   98%
+  Number of BUFG/BUFGCTRLs:                      6 out of      32   18%
+    Number used as BUFGs:                        6
+  Number of DCM_ADVs:                            2 out of      12   16%
+  Number of PLL_ADVs:                            2 out of       6   33%
+
+Average Fanout of Non-Clock Nets:                5.05
+
+Peak Memory Usage:  498 MB
+Total REAL time to MAP completion:  4 mins 56 secs 
+Total CPU time to MAP completion:   4 mins 35 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:43 - No license file was found in the standard Xilinx license
+directory.
+WARNING:Security:44 - No license file was found.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:MapLib:23 - Short on signal pca9564_ce detected.
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[100].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[100].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[100].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[100].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[101].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[101].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[101].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[101].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[102].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[102].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[102].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[102].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[103].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[103].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[103].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[103].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[104].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[104].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[104].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[104].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[105].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[105].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[105].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[105].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[106].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[106].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[106].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[106].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[107].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[107].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[107].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[107].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[108].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[108].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[108].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[108].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[109].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[109].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[109].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[109].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[110].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[110].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[110].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[110].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[111].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[111].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[111].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[111].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[112].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[112].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[112].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[112].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[113].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[113].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[113].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[113].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[114].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[114].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[114].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[114].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[115].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[115].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[115].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[115].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[116].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[116].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[116].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[116].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[117].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[117].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[117].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[117].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[118].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[118].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[118].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[118].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[119].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[119].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[119].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[119].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[120].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[120].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[120].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[120].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[121].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[121].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[121].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[121].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[122].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[122].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[122].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[122].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[123].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[123].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[123].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[123].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[124].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[124].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[124].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[124].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[125].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[125].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[125].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[125].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[126].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[126].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[126].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[126].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[127].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[127].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[127].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[127].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[16].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[16].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[16].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[16].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[17].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[17].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[17].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[17].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[18].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[18].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[18].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[18].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[19].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[19].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[19].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[19].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[20].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[20].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[20].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[20].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[21].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[21].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[21].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[21].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[22].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[22].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[22].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[22].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[23].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[23].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[23].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[23].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[24].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[24].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[24].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[24].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[25].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[25].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[25].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[25].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[26].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[26].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[26].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[26].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[27].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[27].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[27].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[27].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[28].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[28].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[28].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[28].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[29].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[29].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[29].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[29].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[30].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[30].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[30].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[30].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[31].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[31].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[31].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[31].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[32].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[32].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[32].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[32].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[33].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[33].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[33].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[33].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[34].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[34].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[34].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[34].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[35].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[35].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[35].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[35].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[36].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[36].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[36].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[36].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[37].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[37].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[37].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[37].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[38].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[38].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[38].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[38].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[39].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[39].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[39].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[39].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[40].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[40].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[40].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[40].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[41].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[41].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[41].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[41].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[42].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[42].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[42].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[42].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[43].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[43].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[43].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[43].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[44].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[44].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[44].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[44].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[45].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[45].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[45].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[45].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[46].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[46].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[46].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[46].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[47].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[47].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[47].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[47].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[48].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[48].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[48].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[48].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[49].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[49].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[49].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[49].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[50].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[50].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[50].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[50].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[51].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[51].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[51].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[51].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[52].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[52].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[52].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[52].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[53].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[53].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[53].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[53].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[54].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[54].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[54].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[54].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[55].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[55].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[55].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[55].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[56].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[56].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[56].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[56].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[57].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[57].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[57].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[57].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[58].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[58].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[58].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[58].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[59].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[59].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[59].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[59].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[60].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[60].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[60].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[60].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[61].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[61].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[61].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[61].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[62].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[62].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[62].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[62].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[63].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[63].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[63].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[63].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[64].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[64].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[64].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[64].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[65].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[65].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[65].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[65].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[66].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[66].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[66].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[66].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[67].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[67].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[67].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[67].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[68].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[68].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[68].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[68].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[69].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[69].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[69].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[69].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[70].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[70].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[70].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[70].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[71].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[71].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[71].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[71].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[72].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[72].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[72].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[72].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[73].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[73].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[73].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[73].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[74].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[74].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[74].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[74].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[75].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[75].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[75].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[75].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[76].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[76].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[76].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[76].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[77].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[77].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[77].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[77].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[78].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[78].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[78].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[78].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[79].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[79].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[79].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[79].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[80].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[80].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[80].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[80].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[81].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[81].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[81].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[81].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[82].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[82].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[82].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[82].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[83].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[83].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[83].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[83].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[84].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[84].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[84].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[84].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[85].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[85].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[85].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[85].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[86].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[86].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[86].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[86].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[87].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[87].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[87].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[87].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[88].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[88].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[88].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[88].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[89].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[89].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[89].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[89].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[90].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[90].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[90].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[90].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[91].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[91].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[91].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[91].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[92].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[92].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[92].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[92].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[93].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[93].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[93].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[93].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[94].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[94].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[94].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[94].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[95].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[95].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[95].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[95].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[96].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[96].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[96].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[96].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[97].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[97].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[97].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[97].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[98].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[98].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[98].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[98].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[99].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[99].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[99].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[99].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BRAM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[10].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[11].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[12].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[13].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[14].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[15].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[1].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[2].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[3].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[4].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[5].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[6].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[7].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[8].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAU connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP
+   of frag REGCLKAL connected to power/ground net
+   BROM_instance/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[9].ram.r/v5_init.ram/SP.SINGLE_PRIM36.SP_REGCLKAL_tiesig
+
+Section 3 - Informational
+-------------------------
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
+'2100@i80pdc.irf.uni-karlsruhe.de'.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
+'1717@scclic2.scc.kit.edu:'.
+INFO:Security:56 - Part 'xc5vlx110t' is not a WebPack part.
+INFO:LIT:243 - Logical network
+   i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/g
+   rf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/WR_ACK has no load.
+INFO:LIT:395 - The above info message is repeated 34 more times for the
+   following (max. 5 shown):
+   i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/g
+   rf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i,
+   i2c_interface/input_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sy
+   nc_fifo.gl0.wr/gwas.wsts/ram_full_i,
+   AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_o
+   r_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<9>,
+   AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_o
+   r_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<8>,
+   AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_o
+   r_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<7>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:856 - PLL_ADV Inst_DCM_100/PLL_ADV_INST CLKIN2 pin was disconnected
+   because a constant 1 is driving the CLKINSEL pin.
+INFO:MapLib:856 - PLL_ADV Inst_DCM_33/PLL_ADV_INST CLKIN2 pin was disconnected
+   because a constant 1 is driving the CLKINSEL pin.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 227 block(s) removed
+  16 block(s) optimized away
+ 243 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "Inst_DCM_100/CLKOUT1_BUFG_INST" (CKBUF) removed.
+ The signal "Inst_DCM_100/CLKOUT1_BUF" is loadless and has been removed.
+Loadless block "Inst_DCM_100/CLKOUT2_BUFG_INST" (CKBUF) removed.
+ The signal "Inst_DCM_100/CLKOUT2_BUF" is loadless and has been removed.
+Loadless block "Inst_DCM_100/CLKOUT3_BUFG_INST" (CKBUF) removed.
+ The signal "Inst_DCM_100/CLKOUT3_BUF" is loadless and has been removed.
+Loadless block "Inst_DCM_100/CLKOUT4_BUFG_INST" (CKBUF) removed.
+ The signal "Inst_DCM_100/CLKOUT4_BUF" is loadless and has been removed.
+Loadless block "Inst_DCM_100/CLKOUT5_BUFG_INST" (CKBUF) removed.
+ The signal "Inst_DCM_100/CLKOUT5_BUF" is loadless and has been removed.
+The signal "BRAM_instance/N1" is sourceless and has been removed.
+The signal
+"i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/grf
+.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/WR_ACK" is sourceless and has been
+removed.
+The signal
+"i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/grf
+.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been
+removed.
+The signal
+"i2c_interface/input_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync
+_fifo.gl0.wr/gwas.wsts/ram_full_i" is sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<9>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<8>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<7>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<6>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<5>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<4>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<3>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<2>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<7>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<6>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<5>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<4>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<3>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<2>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<1>" is sourceless and has been
+removed.
+The signal "AudioR/AudioOutFIFO_Instance/dout<0>" is sourceless and has been
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<9>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<9>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_9" (FF) removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<9>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<8>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<8>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_8" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<8>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<7>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<7>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<7>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<6>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<6>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<6>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<5>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<5>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_5" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<4>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<4>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_4" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<3>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<3>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<2>" (XOR)
+removed.
+  The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<2>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_2" (FF) removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" (MUX)
+removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" is
+sourceless and has been removed.
+The signal
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<9>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<8>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<7>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<6>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<5>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<4>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<3>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i<2>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<7>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<6>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<5>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<4>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<3>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<2>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<1>" is sourceless and has been
+removed.
+The signal "AudioL/AudioOutFIFO_Instance/dout<0>" is sourceless and has been
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<9>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<9>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_9" (FF) removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<9>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<8>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<8>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_8" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<8>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<8>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<7>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<7>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<7>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<7>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<6>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<6>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<6>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<6>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<5>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<5>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_5" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<5>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<4>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<4>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_4" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<3>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<3>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_xor<2>" (XOR)
+removed.
+  The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_sub0000<2>" is sourceless and
+has been removed.
+   Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_2" (FF) removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" (MUX)
+removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" is
+sourceless and has been removed.
+The signal
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" is
+sourceless and has been removed.
+ Sourceless block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" (MUX)
+removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "Mcompar_soundData_cmp_ge0000_cy<0>" is unused and has been removed.
+ Unused block "Mcompar_soundData_cmp_ge0000_cy<0>" (MUX) removed.
+  The signal "Mcompar_soundData_cmp_ge0000_lutdi" is unused and has been removed.
+   Unused block "Mcompar_soundData_cmp_ge0000_lutdi" (ROM) removed.
+    The signal "delay_counter<5>" is unused and has been removed.
+     Unused block "delay_counter_5" (SFF) removed.
+      The signal "Result<5>2" is unused and has been removed.
+       Unused block "Mcount_delay_counter_xor<5>" (XOR) removed.
+        The signal "Mcount_delay_counter_cy<4>" is unused and has been removed.
+         Unused block "Mcount_delay_counter_cy<4>" (MUX) removed.
+          The signal "Mcount_delay_counter_cy<3>" is unused and has been removed.
+           Unused block "Mcount_delay_counter_cy<3>" (MUX) removed.
+            The signal "Mcount_delay_counter_cy<2>" is unused and has been removed.
+             Unused block "Mcount_delay_counter_cy<2>" (MUX) removed.
+              The signal "Mcount_delay_counter_cy<1>" is unused and has been removed.
+               Unused block "Mcount_delay_counter_cy<1>" (MUX) removed.
+                The signal "Mcount_delay_counter_cy<0>" is unused and has been removed.
+                 Unused block "Mcount_delay_counter_cy<0>" (MUX) removed.
+                  The signal "Mcount_delay_counter_lut<0>" is unused and has been removed.
+                   Unused block "Mcount_delay_counter_lut<0>_INV_0" (BUF) removed.
+                    The signal "delay_counter<0>" is unused and has been removed.
+                     Unused block "delay_counter_0" (SFF) removed.
+                      The signal "Result<0>2" is unused and has been removed.
+                       Unused block "Mcount_delay_counter_xor<0>" (XOR) removed.
+                      The signal "delay_counter_or0000" is unused and has been removed.
+                       Unused block "delay_counter_or00001" (ROM) removed.
+                        The signal "soundData_cmp_ge0000" is unused and has been removed.
+                         Unused block "Mcompar_soundData_cmp_ge0000_cy<6>" (MUX) removed.
+                          The signal "Mcompar_soundData_cmp_ge0000_cy<5>" is unused and has been removed.
+                           Unused block "Mcompar_soundData_cmp_ge0000_cy<5>" (MUX) removed.
+                            The signal "Mcompar_soundData_cmp_ge0000_cy<4>" is unused and has been removed.
+                             Unused block "Mcompar_soundData_cmp_ge0000_cy<4>" (MUX) removed.
+                              The signal "Mcompar_soundData_cmp_ge0000_cy<3>" is unused and has been removed.
+                               Unused block "Mcompar_soundData_cmp_ge0000_cy<3>" (MUX) removed.
+                                The signal "Mcompar_soundData_cmp_ge0000_cy<2>" is unused and has been removed.
+                                 Unused block "Mcompar_soundData_cmp_ge0000_cy<2>" (MUX) removed.
+                                  The signal "Mcompar_soundData_cmp_ge0000_cy<1>" is unused and has been removed.
+                                   Unused block "Mcompar_soundData_cmp_ge0000_cy<1>" (MUX) removed.
+                                    The signal "Mcompar_soundData_cmp_ge0000_lutdi1" is unused and has been removed.
+                                     Unused block "Mcompar_soundData_cmp_ge0000_lutdi1" (ROM) removed.
+                                      The signal "delay_counter<10>" is unused and has been removed.
+                                       Unused block "delay_counter_10" (SFF) removed.
+                                        The signal "Result<10>2" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_xor<10>" (XOR) removed.
+                                          The signal "Mcount_delay_counter_cy<9>" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<9>" (MUX) removed.
+                                            The signal "Mcount_delay_counter_cy<8>" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<8>" (MUX) removed.
+                                              The signal "Mcount_delay_counter_cy<7>" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<7>" (MUX) removed.
+                                                The signal "Mcount_delay_counter_cy<6>" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_cy<6>" (MUX) removed.
+*The signal "Mcount_delay_counter_cy<5>" is unused and has been removed.
+* Unused block "Mcount_delay_counter_cy<5>" (MUX) removed.
+*  The signal "Mcount_delay_counter_cy<5>_rt" is unused and has been removed.
+*   Unused block "Mcount_delay_counter_cy<5>_rt" (ROM) removed.
+*The signal "Mcount_delay_counter_cy<6>_rt" is unused and has been removed.
+* Unused block "Mcount_delay_counter_cy<6>_rt" (ROM) removed.
+*  The signal "delay_counter<6>" is unused and has been removed.
+*   Unused block "delay_counter_6" (SFF) removed.
+*    The signal "Result<6>2" is unused and has been removed.
+*     Unused block "Mcount_delay_counter_xor<6>" (XOR) removed.
+                                                The signal "Mcount_delay_counter_cy<7>_rt" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_cy<7>_rt" (ROM) removed.
+*The signal "delay_counter<7>" is unused and has been removed.
+* Unused block "delay_counter_7" (SFF) removed.
+*  The signal "Result<7>2" is unused and has been removed.
+*   Unused block "Mcount_delay_counter_xor<7>" (XOR) removed.
+                                              The signal "Mcount_delay_counter_cy<8>_rt" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<8>_rt" (ROM) removed.
+                                                The signal "delay_counter<8>" is unused and has been removed.
+                                                 Unused block "delay_counter_8" (SFF) removed.
+*The signal "Result<8>2" is unused and has been removed.
+* Unused block "Mcount_delay_counter_xor<8>" (XOR) removed.
+                                            The signal "Mcount_delay_counter_cy<9>_rt" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<9>_rt" (ROM) removed.
+                                              The signal "delay_counter<9>" is unused and has been removed.
+                                               Unused block "delay_counter_9" (SFF) removed.
+                                                The signal "Result<9>2" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_xor<9>" (XOR) removed.
+                                          The signal "Mcount_delay_counter_cy<10>_rt" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<10>_rt" (ROM) removed.
+                                    The signal "Mcompar_soundData_cmp_ge0000_lut<1>" is unused and has been removed.
+                                     Unused block "Mcompar_soundData_cmp_ge0000_lut<1>" (ROM) removed.
+                                  The signal "Mcompar_soundData_cmp_ge0000_lutdi2" is unused and has been removed.
+                                   Unused block "Mcompar_soundData_cmp_ge0000_lutdi2" (ROM) removed.
+                                    The signal "delay_counter<15>" is unused and has been removed.
+                                     Unused block "delay_counter_15" (SFF) removed.
+                                      The signal "Result<15>2" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_xor<15>" (XOR) removed.
+                                        The signal "Mcount_delay_counter_cy<14>" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<14>" (MUX) removed.
+                                          The signal "Mcount_delay_counter_cy<13>" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<13>" (MUX) removed.
+                                            The signal "Mcount_delay_counter_cy<12>" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<12>" (MUX) removed.
+                                              The signal "Mcount_delay_counter_cy<11>" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<11>" (MUX) removed.
+                                                The signal "Mcount_delay_counter_cy<10>" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_cy<10>" (MUX) removed.
+                                                The signal "Mcount_delay_counter_cy<11>_rt" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_cy<11>_rt" (ROM) removed.
+*The signal "delay_counter<11>" is unused and has been removed.
+* Unused block "delay_counter_11" (SFF) removed.
+*  The signal "Result<11>2" is unused and has been removed.
+*   Unused block "Mcount_delay_counter_xor<11>" (XOR) removed.
+                                              The signal "Mcount_delay_counter_cy<12>_rt" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<12>_rt" (ROM) removed.
+                                                The signal "delay_counter<12>" is unused and has been removed.
+                                                 Unused block "delay_counter_12" (SFF) removed.
+*The signal "Result<12>2" is unused and has been removed.
+* Unused block "Mcount_delay_counter_xor<12>" (XOR) removed.
+                                            The signal "Mcount_delay_counter_cy<13>_rt" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<13>_rt" (ROM) removed.
+                                              The signal "delay_counter<13>" is unused and has been removed.
+                                               Unused block "delay_counter_13" (SFF) removed.
+                                                The signal "Result<13>2" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_xor<13>" (XOR) removed.
+                                          The signal "Mcount_delay_counter_cy<14>_rt" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<14>_rt" (ROM) removed.
+                                            The signal "delay_counter<14>" is unused and has been removed.
+                                             Unused block "delay_counter_14" (SFF) removed.
+                                              The signal "Result<14>2" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_xor<14>" (XOR) removed.
+                                        The signal "Mcount_delay_counter_cy<15>_rt" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<15>_rt" (ROM) removed.
+                                  The signal "Mcompar_soundData_cmp_ge0000_lut<2>" is unused and has been removed.
+                                   Unused block "Mcompar_soundData_cmp_ge0000_lut<2>" (ROM) removed.
+                                The signal "Mcompar_soundData_cmp_ge0000_lutdi3" is unused and has been removed.
+                                 Unused block "Mcompar_soundData_cmp_ge0000_lutdi3" (ROM) removed.
+                                  The signal "delay_counter<20>" is unused and has been removed.
+                                   Unused block "delay_counter_20" (SFF) removed.
+                                    The signal "Result<20>2" is unused and has been removed.
+                                     Unused block "Mcount_delay_counter_xor<20>" (XOR) removed.
+                                      The signal "Mcount_delay_counter_cy<19>" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<19>" (MUX) removed.
+                                        The signal "Mcount_delay_counter_cy<18>" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<18>" (MUX) removed.
+                                          The signal "Mcount_delay_counter_cy<17>" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<17>" (MUX) removed.
+                                            The signal "Mcount_delay_counter_cy<16>" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<16>" (MUX) removed.
+                                              The signal "Mcount_delay_counter_cy<15>" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<15>" (MUX) removed.
+                                              The signal "Mcount_delay_counter_cy<16>_rt" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_cy<16>_rt" (ROM) removed.
+                                                The signal "delay_counter<16>" is unused and has been removed.
+                                                 Unused block "delay_counter_16" (SFF) removed.
+*The signal "Result<16>2" is unused and has been removed.
+* Unused block "Mcount_delay_counter_xor<16>" (XOR) removed.
+                                            The signal "Mcount_delay_counter_cy<17>_rt" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<17>_rt" (ROM) removed.
+                                              The signal "delay_counter<17>" is unused and has been removed.
+                                               Unused block "delay_counter_17" (SFF) removed.
+                                                The signal "Result<17>2" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_xor<17>" (XOR) removed.
+                                          The signal "Mcount_delay_counter_cy<18>_rt" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<18>_rt" (ROM) removed.
+                                            The signal "delay_counter<18>" is unused and has been removed.
+                                             Unused block "delay_counter_18" (SFF) removed.
+                                              The signal "Result<18>2" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_xor<18>" (XOR) removed.
+                                        The signal "Mcount_delay_counter_cy<19>_rt" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<19>_rt" (ROM) removed.
+                                          The signal "delay_counter<19>" is unused and has been removed.
+                                           Unused block "delay_counter_19" (SFF) removed.
+                                            The signal "Result<19>2" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_xor<19>" (XOR) removed.
+                                      The signal "Mcount_delay_counter_cy<20>_rt" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<20>_rt" (ROM) removed.
+                                The signal "Mcompar_soundData_cmp_ge0000_lut<3>" is unused and has been removed.
+                                 Unused block "Mcompar_soundData_cmp_ge0000_lut<3>" (ROM) removed.
+                              The signal "Mcompar_soundData_cmp_ge0000_lutdi4" is unused and has been removed.
+                               Unused block "Mcompar_soundData_cmp_ge0000_lutdi4" (ROM) removed.
+                                The signal "delay_counter<25>" is unused and has been removed.
+                                 Unused block "delay_counter_25" (SFF) removed.
+                                  The signal "Result<25>2" is unused and has been removed.
+                                   Unused block "Mcount_delay_counter_xor<25>" (XOR) removed.
+                                    The signal "Mcount_delay_counter_cy<24>" is unused and has been removed.
+                                     Unused block "Mcount_delay_counter_cy<24>" (MUX) removed.
+                                      The signal "Mcount_delay_counter_cy<23>" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<23>" (MUX) removed.
+                                        The signal "Mcount_delay_counter_cy<22>" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<22>" (MUX) removed.
+                                          The signal "Mcount_delay_counter_cy<21>" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<21>" (MUX) removed.
+                                            The signal "Mcount_delay_counter_cy<20>" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<20>" (MUX) removed.
+                                            The signal "Mcount_delay_counter_cy<21>_rt" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_cy<21>_rt" (ROM) removed.
+                                              The signal "delay_counter<21>" is unused and has been removed.
+                                               Unused block "delay_counter_21" (SFF) removed.
+                                                The signal "Result<21>2" is unused and has been removed.
+                                                 Unused block "Mcount_delay_counter_xor<21>" (XOR) removed.
+                                          The signal "Mcount_delay_counter_cy<22>_rt" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<22>_rt" (ROM) removed.
+                                            The signal "delay_counter<22>" is unused and has been removed.
+                                             Unused block "delay_counter_22" (SFF) removed.
+                                              The signal "Result<22>2" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_xor<22>" (XOR) removed.
+                                        The signal "Mcount_delay_counter_cy<23>_rt" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<23>_rt" (ROM) removed.
+                                          The signal "delay_counter<23>" is unused and has been removed.
+                                           Unused block "delay_counter_23" (SFF) removed.
+                                            The signal "Result<23>2" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_xor<23>" (XOR) removed.
+                                      The signal "Mcount_delay_counter_cy<24>_rt" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<24>_rt" (ROM) removed.
+                                        The signal "delay_counter<24>" is unused and has been removed.
+                                         Unused block "delay_counter_24" (SFF) removed.
+                                          The signal "Result<24>2" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_xor<24>" (XOR) removed.
+                                    The signal "Mcount_delay_counter_cy<25>_rt" is unused and has been removed.
+                                     Unused block "Mcount_delay_counter_cy<25>_rt" (ROM) removed.
+                              The signal "Mcompar_soundData_cmp_ge0000_lut<4>" is unused and has been removed.
+                               Unused block "Mcompar_soundData_cmp_ge0000_lut<4>" (ROM) removed.
+                            The signal "Mcompar_soundData_cmp_ge0000_lutdi5" is unused and has been removed.
+                             Unused block "Mcompar_soundData_cmp_ge0000_lutdi5" (ROM) removed.
+                              The signal "delay_counter<30>" is unused and has been removed.
+                               Unused block "delay_counter_30" (SFF) removed.
+                                The signal "Result<30>2" is unused and has been removed.
+                                 Unused block "Mcount_delay_counter_xor<30>" (XOR) removed.
+                                  The signal "Mcount_delay_counter_cy<29>" is unused and has been removed.
+                                   Unused block "Mcount_delay_counter_cy<29>" (MUX) removed.
+                                    The signal "Mcount_delay_counter_cy<28>" is unused and has been removed.
+                                     Unused block "Mcount_delay_counter_cy<28>" (MUX) removed.
+                                      The signal "Mcount_delay_counter_cy<27>" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<27>" (MUX) removed.
+                                        The signal "Mcount_delay_counter_cy<26>" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<26>" (MUX) removed.
+                                          The signal "Mcount_delay_counter_cy<25>" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<25>" (MUX) removed.
+                                          The signal "Mcount_delay_counter_cy<26>_rt" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_cy<26>_rt" (ROM) removed.
+                                            The signal "delay_counter<26>" is unused and has been removed.
+                                             Unused block "delay_counter_26" (SFF) removed.
+                                              The signal "Result<26>2" is unused and has been removed.
+                                               Unused block "Mcount_delay_counter_xor<26>" (XOR) removed.
+                                        The signal "Mcount_delay_counter_cy<27>_rt" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_cy<27>_rt" (ROM) removed.
+                                          The signal "delay_counter<27>" is unused and has been removed.
+                                           Unused block "delay_counter_27" (SFF) removed.
+                                            The signal "Result<27>2" is unused and has been removed.
+                                             Unused block "Mcount_delay_counter_xor<27>" (XOR) removed.
+                                      The signal "Mcount_delay_counter_cy<28>_rt" is unused and has been removed.
+                                       Unused block "Mcount_delay_counter_cy<28>_rt" (ROM) removed.
+                                        The signal "delay_counter<28>" is unused and has been removed.
+                                         Unused block "delay_counter_28" (SFF) removed.
+                                          The signal "Result<28>2" is unused and has been removed.
+                                           Unused block "Mcount_delay_counter_xor<28>" (XOR) removed.
+                                    The signal "Mcount_delay_counter_cy<29>_rt" is unused and has been removed.
+                                     Unused block "Mcount_delay_counter_cy<29>_rt" (ROM) removed.
+                                      The signal "delay_counter<29>" is unused and has been removed.
+                                       Unused block "delay_counter_29" (SFF) removed.
+                                        The signal "Result<29>2" is unused and has been removed.
+                                         Unused block "Mcount_delay_counter_xor<29>" (XOR) removed.
+                                  The signal "Mcount_delay_counter_cy<30>_rt" is unused and has been removed.
+                                   Unused block "Mcount_delay_counter_cy<30>_rt" (ROM) removed.
+                            The signal "Mcompar_soundData_cmp_ge0000_lut<5>" is unused and has been removed.
+                             Unused block "Mcompar_soundData_cmp_ge0000_lut<5>" (ROM) removed.
+                          The signal "Mcompar_soundData_cmp_ge0000_lut<6>" is unused and has been removed.
+                           Unused block "Mcompar_soundData_cmp_ge0000_lut<6>_INV_0" (BUF) removed.
+                            The signal "delay_counter<31>" is unused and has been removed.
+                             Unused block "delay_counter_31" (SFF) removed.
+                              The signal "Result<31>2" is unused and has been removed.
+                               Unused block "Mcount_delay_counter_xor<31>" (XOR) removed.
+                                The signal "Mcount_delay_counter_cy<30>" is unused and has been removed.
+                                 Unused block "Mcount_delay_counter_cy<30>" (MUX) removed.
+                                The signal "Mcount_delay_counter_xor<31>_rt" is unused and has been removed.
+                                 Unused block "Mcount_delay_counter_xor<31>_rt" (ROM) removed.
+                The signal "Mcount_delay_counter_cy<1>_rt" is unused and has been removed.
+                 Unused block "Mcount_delay_counter_cy<1>_rt" (ROM) removed.
+                  The signal "delay_counter<1>" is unused and has been removed.
+                   Unused block "delay_counter_1" (SFF) removed.
+                    The signal "Result<1>2" is unused and has been removed.
+                     Unused block "Mcount_delay_counter_xor<1>" (XOR) removed.
+              The signal "Mcount_delay_counter_cy<2>_rt" is unused and has been removed.
+               Unused block "Mcount_delay_counter_cy<2>_rt" (ROM) removed.
+                The signal "delay_counter<2>" is unused and has been removed.
+                 Unused block "delay_counter_2" (SFF) removed.
+                  The signal "Result<2>2" is unused and has been removed.
+                   Unused block "Mcount_delay_counter_xor<2>" (XOR) removed.
+            The signal "Mcount_delay_counter_cy<3>_rt" is unused and has been removed.
+             Unused block "Mcount_delay_counter_cy<3>_rt" (ROM) removed.
+              The signal "delay_counter<3>" is unused and has been removed.
+               Unused block "delay_counter_3" (SFF) removed.
+                The signal "Result<3>2" is unused and has been removed.
+                 Unused block "Mcount_delay_counter_xor<3>" (XOR) removed.
+          The signal "Mcount_delay_counter_cy<4>_rt" is unused and has been removed.
+           Unused block "Mcount_delay_counter_cy<4>_rt" (ROM) removed.
+            The signal "delay_counter<4>" is unused and has been removed.
+             Unused block "delay_counter_4" (SFF) removed.
+              The signal "Result<4>2" is unused and has been removed.
+               Unused block "Mcount_delay_counter_xor<4>" (XOR) removed.
+  The signal "Mcompar_soundData_cmp_ge0000_lut<0>" is unused and has been removed.
+   Unused block "Mcompar_soundData_cmp_ge0000_lut<0>" (ROM) removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<6>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<7>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<8>" (ROM)
+removed.
+Unused block
+"AudioL/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<9>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<6>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<7>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<8>" (ROM)
+removed.
+Unused block
+"AudioR/AudioOutFIFO_Instance/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
+sync_fifo.gl0.wr/gwas.gwdc0.wdc/Msub_wr_data_count_i_sub0000_lut<9>" (ROM)
+removed.
+Unused block
+"i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/grf
+.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+Unused block
+"i2c_core/input_fifo[1].input_fifo_asynch/U0/xst_fifo_generator/gconvfifo.rf/grf
+.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/WR_ACK" (FF) removed.
+Unused block
+"i2c_interface/input_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync
+_fifo.gl0.wr/gwas.wsts/ram_full_i" (FF) removed.
+Unused block "pca9564_ce_PULLUP" (PULLUP) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		AudioL/AudioOutFIFO_Instance/XST_GND
+VCC 		AudioL/AudioOutFIFO_Instance/XST_VCC
+GND 		AudioR/AudioOutFIFO_Instance/XST_GND
+VCC 		AudioR/AudioOutFIFO_Instance/XST_VCC
+GND 		BRAM_instance/XST_GND
+VCC 		BRAM_instance/XST_VCC
+GND 		BROM_instance/XST_GND
+VCC 		BROM_instance/XST_VCC
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		i2c_core/input_fifo[1].input_fifo_asynch/XST_GND
+VCC 		i2c_core/input_fifo[1].input_fifo_asynch/XST_VCC
+GND 		i2c_core/output_fifo[1].output_fifo_asynch/XST_GND
+VCC 		i2c_core/output_fifo[1].output_fifo_asynch/XST_VCC
+GND 		i2c_interface/input_fifo/XST_GND
+VCC 		i2c_interface/input_fifo/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AudioL_Out                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| AudioR_Out                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| clk_in                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| clock_33                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| knop<0>                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN |          |
+| knop<1>                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN |          |
+| knop<2>                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN |          |
+| knop<3>                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN |          |
+| led_buildin<0>                     | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_buildin<1>                     | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_buildin<2>                     | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_buildin<3>                     | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_user<0>                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led_user<1>                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led_user<2>                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| pca9564_address<0>                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_address<1>                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_ce                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| pca9564_data<0>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<1>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<2>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<3>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<4>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<5>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<6>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_data<7>                    | IOB              | BIDIR     | LVCMOS33             |       | 12       | FAST |              | PULLUP   |          |
+| pca9564_int                        | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| pca9564_rd                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| pca9564_reset                      | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| pca9564_wr                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| reset                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN |          |
+| serial0_in                         | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| serial0_out                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

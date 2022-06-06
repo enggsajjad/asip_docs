@@ -1,0 +1,27 @@
+a: the internal Loop will be executed 190 times.
+
+b: When there is Exchange: Index has 6 / address has 3
+
+   When there is no Exchange: Index has 2/ address has 1
+
+the reason behind this difference is  we have written on Registers instead of memory and we have read *j before internal Loop.
+
+c: 11431 clock cycles
+
+d: 11012 clock cycles for optimized code
+
+e: the speedup is about 4%
+
+
+
+we have found that if we want to optimize the code by replacing  
+    ;eltu   
+    ;brz   
+
+by
+    bgeu   
+
+we should chenge it to bg without equal, we can do this by delete '=' in the Implementation of 'bgeu'
+
+
+another thing I would like to mention, the .Lx with '.' will not work. it should be replaced by _Lx.

@@ -1,0 +1,10 @@
+a) 619 cycles
+b) Startup.s is the preparation that is needed to be executed before the real program starts, there, the system stores the stack pointer, the program pointer and some other variables. After that, it makes a jump onto the first instruction of our real program
+c)819 cycles
+d)
+Optimization  Executed?  (ModelSim)  (Dlxsim)
+-O0                       yes                2195           1083
+-O1                       yes                2195            455
+-O2                       yes                2195            421
+-O3                       yes                2195            421 
+-O4                       yes                2195            421

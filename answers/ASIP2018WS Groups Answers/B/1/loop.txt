@@ -1,0 +1,33 @@
+.data 
+
+_B: .word 0x00445566, 0x01556677, 0x02667788, 0x03778899, 0x048899aa, 0x0599aabb, 0x06aabbcc, 0x07bbccdd, 0x08ccddee, 0x09ddeeff
+ 
+_C: .word 0x1234abcd
+
+_A: .space (3*10)
+
+
+.text
+
+	; r25 == aux
+	; r24 == C
+	; r23 == B[i]
+	; r21 == Counter
+	
+	xor r21,r21
+	addi r21, r21, 36 ; Counter from 36 to zero four by four.
+	lw r24,(_C)	; load _C into r24
+	addi r24,r24,5	; C = C + 5
+_loop:
+	beqz r21, _end ; if counter == 0, end
+	NOP 
+	lw r23,r21(_B)	; load _B[r21] into r23
+	add r25,r24,r23	; aux = (C+5) + B[r21]
+	sw r21(_A),r25	; store aux into _A[r21]
+	xor r25,r25,r25
+	subi r21,r21,4
+	j _loop
+
+_end:
+	trap #0
+

@@ -1,0 +1,18 @@
+Slice Logic Utilization:
+  Number of Slice Registers:                 3,404 out of  69,120    4%
+    Number used as Flip Flops:               3,370
+    Number used as Latches:                     32
+    Number used as Latch-thrus:                  2
+  Number of Slice LUTs:                      4,528 out of  69,120    6%
+    Number used as logic:                    4,483 out of  69,120    6%
+      Number using O6 output only:           3,582
+      Number using O5 output only:             460
+      Number using O5 and O6:                  441
+    Number used as Memory:                      20 out of  17,920    1%
+      Number used as Shift Register:            20
+        Number using O6 output only:            20
+    Number used as exclusive route-thru:        25
+  Number of route-thrus:                       486
+    Number using O6 output only:               484
+    Number using O5 output only:                 1
+    Number using O5 and O6:                      1

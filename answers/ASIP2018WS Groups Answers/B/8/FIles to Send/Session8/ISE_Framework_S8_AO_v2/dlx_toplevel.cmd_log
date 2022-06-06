@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/dlx_toplevel.xst" -ofn "/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/dlx_toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc dlx_toplevel.ucf -bm blockram.bmm -p xc5vlx110t-ff1136-2 dlx_toplevel.ngc dlx_toplevel.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-2 -w -logic_opt off -ol high -t 1 -global_opt area -equivalent_register_removal on -mt off -cm area -ir off -pr b -lc area -power off -o dlx_toplevel_map.ncd dlx_toplevel.ngd dlx_toplevel.pcf 

@@ -1,0 +1,34 @@
+1º
+a) The reason behind that high amount of cycles is that we have plenty stall cycles in our algorithm. MUL instruction causes that because it is a slow operation exeuted on its own dedicated hardware.
+
+b) The purpose of the Trap #0 is to throw an exception that can be handled by the Operative System i.e. An exception to stop the program.
+
+2º
+a) Because of the fact that DLX instruction size is 32, we cannot load a 32b immediate onto a register. the way to fix it is by writting into the register 2 times, one half of the value each time.
+First of all we load in by moving one half of the number onto the left part of the register. After that we load by adding, at the second part, the second half of the desired value.
+After the first instruction we have the less significant part of the value in the register. then, by adding the rest of the number we complete the task.
+b)Because if it was omited we would lose one half of the value. In this speceific case it is not relevant because the half that is going to be added is full 0.
+
+3º
+a) it is implemented the max algorithm.
+b) R24 gets the value of the bigger register passed by parameters. In other words, the biggest value between R21 and R22 is written in R24
+c)When the jump instruction is done and a jump needs to be executed, program counter changes but, if the NOP instruction is not placed, because of the pipeline, the next lineally instruction is already loaded. To avoid that we insert a NOP instruction which wastes a clock-cycle. This makes the next instruction to be loaded be the one with the correct program counter.
+d)We can substitute the NOP by any instruction which doesnt rely on the results of previous instructions. 
+
+4º
+a)The algorithm written is the multiplication.
+b)The Russian peasant multiplication or the shift and add multiplication algorithm.
+c)In general the time spent with the algorithm is log2(N)+1. Where N is the position of the last non-zero bit. (0x00100000b -> N=6) The maximum number of iterations is reached when the least relevant number has a 1 (we have big endian architecture).
+
+5º
+a) We can recognize a Switch block in which R23 is the selector.
+The meaning of the instructions block mentioned is to get the begining address of the switch "options-block" then trasnform and finally add our choice to the base address so it jumps into the correct option.
+b) We have to shift by 3 because we need to transform our choice from a number in between 0 and 5 to a memory address. First of all we have to multiply by 4 because the instruction size is always 32b. Then we multiply by 2 because each switch option is made of 2 instructions, that means that every new option is after 8B after the previous one.
+Finally multiplying by 8 is the same as shifting to the left 3 times.
+c) The main difference between Jump and Branch is that Jump is always inconditional whereas Branch needs register evaluation.
+
+6º
+a)
+b) I need 13 assembly instructions, 8 inside a loop
+c) Not measurable, the computer was shutted down
+d) 3 accesses, 2 inside the loop

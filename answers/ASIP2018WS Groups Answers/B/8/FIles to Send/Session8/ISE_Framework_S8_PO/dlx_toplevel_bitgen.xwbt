@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_PO/dlx_toplevel.ncd
+OUTFILE=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_PO/dlx_toplevel.bit
+FAMILY=Virtex5
+PART=xc5vlx110t-2ff1136
+WORKINGDIR=/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_PO
+LICENSE=ISE
+USER_INFO=174111760_174111761_210611273_445

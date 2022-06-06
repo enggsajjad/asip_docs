@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/AudioOut_TopLevel.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/AudioOut_Types.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/BrownieSTD32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/Debouncer.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/DigitalAnalogConverter.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/Helper.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/MemoryMapper.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/MemoryMapperTypes.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/audio_out_fifo.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/bram_dm.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/brom_im.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/clk_div.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/dlxTypes.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/dlx_toplevel.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_alu_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_browregfile_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_divider_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_dummy_register_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_extender_w16.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_extender_w26.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_fwu_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_mifu_w32_00.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_mifu_w32_01.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_pcu_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_register_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_shifter_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fhm_wire_out_w1.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/fifo_generator_v2_1.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/i2c_arbiter.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/i2c_multiclock_latch.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/i2c_toplevel.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/interface_asipmeister_i2c.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/kcuart_rx.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/kcuart_tx.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/pca9564_interface_state.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_mux2to1_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_mux2to1_w5.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_mux3to1_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_mux3to1_w5.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_mux7to1_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_proc_fsm.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w1.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w14.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w2.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w32.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w5.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO_v2/rtg_register_w54.vhd&quot; into library work</arg>
+</msg>
+
+</messages>
+

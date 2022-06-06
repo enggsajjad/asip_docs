@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v13.2
+# Build 131561 by hdbuild on Thu Jun 16 16:53:31 PDT 2011
+# Start of session at: Tue Jan 29 12:42:45 2019
+# Process ID: 6930
+# Log file: /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/planAhead_run_1/planAhead.log
+# Journal file: /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/asip02/Schreibtisch/Session8/brownie2/ISE_Framework_S8_AO/pa.fromNetlist.tcl
+exit
+stop_gui

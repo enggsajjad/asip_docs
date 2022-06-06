@@ -1,0 +1,28 @@
+/* Script for -N: mix text and data on same page; don't align data */
+OUTPUT_FORMAT("elf32-brownie32", "",
+	      "")
+OUTPUT_ARCH(brownie32)
+SEARCH_DIR("/home/asip02/Schreibtisch/Session8/brownie2/meister/browstd32AOv2.swgen/brownie32-elf/lib");
+SECTIONS
+{
+  . = 0x10000000;
+  .text :
+  {
+    CREATE_OBJECT_SYMBOLS
+    *(.text)
+    etext = .;
+  }
+  . = .;
+  .data :
+  {
+    *(.data)
+    CONSTRUCTORS
+    edata  =  .;
+  }
+  .bss :
+  {
+   *(.bss)
+   *(COMMON)
+   end = . ;
+  }
+}
