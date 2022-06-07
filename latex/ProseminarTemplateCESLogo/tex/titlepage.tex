@@ -1,0 +1,48 @@
+%% Titelseite
+%% Vorlage $Id: titelseite.tex 54 2009-12-10 12:23:58Z bless $
+
+\def\usesf{}
+\let\usesf\sffamily % diese Zeile auskommentieren für normalen TeX Font
+
+
+
+\begin{titlepage}
+\setlength{\unitlength}{1pt}
+
+\begin{picture}(0,0)(85,770)
+%\includegraphics[width=\paperwidth]{src/logos/KIT_Deckblatt}
+%added by sajjad
+\includegraphics[width=\paperwidth]{src/logos/KIT_Deckblatt_CES1}
+\end{picture}
+
+%\vspace*{-39pt}\hspace*{260pt}\parbox[]{10cm}{\usesf Institute of Computer Engineering\\ Chair of Embedded Systems}
+%added by sajjad
+\vspace*{-39pt}\hspace*{160pt}\parbox[]{10cm}{\usesf Institute of Computer Engineering\\ Chair of Embedded Systems}
+
+\thispagestyle{empty}
+
+%\begin{titlepage}
+%%\let\footnotesize\small \let\footnoterule\relax
+\begin{center}
+\hbox{}
+\vfill
+{\usesf\large
+{\huge\bfseries Machine Learning for Hardware Security}
+\vskip 0.5cm
+
+{\large\bfseries Yigit Oguz\\}
+2309297
+\vskip 1.2cm
+
+Department of Informatics\\
+
+\vskip 3cm
+
+Responsible Supervisor:  \\
+{\large\bfseries Sajjad Hussain\\}
+
+}
+\end{center}
+\vfill
+\end{titlepage}
+%% Titelseite Ende

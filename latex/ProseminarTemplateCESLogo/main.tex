@@ -1,0 +1,72 @@
+\documentclass{wissdoc}
+
+%% --------------------
+%% |     Packages     |
+%% --------------------
+
+\include{config/packages}
+
+%% --------------------
+%% |     Settings     |
+%% --------------------
+
+% Settings: Titlepage, Comments, etc.
+\include{config/settings}
+
+% Bibliography
+\addbibresource{bib/references.bib}
+\makeindex %added by sajjad
+%% --------------------------------------------------------------------------------
+%% |                           BEGINNING OF DOCUMENT                              |
+%% --------------------------------------------------------------------------------
+\begin{document}
+
+%% ----------------------
+%% |     Title Page     |
+%% ----------------------
+\frontmatter
+\pagenumbering{roman}
+
+%% ----------------------------
+%% |     Table of Content     |
+%% ----------------------------
+%\thispagestyle{empty}
+
+%% ------------------
+%% |     Content    |
+%% ------------------
+
+\graphicspath{{src/}}
+
+\mainmatter
+\pagenumbering{arabic}
+
+\include{tex/titlepage}
+\include{tex/abstract}
+\tableofcontents
+\include{tex/chapter/introduction} 
+\include{tex/chapter/background}  
+\include{tex/chapter/ml-for-hardware-security}
+\include{tex/summary} 
+
+%% ----------------
+%% |   Appendix   |
+%% ----------------
+
+\appendix
+%\include{src/appendix/anhang_a}
+%\include{src/appendix/anhang_b}
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+
+\end{document}
+%% --------------------------------------------------------------------------------
+%% |                              END OF DOCUMENT                                 |
+%% --------------------------------------------------------------------------------

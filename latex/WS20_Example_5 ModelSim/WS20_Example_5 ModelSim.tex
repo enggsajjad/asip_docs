@@ -1,0 +1,192 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{MODELSIM SIMULATION -TUTORIAL}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\item
+  \textbf{Setting up your first ASIP project directory structure}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using
+  SSH or using X2Go Client. For example, login as
+  \emph{\textbf{asip-sajjad04}} into
+  \emph{\textbf{i80labpc02.ira.uka.de}}
+\item
+  Open shell terminal from the start menu. It should be in your default
+  home directory. Go to the directory
+  ``\emph{\textbf{\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie:\$}}''
+\item
+  Set the proper path and parameters in ``env\_settings'' like dlxsim
+  path, project path and project name.
+\item
+  Go to the application directory, for example:
+  ``\emph{\textbf{\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:\$}}''
+  and type ``\emph{\textbf{make clean}}'' clean this directory it there
+  are previously generated files.
+\item
+  Generate the Compiler using ASIPmeister if you have a C application.
+\item
+  Compile the C application using ``\emph{\textbf{make sim}}''. A
+  directory ``\emph{\textbf{BUILD\_SIM}}'' is created which contains
+  different temporary files and a .dlxsim file to be simulated in dlxsim
+  (in this case it is ``\emph{\textbf{Arith.dlxsim}}''). In this
+  directory, the files ``\emph{\textbf{TestData.IM}}'' and
+  ``\emph{\textbf{TestData.DM}}''are the file used during the ModelSim
+  simulation.
+\item
+  Simulate your application in dlxsim simulator using
+  ``\emph{\textbf{make dlxsim}}'', just to verify the functionality.
+\item
+  Go to the directory
+  ``\emph{\textbf{\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie:\$}}''
+  Open the ASIPmeister project, modify the CPU if required, and generate
+  VHDL files for simulation/synthesis and files for compiler generation.
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie:\$ASIPmeister
+brownie.pdb \&
+
+\begin{quote}
+This will create a meister folder in current directory having three
+subdirectories (brownie.sim, brownie.syn, brownie.sw) and some
+architectural and description files. This will also generate the
+compiler and assembler for the CPU.
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  Go to the directory
+  ``\emph{\textbf{\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/ModelSim:\$}}''
+  Start the ModelSim using ``\emph{\textbf{vsim}}''
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/ModelSim:\$vsim
+\&
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\item
+  If ModelSim asks for ``modelsim.ini'' choose the default one like
+  ``/Software/ModelSim/ModelSim\_6.6d/modeltech/modelsim.ini''
+\item
+  Open File Menu \textgreater{} New \textgreater{} Project and enter a
+  project name and change the project location to the ModelSim directory
+  in your project directory. Confirm the dialog with the OK button.
+\item
+  Choose ``Add Existing File'' button and browse to the
+  ``meister/brownie.syn'' directory of your ASIP Meister project and
+  select all the VHDL files for synthesis.
+\item
+  Again, choose ``Add Existing File'' button and add the testbench
+  files: ``tb\_browstd32.vhd'', ``MemoryMapperTypes.vhd'',
+  ``MemoryMapper.vhd'', and ``Helper.vhd'' from the ModelSim directory
+  of your current project.
+\item
+  {[}Optional{]} Configure the CPU Frequency for which you want to
+  simulate your CPU, default is 50 MHz Open the ModelSim testbench
+  (``tb\_ browstd32.vhd''), search for CLK\_PERIOD, and change the value
+  accordingly in ``ns''.
+\item
+  Compile the project using Compile Menu \textgreater{} Compile Order
+  \textgreater{} Auto Generate. Every file should have a green mark
+  behind its name, showing that the compilation was successful.
+\item
+  Run the simulation using Simulate Menu \textgreater{} Start
+  Simulation. Open the work library, mark the entry
+  ``\emph{\textbf{cfg}}'' (that is the VHDL configuration for the
+  testbench) in the list and press OK. That will start the simulation
+  and you will get another two tabs attached to the Workspace window
+  (sim / Files).
+\item
+  To load some predefined simulation settings, choose Tools Menu
+  \textgreater{} Tcl \textgreater{} Execute Macro and select the
+  ``\emph{wave\_vhdl.do}'' file in your ModelSim directory and press OK
+  to load it. The wave-window is filled with certain signals that are
+  useful to evaluate the simulation of the program execution on the
+  processor.
+\item
+  {[}Optional{]} If you want to dump VCD file of your design for power
+  estimation, you can enter following commands in ModelSim command
+  prompt:
+\end{enumerate}
+
+VSIM \textgreater{} vsim -t 1ns work.cfg
+
+VSIM \textgreater{} vcd file test.vcd
+
+VSIM \textgreater{} vcd add -r test/dut/*
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\item
+  Press the button ``\emph{\textbf{Run all}}'' to run the simulation
+  until it aborts. At the end of a simulation the message ``Failure:
+  Simulation End'' is printed to show successful end of simulation. At
+  the simulation end, the file ``\emph{\textbf{TestData.OUT}}'' is
+  created in your ModelSim directory. It contains the content of the
+  simulated memory after the CPU finished working. Therefore, if your
+  algorithm is storing the result in the memory you can find the values
+  here.
+\end{enumerate}
+
+\end{document}

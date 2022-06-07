@@ -1,0 +1,283 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{DIRECTORY STRUCTURE -TUTORIAL}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\item
+  \textbf{Setting up your first ASIP project directory structure}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using
+  SSH or using X2Go Client. For example, login as
+  \emph{\textbf{asip-sajjad04}} into
+  \emph{\textbf{i80labpc02.ira.uka.de}}
+\item
+  Open shell terminal from the start menu. It should be in your default
+  home directory. Type ``\emph{\textbf{pwd}}''
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde:\$pwd
+
+/home/asip04
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Create a new directory for your Lab e.g.
+  ``\emph{\textbf{ASIP\_SS17''}}
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde:\$mkdir ASIP\_SS17
+
+asip04@i80labpc04:\textasciitilde:\$cd ASIP\_SS17/
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  Create a new directory for your lab session in
+  ``\emph{\textbf{ASIP\_SS17''}} e.g. ``\emph{\textbf{Session1''}}
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17:\$mkdir Session1
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17:\$cd Session1/
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  Create a directory for your ASIP project in
+  ``\emph{\textbf{Session1''}}
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1:\$mkdir
+ASIPMeisterProjects
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1:\$cd
+ASIPMeisterProjects/
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  Copy template project and rename it e.g. ``\emph{\textbf{brownie''}}
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects:\$cp
+-r /home/asip00/epp/ASIPMeisterProjects/TEMPLATE\_PROJECT ./brownie
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects:\$ls
+
+brownie
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\item
+  Set the parameters and settings of the ASIP project in
+  ``\emph{\textbf{env\_settings}}'' file.
+\item
+  For each application, create a new directory into
+  ``\emph{\textbf{Application}}'' directory e.g. for example for
+  application ``\emph{\textbf{Arith''}}
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects:\$cd
+brownie/Applications/
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$ls
+
+Bootloader TestPrint
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$mkdir
+Arith
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$cd
+Arith/
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  Copy your application .c or .s file into ``\emph{\textbf{Arith}}''
+  e.g. in this case copy \emph{\textbf{``1\_Arith.s''}} into your
+  application directory
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:\$cp
+/home/asip00/Session1/1\_Arith.s .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\item
+  Copy the Makefile from any other application to your application
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:\$cp
+../TestPrint/Makefile .
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:\$ls
+
+1\_Arith.s Makefile
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\item
+  For other application, create a new directory into
+  ``\emph{\textbf{Application}}'' directory e.g. ``\emph{\textbf{LS}}''
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$mkdir
+LS
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications:\$cd
+LS/
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\item
+  Copy your application .c or .s file into ``\emph{\textbf{LS}}'' e.g.
+  in this case copy ``\emph{\textbf{2\_LoadStore.s}}'' into your
+  application directory
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:\$cp
+/home/asip00/Session1/2\_LoadStore.s .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\item
+  Copy the Makefile from any other application to your application
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:\$cp
+../TestPrint/Makefile .
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:\$ls
+
+2\_LoadStore.s Makefile
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Creating new ASIP project in the same session}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\item
+  Create a new directory ``\emph{\textbf{brownieBGEU}}'' for new project
+  under ASIPMeisterProjects.
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde:\$cd
+ASIP\_SS17/Session1/ASIPMeisterProjects/
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17/Session1/ASIPMeisterProjects:\$cp
+-r /home/asip00/ASIPMeisterProjects/TEMPLATE\_PROJECT ./brownieBGEU
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\item
+  Follow the same steps (7-12) to create different application under
+  this project
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \textbf{Creating new Session e.g. ``\emph{Session2}''}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\item
+  Creating new directory for new session under ASIP\_SS17 directory
+\end{enumerate}
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17:\$mkdir Session2
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17:\$ls
+
+Session1 Session2
+
+asip04@i80labpc04:\textasciitilde/ASIP\_SS17:\$
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\item
+  Follow the same steps (6-14) to create different application under
+  this project
+\end{enumerate}
+
+\end{document}

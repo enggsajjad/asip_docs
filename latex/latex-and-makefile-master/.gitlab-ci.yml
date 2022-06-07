@@ -1,0 +1,9 @@
+image: blang/latex 
+
+
+build:   
+  script: 
+    - make 
+  artifacts:    
+    paths:
+      - "article.pdf"
