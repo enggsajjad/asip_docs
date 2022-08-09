@@ -1,0 +1,107 @@
+\documentclass{wissdoc}
+
+%% --------------------
+%% |     Packages     |
+%% --------------------
+
+\include{config/packages}
+
+%% --------------------
+%% |     Settings     |
+%% --------------------
+
+% Settings: Titlepage, Comments, etc.
+\include{config/settings}
+
+% Bibliography
+\addbibresource{bib/references.bib}
+\makeindex %added by sajjad
+%% --------------------
+%% |   STARTS Sajjad   |
+%% --------------------
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{verbgray}{gray}{0.9}
+\lstset{backgroundcolor=\color{verbgray},
+	basicstyle=\scriptsize,
+	frame=single,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{Customized Embedded Processors Design}
+\fancyhead[RE,RO]{Tutorial}
+\fancyfoot[LE,LO]{Sajjad Hussain CES KIT}
+\fancyfoot[RE,RO]{Version 5:2022}
+\fancyfoot[CE,CO]{\thepage}
+\fancyheadoffset[RE,LO]{0pt}%adjusting the header/footer width https://latex.org/forum/viewtopic.php?t=7036
+\fancyfootoffset[RE,LO]{0pt}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\let\cleardoublepage=\clearpage%remove the blank page after the title
+\renewcommand\thesubsection{\Alph{subsection}}%Alphabetical Sections
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection.}{3pt}{}[:]% Make from A Section to A. Section:
+
+%% --------------------
+%% |   ENDS Sajjad    |
+%% --------------------
+
+%% --------------------------------------------------------------------------------
+%% |                           BEGINNING OF DOCUMENT                              |
+%% --------------------------------------------------------------------------------
+\begin{document}
+
+%% ----------------------
+%% |     Title Page     |
+%% ----------------------
+%\frontmatter
+%\pagenumbering{roman}
+
+%% ----------------------------
+%% |     Table of Content     |
+%% ----------------------------
+%\thispagestyle{empty}
+
+%% ------------------
+%% |     Content    |
+%% ------------------
+
+\graphicspath{{src/}}
+
+\mainmatter
+\pagenumbering{arabic}
+
+\include{tex/titlepage}
+%\include{tex/abstract}
+%\tableofcontents
+%%Use different Margins for the pages after the frontmatter
+\newgeometry{left=1.27cm,right=1.27cm,top=2cm,bottom=2cm}
+\include{tex/mainbody} 
+%\include{tex/chapter/background}  
+%\include{tex/chapter/ml-for-hardware-security}
+%\include{tex/summary} 
+
+%% ----------------
+%% |   Appendix   |
+%% ----------------
+
+\appendix
+%\include{src/appendix/anhang_a}
+%\include{src/appendix/anhang_b}
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+
+
+\end{document}
+%% --------------------------------------------------------------------------------
+%% |                              END OF DOCUMENT                                 |
+%% --------------------------------------------------------------------------------

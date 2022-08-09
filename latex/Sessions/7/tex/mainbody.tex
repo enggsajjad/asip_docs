@@ -1,0 +1,164 @@
+\hypertarget{bubble-sort-power-area-estimation-and-hardware-implementation}{%
+\chapter*{Bubble Sort -- Power \& Area Estimation and Hardware Implementation}\label{bubble-sort-power-area-estimation-and-hardware-implementation}}
+
+\rightline{\textbf{{1 Week}}}
+
+\section*{Motivation and introduction}
+
+In this exercise, you will synthesize and implement the bubblesort
+application and then download it to FPGA board and see the results on
+the UART terminal or LCD. For visualizing, the output of BubbleSort and
+some additional information is printed to the URAT interface. You can
+use t\_print() for directing output to LCD or u\_print() to UART.
+Remember, you need to add respective libraries. Using these frameworks,
+the Bubble sort algorithm which will be implemented using the two CPUs
+to form two versions:
+
+\textbf{Version1:} basis CPU (\emph{browstd32.pdb})
+
+\textbf{Version2:} optimized CPU (\emph{browstd32opt.pdb}) which
+supports new instructions
+
+For every part, that starts like ``a)'', ``b)'' \ldots{} you have to
+mail the answers and asked files to \textbf{sajjad.hussain@kit.edu} and
+use the topic ``asipXX-Session6'', with XX replaced by your group
+number.
+
+\section*{Exercises}
+\begin{enumerate}
+\item \textbf{Preparing and Simulating Version 1}
+	\begin{enumerate}
+		\item
+		You have to create the software and the hardware sub directories
+		under ``\emph{Application}'' for browstd32.pdb CPU. First, create a
+		new project directory inside your \emph{ASIPMeisterProjects}
+		directory for the new CPU and name it ``\emph{browstd32''}. You can
+		use a copy from the \emph{browstd32} CPU project from the last
+		session, but do not forget to adjust the ``\emph{env\_settings''}.
+		Remember, for LCD interface you need to create two separate
+		subdirectories for the software and the hardware application in
+		``Applications'' directory.
+		\item
+		Copy the provided and ``\emph{app\_UART.c''} from
+		``/home/asip00/Sessions/Session7'' to the created LCD or UART
+		subdirectories respectively. This file directs the printing to UART,
+		you can change it to LCD by replacing u\_print() to t\_print().
+		However, UART interfacing is sufficient.
+		\item
+		Copy the C libraries from ``\emph{asip00/epp/StdLib}'' to each
+		application subdirectory. For LCD simulation in dlxsim and ModelSim,
+		use ``lib\_lcd\_dlxim.c''. For real LCD implementation in FPGA use
+		``lib\_lcd\_320.c''.
+		\item
+		Also, copy the ``\emph{Makefile}'' to both the subdirectories.
+		\item
+		Make sure that you already have generated the VHDL files and GNU
+		Tools for your CPU.
+		\item
+		Compile (``\emph{make sim}'') the application for basis CPU and
+		generates the required .dlxsim and DM/IM file for the dlxsim and
+		ModelSim respectively.
+		\item
+		Simulate the application with dlxsim using ``\emph{make dlxsim
+			DLXSIM\_PARAM=''-da0 --pf1 --ufBubbleUART.out''}''. It will start
+		the dlx simulator to simulate the compiled file generated in the
+		previous stage. Here, you have to pass some parameters to dlxsim
+		such as the LCD/UART file to print the outputs.
+		\item
+		You can restart the CPU by pressing the ``\emph{reset}'' push button
+		on the small mini board on the FPGA board, but REMEMBER, that your
+		array in data memory is already sorted after the first run, so the
+		second, third \ldots{} run will be significantly faster than the
+		first one.
+		\item
+		The BubbleSort framework is measuring the number of cycles for the
+		execution of the bubbleSort methods. This measurement is done by a
+		counter on the FPGA Board or in dlxsim/ModelSim respectively. This
+		measurement only measures the bubbleSort method, but not the
+		overhead for e.g. printing the result.
+	\end{enumerate}
+\item \textbf{Implementing the Project}
+	\begin{enumerate}
+		\item
+		Create your ISE project as discussed in the session 4. Synthesize,
+		implement and generate the bitfiles.
+		\item
+		Then from the application direcotory run ``make fpga'' and ``make
+		upload''.
+		\item
+		You can check the results on the UART. You can open HyperTerminal
+		using ``hterm \&''.
+		\begin{enumerate}[label=(\alph*),start=1]
+			\color{red}\item\normalcolor
+			If your design works correctly, find out the design statistics
+			(critical path, maximum frequency and area)
+			\color{red}\item\normalcolor
+			Compute the accurate time (in ms) required to sort the 20 numbers. Use
+			the number of executed cycles (printed on the URAT interface) and the
+			max. CPU frequency on the FPGA board, where the sorting is still
+			correct).
+			\color{red}\item\normalcolor
+			Analyse the time and find the critical path (see Chapter 6.5 of the
+			Laboratory Script)
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Power Estimation}
+	\begin{enumerate}
+		\item
+		During ModelSim simulation also generate the VCD files for mentioned
+		frequencies (first with 50MHz and then with Max. Frequency found in
+		the last session).
+		\item
+		Create Xilinx ISE project to estimate power with XPower.
+		\begin{enumerate}[label=(\alph*),start=4]
+			\color{red}\item\normalcolor
+			Determine the total and dynamic power.
+			\color{red}\item\normalcolor
+			Compute the total execution time (ms). You can use execution as the \#
+			of cycles multiplied by the clock cycle in ModelSim.
+			\color{red}\item\normalcolor
+			Compute the energy required. Fill in all these results in the table
+			below e.g. \emph{PowerReport.xlx} or \emph{PowerReport.ods}.
+			\color{red}\item\normalcolor
+			Does using any instruction minimize the required energy? A version
+			uses an application, which needs less number of clock cycles than
+			another Version; is it also power and/or energy-optimized version
+			compared to Version2?
+			\color{red}\item\normalcolor
+			Repeat a-d, but instead of taking the default of 50 MHz, use the
+			individual maximum CPU frequency on which a CPU can run (You can get
+			it from ISE\_Benchmark). This frequency has to be configured in
+			tb\_brownie32std.vhd (search for CLK\_PERIOD; e.g. 10 ns half period =
+			20 ns period = 50 MHz). XPower will automatically load this frequency
+			from the VCD file.
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Preparing, Simulating, Implementing and Power Estimation for Version2}
+	\begin{enumerate}
+		\item
+		Repeat the above exercises for the optimized version a), b), c), d), e).
+		\item
+		Show the power consumption report as Sample PowerReport shown in the following table.
+	\end{enumerate}
+\end{enumerate}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[!htb]
+	\centering
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{\textbf{Versions}}                                                           & \multicolumn{1}{c|}{\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}c@{}}Total   Power \\ {[}mW{]}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}c@{}}Dynamic   Power \\ {[}mW{]}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}c@{}}Execution   Time \\ {[}ms{]}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}c@{}}Energy  \\  {[}nJ{]}\end{tabular}} \\ \hline
+	\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}l@{}}Version1   \\ 50 MHz\end{tabular}              &                                                                                                                &                                                                                                                  &                                                                                                                   &                                                                                                           \\ \hline
+	\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}l@{}}Version2   \\ 50 MHz\end{tabular}              &                                                                                                                &                                                                                                                  &                                                                                                                   &                                                                                                           \\ \hline
+	\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}l@{}}Version1 \\ Max. Freq:   -----MHz\end{tabular} &                                                                                                                &                                                                                                                  &                                                                                                                   &                                                                                                           \\ \hline
+	\cellcolor[HTML]{F1F1F1}\begin{tabular}[c]{@{}l@{}}Version2 \\ Max. Freq: -----MHz\end{tabular}   &                                                                                                                &                                                                                                                  &                                                                                                                   &                                                                                                           \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{Next Session:} Adaptive Differential Pulse Code Modulation
+(ADPCM)
+
+\textbf{Readings:} Recall relevant information from Laboratory Script,
+ASIPmeister Tutorial and User Manual

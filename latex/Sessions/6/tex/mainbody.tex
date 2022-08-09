@@ -1,0 +1,224 @@
+\hypertarget{bubble-sort-simulation-optimisation}{%
+\chapter*{Bubble Sort -- Simulation \& Optimisation}\label{bubble-sort-simulation-optimisation}}
+
+\rightline{\textbf{{1 Week}}}
+
+\section*{Motivation and introduction}
+
+In this session, we will start applying the whole design flow to a
+\emph{BubbleSort} algorithm. You will receive the C code for
+\emph{BubbleSort} to be simulated. Afterwards you will optimize its
+performance by adding new instruction(s). In a later session, we will
+estimate what we have paid for this speedup; in terms of chip area,
+power and energy consumption, i.e. we will compare the basis processor
+with the modified/extended one. Finally, in a later session, we will
+implement both processors on the FPGA board. For every part, that starts
+like ``a)'', ``b)'' \ldots{} you have to mail the answers and asked
+files to \textbf{sajjad.hussain@kit.edu} and use the topic
+``asipXX-Session5'', with XX replaced by your group number.
+
+\section*{Exercices}
+
+\begin{enumerate}
+\item \textbf{BubbleSort Algorithm}
+	\begin{enumerate}
+		\item
+		Have a look at ``\emph{BubbleSort\_Index.c''}. Every part, which
+		contains a \emph{printf} function call, is encapsulated with a
+		\emph{``\#ifndef ASIP''} directive. The reason is, that the
+		\emph{printf} function usually is resolved to an operating system
+		call (managing the screen and other resources), but for our CPU we
+		don't have an operating system, thus we ignore the \emph{printf}
+		function for our simulations. For hardware execution in a later
+		session, we will map this call to a UART terminal or LCD. For a
+		\emph{gcc} compiled version the \emph{printf} is a helpful in
+		debugging the output.
+		\item
+		Look at the implementation of the algorithm. You will need a good
+		knowledge of the algorithm for later optimizations. Compile
+		\emph{``BubbleSort\_Index.c''} with ``\emph{gcc BubbleSort\_Index.c
+			--o BubbleSort\_Index}'', look at the printed output when executing
+		the binary and understand how the algorithm is working by going
+		through the printed output gradually.
+		\begin{enumerate}[label=(\alph*)]
+			\color{red}\item\normalcolor
+			How often the code of the inner loop is executed (not only the
+			exchange part, the whole inner loop)? Please do not only answer this
+			question, but also go through the output step by step. First, you
+			should look at the code and think about the answer and then you should
+			add a counter to the code to compute the correct result just to make
+			sure, your prediction is correct.
+		\end{enumerate}
+		\item
+		To simulate \emph{BubbleSort} with \emph{dlxsim} and \emph{ModelSim}
+		it has to be translated from C to assembly, which will be done in
+		the later exercises. To make the translation easier, the
+		``\emph{BubbleSort\_Address.c''} has been prepared. Compile
+		``\emph{BubbleSort\_Address.c''} with \emph{gcc} as discussed
+		before.
+		\item
+		First, make sure that the output of the \emph{gcc} compiled versions
+		of ``\emph{BubbleSort\_Index.c''} and
+		``\emph{BubbleSort\_Address.c''} is the same. Then have a more
+		detailed look into the address-version. The main difference between
+		both versions is the way of accessing the array. The index-version
+		uses an indexed access (e.g. array {[}j+1{]}). This usually
+		translates into a chain of assembly instructions. First, the real
+		address has to be computed and then the value can be loaded. The
+		real address is: ``starting address from array'' + ``size of one
+		array entry'' * ``index (i.e. j+1)''. In the inner loop of
+		\emph{BubbleSort} we traverse through the array linearly, so we do
+		not have to compute the real address every time from the scratch,
+		instead we can just update the last computed real address. Two other
+		changes against the index-version are, that every memory access is
+		explicitly written, like ``\emph{value\_j = *j;}'' and the number of
+		memory accesses is optimized as compared to the index-version.
+		\begin{enumerate}[label=(\alph*),start=2]
+			\color{red}\item\normalcolor
+			How many load- and how many store- instructions are executed for each
+			inner loop (distinguish between when there is exchange and no
+			exchange)? Compare the index-version against the address-version and
+			mention the two main points, why the address-version needs less memory
+			accesses.
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Preparing your project}
+	\begin{enumerate}
+		\item
+		You can use the same project as in the first session, and just
+		create a separate application subdirectory for each example. You can
+		start a fresh project as in the Session 1, but this would be time
+		consuming.
+		\item
+		For the C application, you have to create subdirectory in the
+		``\emph{Application}'' directory (e.g. ``sorting''), and copy your
+		application from ``\emph{/home/asip00/Sessions/Session6/bubble.c}''
+		to here.
+		\item
+		Copy a ``\emph{Makefile}'' file from the ``\emph{TestPrint}''
+		application subdirectory to each application subdirectory.
+		\item
+		Set proper parameters and settings in ``\emph{env\_settings}.
+		\item
+		For these exercises, we will be using pipeline forwarding (-pf1)
+		option which is the default one.
+		\item
+		Make sure that you already have VHDL files and GNU tools in your
+		project's meister directory.
+	\end{enumerate}
+\item \textbf{Compiling the application in dlxsim and ModelSim with basis processor}
+	\begin{enumerate}
+		\item
+		Now, compile ``bubble.c'' using ``make sim''.
+		\item
+		After compiling, simulate the application in \emph{dlxsim} and
+		\emph{ModelSim} and compare whether the printed results are the same
+		compared to a \emph{gcc}-compiled version. For dlxsim, you can use
+		the command ``get \_array 20d'', it should give you the sorted
+		array. For ModelSim, you can see the sorted array in the
+		TestData.OUT file.
+		\begin{enumerate}[label=(\alph*),start=3]
+			\color{red}\item\normalcolor
+			How many cycles do you need for execution in dlxsim and ModelSim?
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Bubble Sort -- Optimisation: Customizing the basis processor}
+	\begin{enumerate}
+		\item
+		Create a project directory for this session by copying the directory
+		``\emph{/home/asip00/­epp/ASIP­Meister­Projects/TEMPLATE\_PROJECT/}''
+		and renaming it (e.g. \emph{brownieOPT}).
+		\item
+		Now we start optimizing our bubblesort application for speed. There
+		might be two options for you.
+		\begin{enumerate}
+			\item
+			Create a new application sub-directory (e.g. ``sortingOptS'') and
+			copy ``sorting/BUILD\_SIM/bubble.s'' from the last exercise to
+			this directory and start optimizing the code. In the assembly
+			code, look for different possibility to define custom instructions
+			and replace that part of code with the custom instruction in
+			assemble file. If you start with assembly file, sometime it gives
+			errors for labels that starts with dot. Change it to dashes. like
+			.L6 to \_L6.
+			\item
+			Create a new application sub-directory (e.g. ``sortingOptC'') and
+			copy ``bubble.c'' to this directory and start optimizing the code.
+			You can directly look into the ``bubble\emph{.c}'' and define some
+			custom instruction to replace some part of the code with new
+			custom instruction.
+		\end{enumerate}
+		\item
+		However, before optimizing, create a simple C or assembly file to
+		test different custom instruction (e.g. OPT) into an application
+		subdirectory i.e. \emph{TestOPT}.
+		\item
+		Copy a ``\emph{Makefile}'' file from the ``\emph{TestPrint}''
+		application subdirectory to each application subdirectory.
+		\item
+		Copy the provided \emph{ASIPMeister} CPU file
+		``\emph{browstd32.pdb''} from ``/home/asip00//Sessions/Session1/''
+		into your project directory, and rename it
+		``\emph{browstd32OPT.pdb''}
+		\item
+		Set proper parameters and settings in ``\emph{env\_settings}'' as
+		discussed in Figure 2-5 in the Laboratory Script. Specially the
+		followings:
+\begin{lstlisting}
+export PROJECT_NAME=brownieOPT
+export CPU_NAME=browstd32OPT
+export ASIPMEISTER_PROJECTS_DIR=${HOME}/ASIPMeisterProjects
+export DLXSIM_DIR=/home/asip00/epp/dlxsimbr_Laboratory
+\end{lstlisting}
+	\end{enumerate}
+\item \textbf{Adding the new instruction to \emph{ASIPMeister}}
+	\begin{enumerate}
+		\def\labelenumii{\arabic{enumii}.}
+		\item
+		Now we start adding new instructions to our processor to speed up
+		the execution.
+		\item
+		In your project directory start \emph{ASIPMeister} and add the new
+		instruction to your new CPU. First, define a new instruction format
+		for your instruction if it does not match with the existing
+		instruction formats.
+		\item
+		Use the available opcode.
+		\item
+		You also have to define ``CKF Prototype'' for each new custom instruction in ASIPmeister, generate GNU tools and use inline assembly in C code.
+		\item
+		Add the custom instructions to dlxsim as well.
+		\item
+		Write a small C or assembly code to test your new instruction.
+		\item
+		Generate the hardware and software files from ASIPMeister and
+		simulate the new instruction with \emph{ModelSim}. Use the small
+		test application that you created to test your \emph{dlxsim}
+		implementation in the previous exercises for this purpose.
+		\item
+		If everything is working fine, then simulate the \emph{BubbleSort}
+		C/Assembly code that uses the new instruction in \emph{ModelSim}.
+		\item
+		Compile the optimized bubblesort application using ``\emph{make
+			sim}'' and then ``\emph{make dlxsim}''. Make sure, that the
+		resulting array is still correct.
+		\begin{enumerate}[label=(\alph*),start=4]
+			\color{red}\item\normalcolor
+			How many cycles do you need for execution?
+			\color{red}\item\normalcolor
+			What is the speedup compared to \emph{original code} (i.e. \#Cycles
+			without custom instruction / \#Cycles with custom instruction)?
+			\color{red}\item\normalcolor
+			Attach the assembly and/or C file you used to test the custom
+			instruction and to test the given application.
+			\color{red}\item\normalcolor
+			Attach the modified ASIPmeister .pdb file.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{Next Session:} Bubble Sort - \textbf{Power \&} Area
+
+\textbf{Estimation and} Hardware Implementation
+
+\textbf{Readings for the next session}: Laboratory Chapters 6 \& 7

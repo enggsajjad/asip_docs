@@ -1,0 +1,375 @@
+
+\hypertarget{adaptive-differential-pulse-code-modulation-adpcm}{%
+\chapter*{Adaptive Differential Pulse Code Modulation (ADPCM)}\label{adaptive-differential-pulse-code-modulation-adpcm}}
+
+\rightline{\textbf{{3 Week}}}
+
+\section*{Motivation and introduction}
+
+This is the final session. You have \textbf{{Three}} weeks to complete
+this session, but you will need these weeks! In this exercise, you will
+work with an IoT application for which you have to create an optimized
+CPU. There are different possible ways to modify the CPU, depending on
+your goals and the \textbf{{area/power}} that you want to spend for the
+custom instructions. After the CPU has been modified, you will benchmark
+it to get an idea, what you have to pay for your optimizations. In the
+last semester week, you will present your results to other groups. The
+presentations will take place in the Meeting Room 316.2, the exact date
+and time will be decided mutually. For every part, that starts like
+``a)'', ``b)'' \ldots{} you have to mail the answers and asked files
+with a CC to your group members to \textbf{sajjad.hussain@kit.edu} and
+use the topic ``asipXX-Session8'', with XX replaced by your group
+number.
+
+\section*{Exercises}
+
+\begin{enumerate}
+\item \textbf{The Application:}
+	\begin{enumerate}
+		\item
+		The application is the ADPCM audio decoder.
+		\item
+		The term Pulse-Code Modulation (PCM) denotes uncompressed audio
+		samples and Adaptive Differential Pulse-Code Modulation (ADPCM) use
+		an adaptive prediction for the next audio sample with a lossy
+		quantization (i.e. the audio signal will not be exactly the same
+		after encoding and decoding).
+		\item
+		You can find the source code for ADPCM decoder with some ADPCM
+		encoded audio data in /home/asip00/Sessions/Session8. When you run
+		the ADPCM decoder, you can recover the original audio samples
+		(approximately).
+		\item
+		Two different versions of the encoded audio data are provided,
+		differing in the size of input data. The MINI version is meant for
+		the initial tests, i.e. use it to test whether your application
+		compiles and whether dlxsim and ModelSim can simulate it. However,
+		the MINI version is too short to hear anything meaningful when
+		playing it on the FPGA prototype board. The BRAM version is the
+		biggest possible version that fits into the FPGA-internal memory
+		(called Block RAM). While testing your application on FPGA you have
+		to use this BRAM version. For dlxsim/ModelSim simulation comment the
+		while(1) loop, while for FPGA implementation use while(1) loop
+		without any print statement inside it.
+		\item
+		In our application, the uncompressed audio data has 16 Bits per
+		sample. The ADPCM encoded audio data has 4 Bits per sample; two
+		samples are stored together in one Byte.
+		\item
+		The provided encoded audio data is sampled with a certain frequency
+		(i.e. samples per second = sample rate); in our case 96000 samples
+		per second. ADPCM does not need this information; it simply looks at
+		one sample after the other.
+		\item
+		You can change the CPU frequency by using the knob existed on the
+		small extra PCB which is connected to the FPGA board. Here, you can
+		find a table describing knop position and corresponding frequencies.
+		\item
+		Changing the frequency, you can figure out what is the slowest
+		possible frequency that makes the CPU decode correctly the audio
+		samples (i.e. the sound still hearable enough without corruption).
+	\end{enumerate}
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Knob value} & \textbf{Frequency (MHz)} \\ \hline
+		0                   & 100                      \\ \hline
+		1                   & 80                       \\ \hline
+		2                   & 66                       \\ \hline
+		3                   & 50                       \\ \hline
+		4                   & 40                       \\ \hline
+		5                   & 25                       \\ \hline
+		Else                & 100                      \\ \hline
+	\end{tabular}
+\caption{Frequency Changing}
+\end{table}
+\item \textbf{Your Tasks}
+
+\color{blue}\textbf{You have to perform the following tasks, the details for which are given
+in the following exercises.}\normalcolor
+\begin{enumerate}
+	\def\labelenumi{\arabic{enumi}.}
+	\item
+	To make your optimization comparable with other groups start with the
+	browstd32 CPU provided in Session 1, and test ADPCM application. {Do
+		not take any CPU that you already have modified}).
+	\item
+	Compile the MINI version of the application; simulate it with
+	dlxsim/ModelSim.
+	\item
+	Then compile the BRAM version and run it on the FPGA prototype.
+	\item
+	Which frequency do you need until the decoding is fast enough? You can
+	hear the difference when gradually increasing the frequency. When
+	there is no difference from one frequency to the other, then the
+	slower one was fast enough.
+	\item
+	Improve/Extend the CPU for speed, power or area. You have to create
+	two different versions based on your improvements. You should have at
+	least two extensions (power, performance or area).
+	\item
+	Test the improved CPU version on dlxsim/ModelSim and on FPGA
+	\item
+	Benchmark the basis and improved CPUs for area, frequency, power,
+	execution time etc.
+	\item
+	Prepare slides that explain your modifications, improvements and
+	results to compete with other groups.
+	\item
+	Typically, we will not simulate in dlxsim but mainly in ModelSim. For
+	the extended CPUs you have to generate new compiler as we did in the
+	previous sessions.
+\end{enumerate}
+\item \textbf{Simulating the Application}
+	\begin{enumerate}
+		\def\labelenumii{\arabic{enumii}.}
+		\item
+		Prepare your new project directory and create a subdirectory in your
+		``\emph{Applications}'' directory and copy
+		``\emph{/home/asip00/Sessions/Session8/adpcm.c}'' to this
+		subdirectory. Also, copy the required ``\emph{Makefile}''.
+		\item
+		To compile the application, audio data is needed for decoding;
+		therefore, you have to copy the audio data that shall be used for
+		decoding. Two different-sized versions of the same audio stream are
+		provided in ``\emph{/home/asip00/Sessions/Session8/}''. To copy the
+		required audio data \emph{adpcmDataStereo\_MINI.h or
+			adpcmDataStereo\_BRAM.h} into subdirectory as \emph{adpcmData.h}.
+		The compilation will take some time due to the large audio data. For
+		short tests, e.g. to test whether the inline assembly code compiles
+		and assembles or whether ModelSim simulation gives the correct
+		output, use the ``\emph{adpcmDataStereo\_MINI.h}'' version of the
+		file.
+		\item
+		Copy dlxsim simulator to your home directory to implement new custom
+		instruction here. Set ``\emph{env\_settings}'' accordingly. Usually
+		it is sufficient to simulate the application with ModelSim, but you
+		can also simulate it with dlxsim.
+		\item
+		First you have to compile the application using gcc compiler to
+		compare with the later results from dlxsim and ModelSim, forward the
+		gcc printed output to a file, e.g. ``\emph{a.out \textgreater{}
+			output\_gcc.txt}''.
+		\item
+		Copy the required libraries from \emph{``/home/asip00/epp/StdLib}''
+		to the application subdirectory and compile ADPCM application using
+		``make sim''.
+		\item
+		After compiling, simulate the application in \emph{dlxsim} and
+		\emph{ModelSim} and compare whether the printed results are the same
+		compared to a \emph{gcc}-compiled version. The \emph{gcc} version
+		will print the arrays on the screen and \emph{dlxsim} and
+		\emph{ModelSim} will print them to a \emph{virtual} LCD. For
+		\emph{dlxsim} you can forward the LCD output to a file, using the
+		``-lf'' parameter or forward the audio channel data to a file using
+		``\emph{-af}'' parameter. \emph{ModelSim} automatically writes LCD
+		output to the file `lcd.out' and audio channel data to ``audio.out''
+		The application can write the decoded audio data to the audio output
+		(to hear it) or it can write the data to the LCD/UART (to see it).
+		You can define this behavior with the ``\emph{\#define
+			PRINT\_ARRAY}'' switch, when set to 1 the decoded hexadecimal data
+		is print in ModelSim generated ``\emph{lcd.out}'' and in a file
+		generated with --lf option in dlxsim. When ``\emph{PRINT\_ARRAY}''
+		is set to 0, decode data for left/right channel is saved in ModelSim
+		generated audio.out and in a file generate with ``\emph{--af}''
+		option in dlxsim. ModelSim will create an `audio.out' file and
+		dlxsim will write the data to screen (unless you use the
+		``\emph{-af\{filename\}}'' parameter then it will write it to file).
+		\item
+		Save the printed results from the ModelSim simulation of the
+		original CPU. Then you can compare them with the printed results
+		from your modified CPU; they have to be identical!
+	\end{enumerate}
+\item \textbf{Running the Application on FPGA}
+	\begin{enumerate}
+		\def\labelenumii{\arabic{enumii}.}
+		\item
+		To test whether the decoder is working correct with the base CPU and
+		later with your modified CPU, you have to run the application on the
+		FPGA prototype (test it with ModelSim first).
+		\item
+		We have a simple digital- analog converter (DAC) periphery. This DAC
+		is memory mapped attached to the CPU, i.e. the applications `saves'
+		the decoded audio values to a certain address. The methods
+		``\emph{writeToAudioOutR(int data)}'' and
+		``\emph{writeToAudioOutL(int data)}'' are provided in the
+		\emph{lib\_audio} library.
+		\item
+		The hardware will automatically send the audio samples with a
+		certain sample rate to the audio out pin. The sample rate of the
+		hardware has to match the sample rate of the audio data; otherwise,
+		the audio will play too fast or too slow. The sample rate of the
+		hardware can be configured in the file ``\emph{dlx\_Toplevel.vhd}''
+		i.e. ``\emph{KSAMPLES\_PER\_SECOND}'' should be set to 96). This is
+		the correct sample rate for the provided audio data.
+		\item
+		Whenever you write audio data to the hardware audio out it will be
+		buffered in a FIFO. The data of this FIFO is automatically read with
+		the (above-mentioned) sample rate. You may write to this FIFO as
+		fast as you can compute the data. However, if the FIFO is full, then
+		the store instruction ``sw'' will stall until some space becomes
+		free.
+		\begin{enumerate}
+			\item
+			Therefore, if your application executes faster than this FIFO is
+			read, then the FIFO will slow down your execution. This gives you
+			the possibility to slow down the clock to save energy, or to run
+			other tasks in the case of a multi-tasking environment.
+			\item
+			If your application runs too slow, then the FIFO will become
+			empty, resulting in errors in the audio stream. Try it!
+			\item
+			These effects do not appear in \emph{dlxsim} or \emph{ModelSim}
+			simulation, as they do not model/simulate the FIFO, but just
+			perform a simple ``\emph{sw}'' operation.
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Extending the Basis CPU}
+	\begin{enumerate}
+		\item
+		You may add new custom instructions to speed up frequent
+		computations in adpcm.c. If your custom instruction delays to clock
+		too much, then you can change it into a multi-cycle instruction
+		(i.e. an instruction that is allowed to stay in EXE stage for
+		multiple cycles, similar to ``mult''). The details about multi-cycle
+		FHM are given in Chapter 4.4 of the Laboratory Script.
+		\item
+		You may change parameters for existing hardware blocks. One typical
+		example is the number of read/write ports of the register file,
+		depending on the requirements of your custom instructions.
+		\item
+		It is complicated (but possible) to change the number of registers
+		in the register file. To do this, all instruction formats have to be
+		modified. If you for example, only use 16 registers, then you only
+		need 4 bits in the 32-bit instruction to denote which register you
+		want to access. Therefore, you have to adapt the instruction formats
+		such that only 4 bits are used to address the register (simplest way
+		is to make one of the bits a constant `0' in the instruction
+		format). Additionally, you have to modify the assembly code (or
+		directly the compiler, but changing the assembly code seems simpler)
+		to make sure that only the lower 16 registers are used. Creating a
+		compiler with 16 register is still possible, but needs some
+		debugging.
+		\item
+		{\textbf{You have to create, test, and benchmark TWO}
+			\textbf{different} \textbf{CPUs with different optimizations}}. For
+		example, you might create one CPU that is optimized for performance
+		considering the cycles in ModelSim or the CPU that is optimized for
+		the power/energy due to a reduced clock frequency that is possible
+		due to a faster computation or the CPU that is optimized for area,
+		e.g. by removing not required instructions/hardware blocks etc.
+		\begin{enumerate}[label=(\alph*),start=1]
+			\color{red}\item\normalcolor
+			Attach to mail your both ASIPMeister CPU optimized for
+			area/performance/power named like ``\emph{browstd32Area.pdb}'',
+			``\emph{browstd32Power.pdb}'' or ``\emph{browstd32Speed.pdb}'' etc.
+			\color{red}\item\normalcolor
+			Attach to mail if you have defined new hardware resources (.fhm
+			files) in ASIPMeister.
+			\color{red}\item\normalcolor
+			Attach with the mail your adpcm.c, which you modified with your
+			custom instructions, for the two CPU optimizations.
+			\color{red}\item\normalcolor
+			Attach the test application files that you created to test new
+			instructions.
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Benchmarking the CPUs}
+	\begin{enumerate}
+		\item
+		Make benchmarks for the old (\emph{browstd32}) and the two
+			modified CPUs and compare them with each other. For the benchmarking
+			you have to take care of the following points:
+		\begin{enumerate}
+			\item
+			Make sure, that you do all benchmarks very accurate to
+				make them comparable!
+			\item
+			Always use MINI version of the application
+			\item
+			Always compile with ``-O3'' to achieve the best compiler
+				output. Note: For debugging purpose ``-O0'' (default) is
+				recommended.
+			\item
+			Always using ISE\_Benchmark framework for the area, power
+				and critical path analysis
+			\item
+			Always take execution time or number of cycles from
+				ModelSim
+			\item
+			For execution time, power, and energy use the following
+				three CPU frequencies:
+			\begin{enumerate}
+				\item
+				50 MHz; to make it comparable among the groups
+				\item
+				The slowest frequency that is sufficient to execute the
+					application fast enough; to see the lowest power consumption. To
+					calculate the slowest still fast enough frequency you have to
+					consider the number of cycles that your application requires to
+					execute the decoder and the time-budget that you have for
+					decoding. The time-budget depends on the number of audio samples
+					and the sample-rate. The sample-rate is configured to 96000
+					Samples per second. The number of samples depends to the number
+					of entries in your audio-data array. Remember, that -- in the
+					compressed array -- each sample just requires 4 Bit.
+				\item
+				The fastest frequency that your CPU supports (given by
+					ISE\_Benchmark framework); to see the peak performance
+			\end{enumerate}
+			\item
+			You have to configure the frequency in the ModelSim
+				testbench for power estimation. Remember that you have to
+				configure the half clock period.
+		\end{enumerate}
+		\item
+		You have to benchmark and compare the following points:
+		\begin{enumerate}
+			\item
+			CPU Area
+			\item
+			Maximal CPU frequency or Critical Path
+			\item
+			Number of Cycles or Execution Time
+			\item
+			Dynamic Power Consumption
+			\item
+			Energy Consumption
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Presenting the Results}
+	\begin{enumerate}
+		\item
+		In the last week of the semester, you have to present your
+		results to the other groups. Therefore, every group has to prepare
+		slides to:
+		\item
+		Explain the two different CPUs that you have created to
+			optimize ADPCM application.
+		\item
+		Present the problems that you faced while implementing the
+			two new CPUs. This is the interesting part! Maybe also talk about
+			some implementations that you thought about but which you did not
+			realize.
+		\item
+		Discuss your benchmark results; for every point you should
+			have one slide on which the results are shown in a graph (bar graph,
+			lines \ldots).
+		\item
+		Print proper units your axes e.g. ``Execution time
+			{[}s{]}'', ``Execution time {[}cycles{]}'', ``Power consumption
+			{[}mW{]}'', \ldots).
+		\item
+		For every measurement point, print the value of this
+		measurement result to make comparisons easier.
+		\begin{enumerate}[label=(\alph*),start=5]
+			\color{red}\item\normalcolor
+			You have to mail the slides before the presentation. Name the slides
+			like ``asipXX\_presentation.ppt'' (or ``.odp'' or ``.pdf'').
+			\color{red}\item\normalcolor
+			You have to explain which benchmarks you used while customizing the
+			processor and compare in the presentation.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}

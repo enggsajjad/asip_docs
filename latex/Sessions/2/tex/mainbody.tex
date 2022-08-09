@@ -1,0 +1,213 @@
+\hypertarget{assembly-programs}{%
+\chapter*{Assembly Programs}\label{assembly-programs}}
+
+\rightline{\textbf{{1 Week}}}
+
+\section*{Motivation and Introduction}
+
+The main goal of this session is to get used to assembly programs. Every
+example shows a basic operation. Examine the code, simulate it with
+\emph{dlxsim} and answer the corresponding questions. The assembly code
+is available in the directory
+``\emph{/home/asip00/Sessions/Session2/''}. \emph{Dlxsim} is available
+in the directory
+``\emph{asip00/}\emph{epp/dlxsimbr\_}\emph{Laboratory/'' (default)}. You
+can copy \emph{dlxsim} to your directory or you can start it from the
+default directory. For every exercise, the part that starts like ``a)'',
+``b)'' \ldots{} you have to write an answer. This answer should mainly
+prove that you have understood the problem, so you can make your answers
+short, but they still have to answer everything, that was asked. Mail
+your answer to \textbf{sajjad.hussain@kit.edu} and use the topic
+``asipXX-Session1'', with XX replaced by your group number.
+
+\section*{Exercises}
+
+The following exercise correspond to the given assembly files in the
+``\emph{/home/asip00/Sessions/Session1}'' directory.
+
+\begin{enumerate}[start=0]
+\item \textbf{Preparing your project}
+	\begin{enumerate}
+		\item
+		You can use the same project as in the last session, and just create
+		a separate application subdirectory for each assembly example. You
+		can start a fresh project as in the Session 1, but this would be
+		time consuming.
+		\item
+		For each application (C or Assembly), you have to create
+		subdirectories in the ``\emph{Application}'' directory.
+		\item
+		Copy a ``\emph{Makefile}'' file from the ``\emph{TestPrint}''
+		subdirectory to each application subdirectory.
+		\item
+		Set proper parameters and settings in ``\emph{env\_settings}.
+		\item
+		For these exercises, we will run basic assembly programs in dlxsim
+		and see the effect of pipeline forwarding (-pf1) or no forwarding
+		(-pf0), like
+	\end{enumerate}
+\begin{lstlisting}
+	make dlxsim DLXSIM_PARAM="-da0 -pf0"
+\end{lstlisting}
+\item \textbf{Basic Assembly Instructions}
+	\begin{enumerate}
+	\item Understand the functionality of every instruction and understand the
+	values of every target register after the program run has completed (see
+	the dlxsim chapter for reading register values in dlxsim simulation).
+	Check the number of cycles needed to execute all instructions.
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor What is the reason for this high number of cycles? Which instruction
+	causes that behaviour and why is it doing so?
+	\color{red}\item\normalcolor What is the code/data address space? What is starting and ending
+	address of code/data section?
+	\end{enumerate}
+	\end{enumerate}
+\item \textbf{Memory Access}
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor
+	Explain the goal of the instruction combination \emph{LSOI /ADDI}.
+	What is generally (so: not only for this specific example) the
+	register value after \emph{ADDI}, what is it after the additional
+	\emph{LSOI}?
+	\color{red}\item\normalcolor
+	Why is it in general not possible to omit the \emph{LSOI} instruction,
+	although it would be possible in this special example?
+	\color{red}\item\normalcolor
+	Read about ``forwarding'' and ``load delay slot'' in brownie32
+	datasheet. Disable NOP after the load instruction, and try executing
+	with --pf0 and --pf1 both.
+	\end{enumerate}
+\item \textbf{Branches}
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor
+	Which high-level control structure (e.g. `call subroutine' \ldots) is
+	implemented in this example code?
+	\color{red}\item\normalcolor
+	What is computed with this example? R24 = \emph{function} (R21, R22);
+	\color{red}\item\normalcolor
+	Look at the \emph{NOP} instructions and explain why they are placed
+	there.
+	\end{enumerate}
+\item \textbf{Loops}
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor 
+	What is computed with this example? R23 = \emph{function} (R21, R22).
+	Debug the application step-by-step with the capabilities of dlxsim.
+	\color{red}\item\normalcolor
+	The approach to compute the function in the way this example is doing
+	it has two specific names. Do you know those names? (One is founded by
+	the main operations, while the other is founded historically. You
+	either know the names or you don't. If you don't know both names, you
+	may guess)
+	\color{red}\item\normalcolor
+	In general, how often is the loop maximally executed? How the input
+	data has to look like to get this maximal number of iterations?
+	\color{red}\item\normalcolor
+	Enable and disable the first NOP, and try executing with --pf0 and
+	--pf1 both.
+	\end{enumerate}
+\item \textbf{A High Level Structure}
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor
+	Which high-level control structure do you recognize? Explain the
+	purpose of the instruction-block between ``\emph{ADDI R23, R0,
+		\$(2)}'' and ``\emph{JPR R24}''.
+	\color{red}\item\normalcolor
+	Why do you have to shift by value 3? Explain it with a close view to
+	the body of the control structure and pay attention to the addressing
+	mode of the DLX processor.
+	\color{red}\item\normalcolor
+	What are the general differences between branch and jump instructions
+	in the DLX instruction set (also have a look at the different
+	instruction formats to find a part of the answer)?
+	\end{enumerate}
+\item \textbf{ASM Directive in C}
+	\begin{enumerate}
+	\item You can use assemble instruction directly in c as follows {[}1,2{]}:
+	\begin{lstlisting}
+int @\aftergroup\redcolor@res@\aftergroup\blackcolor@=0;
+int @\aftergroup\bluecolor@in1@\aftergroup\blackcolor@=20;
+int @\aftergroup\bluecolor@in2@\aftergroup\blackcolor@=30;
+int main() {
+	__asm__ volatile (
+	"add 	%[@\aftergroup\greencolor@out@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@]\n"
+	: [@\aftergroup\greencolor@out@\aftergroup\blackcolor@] "=&r" (@\aftergroup\redcolor@res@\aftergroup\blackcolor@)
+	: [@\aftergroup\greencolor@op1@\aftergroup\blackcolor@] "r" (@\aftergroup\bluecolor@in1@\aftergroup\blackcolor@),[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@] "r" (@\aftergroup\bluecolor@in2@\aftergroup\blackcolor@)
+	);
+	return 0;
+}
+	\end{lstlisting}
+	\item
+	In any asm block, assembly instructions appear first, followed by the
+	inputs and outputs, which are separated by a colon. The assembly
+	instructions can consist of one or more quoted strings. The first
+	colon separates the output operands; the second colon separates the
+	input operands. If there are clobbered registers, they are inserted
+	after the third colon. If there are no clobbered inputs for the asm
+	block, the third colon can be omitted, as Listing 2 shows.
+	\begin{lstlisting}
+int A[10] = {45,23,0,0,0,0,0,0,0,0};
+int main() {
+	__asm__volatile (
+	"add 	%[@\aftergroup\greencolor@out@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@]	\n"
+	: [@\aftergroup\greencolor@out@\aftergroup\blackcolor@] "=&r" (A[2])
+	: [@\aftergroup\greencolor@op1@\aftergroup\blackcolor@] "r" (A[0]),	[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@] "r" (A[1])
+	);
+	return 0;
+}
+	\end{lstlisting}
+	\item There is no output operand for the sw instruction, hence the outputs section of the asm is empty. None of the registers is modified, so they are all input operands, and the target address is passed in with
+	the input operands. However, something is modified: the addressed
+	memory location.
+	\begin{lstlisting}
+int @\aftergroup\redcolor@res@\aftergroup\blackcolor@ [] = {0,0,0,0,0,0,0,0};
+int @\aftergroup\bluecolor@a@\aftergroup\blackcolor@=45;
+int main() {
+	
+	__asm__ volatile  ( 
+	" sw    %@\aftergroup\greencolor@1@\aftergroup\blackcolor@(%@\aftergroup\greencolor@2@\aftergroup\blackcolor@),	%@\aftergroup\greencolor@0@\aftergroup\blackcolor@        \n"
+	:
+	: "r"(@\aftergroup\bluecolor@a@\aftergroup\blackcolor@), "i"(sizeof(int)),"r"(&@\aftergroup\redcolor@res@\aftergroup\blackcolor@)
+	);
+	
+	return 0;
+}
+	\end{lstlisting}
+	\item
+	Branching can be tricky with inline asm. Using labels, the branch-to
+	address can be designated with a unique identifier that can be used as
+	a target branch address.
+	\begin{lstlisting}
+int @\aftergroup\redcolor@x, y, z@\aftergroup\blackcolor@;
+int @\aftergroup\bluecolor@a=45, b=23, c=1@\aftergroup\blackcolor@;
+int main() {
+__asm__ volatile ( 
+"  		addi 	%[@\aftergroup\greencolor@out1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@]                    \n"     
+" 	 	brnz     	%[@\aftergroup\greencolor@op3@\aftergroup\blackcolor@],	here                          	\n"         
+"  there: 	add 	%[@\aftergroup\greencolor@out2@\aftergroup\blackcolor@], %[@\aftergroup\greencolor@op1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@]                    \n"       
+"  here:  	mul 	%[@\aftergroup\greencolor@out3@\aftergroup\blackcolor@], %[@\aftergroup\greencolor@op1@\aftergroup\blackcolor@], 	%[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@]                   	\n"         
+: [@\aftergroup\greencolor@out1@\aftergroup\blackcolor@] "=&r" (@\aftergroup\redcolor@x@\aftergroup\blackcolor@),	[@\aftergroup\greencolor@out2@\aftergroup\blackcolor@] "=&r" (@\aftergroup\redcolor@y@\aftergroup\blackcolor@), 	[@\aftergroup\greencolor@out3@\aftergroup\blackcolor@] "=&r" (@\aftergroup\redcolor@z@\aftergroup\blackcolor@)                                    
+: [@\aftergroup\greencolor@op1@\aftergroup\blackcolor@] "r" (@\aftergroup\bluecolor@a@\aftergroup\blackcolor@),	[@\aftergroup\greencolor@op2@\aftergroup\blackcolor@] "r" (@\aftergroup\bluecolor@b@\aftergroup\blackcolor@) ,	[@\aftergroup\greencolor@op3@\aftergroup\blackcolor@] "r" (@\aftergroup\bluecolor@c@\aftergroup\blackcolor@)
+:  "r0" );
+	return 0;
+}
+	\end{lstlisting}
+	\item See ``A guide to inline assembly for C and C++'' for further details.
+	\begin{enumerate}[label=(\alph*)]
+	\color{red}\item\normalcolor
+	Write a C program using assembly instructions to load two consecutive
+	values from an array and store their addition or subtraction at the
+	fourth location of an array depending on the third value of array i.e.
+	0 means addition and 1 means subtraction.
+	\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\textbf{Next Session:} ModelSim Simulation
+
+\textbf{Readings for the next session}: Chapters 2.3, 4 \& 5
+
+\textbf{{[}1{]}.
+	\url{https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html}}
+
+\textbf{{[}2{]}.\url{https://dmalcolm.fedorapeople.org/gcc/2015-08-31/rst-experiment/how-to-use-inline-assembly-language-in-c-code.html}}

@@ -1,0 +1,243 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{DLX-Package}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{http://www.ra.informatik.uni-stuttgart.de/~rainer/Lehre/ROTI01/DLX/}}
+    \field{title}{A composition of the used programs DLXsim, DLXview, DLXgui
+  and DLXcc:}
+  \endentry
+
+  \entry{Kalenteridis04}{book}{}
+    \name{author}{1}{}{%
+      {{hash=eaK}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={al.},
+         familyi={a\bibinitperiod},
+         given={Kalenteridis},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Microprocessors}%
+      {Mi-crosystems}%
+    }
+    \strng{namehash}{aKe1}
+    \strng{fullhash}{aKe1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{“A complete platform and toolset for system implementa-tion
+  on fine-grained reconfigurable hardware}
+    \field{year}{2004}
+  \endentry
+
+  \entry{ASIPMeister}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{howpublished}{\url{http://www.asip-solutions.com/}}
+    \field{title}{ASIP Meister Homepage (note: this is the new homepage from
+  the founded company; the old academic homepage no longer exists):}
+  \endentry
+
+  \entry{RM}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+  \field{howpublished}{\url{/home/asip00/epp/Documents/BrownieSTD32_Spec_en.pdf}}
+    \field{title}{Data Sheets for Brownie STD 32}
+  \endentry
+
+  \entry{eDIP}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{howpublished}{\url{http://www.lcd-module.de/deu/dip/edip.htm}}
+    \field{title}{Data Sheets for the eDIP LCDs}
+  \endentry
+
+  \entry{XDS060}{manual}{}
+    \list{organization}{1}{%
+      {Xilinx Corp.}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{“DS060: Spartan and Spartan-XL Families Field Programmable
+  Gate Arrays}
+    \verb{url}
+    \verb http://www.xilinx.com/support/documentation/data_sheets/ds060.pdf
+    \endverb
+  \endentry
+
+  \entry{DLXsim}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{howpublished}{\url{http://heather.cs.ucdavis.edu/~matloff/dlx.html}}
+    \field{title}{Handbook for DLXsim:}
+  \endentry
+
+  \entry{Henkel03}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=HJ}{%
+         family={Henkel},
+         familyi={H\bibinitperiod},
+         given={Joerg},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{HJ1}
+    \strng{fullhash}{HJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{IEEE Computer Volume 36, Issue 9}
+    \field{pages}{119\bibrangedash 121}
+    \field{title}{Closing the SoC Design Gap}
+    \field{year}{September 2003}
+  \endentry
+
+  \entry{Henkel06}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=HJ}{%
+         family={Henkel},
+         familyi={H\bibinitperiod},
+         given={Joerg},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {University of Karlsruhe, WS06/07}%
+    }
+    \strng{namehash}{HJ1}
+    \strng{fullhash}{HJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{howpublished}{\url{http://ces.univ-karlsruhe.de/}}
+    \field{title}{Design and Architectures for Embedded Systems (ESII)}
+  \endentry
+
+  \entry{CoSy}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{howpublished}{\url{www.ace.nl}}
+    \field{title}{Homepage from ACE, the developers of the CoSy compiler:}
+  \endentry
+
+  \entry{CES}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{howpublished}{\url{http://ces.univ-karlsruhe.de/}}
+    \field{title}{Homepage of the Chair for Embedded Systems at the University
+  of Karls-ruhe}
+  \endentry
+
+  \entry{Hennessy96}{book}{}
+    \name{author}{1}{}{%
+      {{hash=JLHDAP}{%
+         family={John L.\bibnamedelima Hennessy},
+         familyi={J\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+         given={David A\bibnamedelima Patterson},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann Publishers, Inc}%
+    }
+    \strng{namehash}{JLHDAP1}
+    \strng{fullhash}{JLHDAP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Computer Architecture – A Quantita-tive Approach}
+    \field{year}{2nd edition 1996}
+  \endentry
+
+  \entry{Sailer96}{book}{}
+    \name{author}{1}{}{%
+      {{hash=PMSDRK}{%
+         family={Philip M.\bibnamedelima Sailer},
+         familyi={P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+         given={David R.\bibnamedelima Kaeli},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann Publishers, Inc}%
+    }
+    \strng{namehash}{PMSDRK1}
+    \strng{fullhash}{PMSDRK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{The DLX Instruction Set Architecture Handbook}
+    \field{year}{1996}
+  \endentry
+
+  \entry{FSM}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{howpublished}{\url{www.gaisler.com/doc/vhdl2proc.pdf}}
+    \field{title}{Tutorial for VHDL Final State Machines with synchronous and
+  asynchronous process:}
+  \endentry
+
+  \entry{XUG002}{manual}{}
+    \list{organization}{1}{%
+      {Xilinx Corp.}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{title}{UG002: Virtex-II Platform FPGA User Guide}
+    \verb{url}
+    \verb http://www.xilinx.com/support/documentation/user_guides/ug002.pdf
+    \endverb
+  \endentry
+
+  \entry{HWAFX}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{howpublished}{\url{http://www.xilinx.com/univ/xupv5-lx110t.htm/}}
+    \field{title}{Virtex-II FF1152 Prototype Board:}
+  \endentry
+\enddatalist
+\endinput

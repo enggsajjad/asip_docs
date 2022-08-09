@@ -1,0 +1,61 @@
+%% Titelseite
+%% Vorlage $Id: titelseite.tex 54 2009-12-10 12:23:58Z bless $
+
+\def\usesf{}
+\let\usesf\sffamily % diese Zeile auskommentieren für normalen TeX Font
+
+
+
+\begin{titlepage}
+\setlength{\unitlength}{1pt}
+
+\begin{picture}(0,0)(85,770)
+%\includegraphics[width=\paperwidth]{src/logos/KIT_Deckblatt}
+%added by sajjad
+\includegraphics[width=\paperwidth]{src/logos/KIT_Deckblatt_CES1}
+\end{picture}
+
+%\vspace*{-39pt}\hspace*{260pt}\parbox[]{10cm}{\usesf Institute of Computer Engineering\\ Chair of Embedded Systems}
+%added by sajjad
+\vspace*{-39pt}\hspace*{160pt}\parbox[]{10cm}{\usesf KIT-Fakultät für Informatik \\ Institut für Technische Informatik}
+
+\thispagestyle{empty}
+
+%\begin{titlepage}
+%%\let\footnotesize\small \let\footnoterule\relax
+\begin{center}
+\hbox{}
+\vfill
+
+{\usesf\large
+{\huge\bfseries Tutorial - Xilinx ISE Synthesis \& Implementation}
+\vskip 2.5cm
+
+{\LARGE\bfseries Customized Embedded Processor Design}
+\vskip 0.25cm
+
+{\large\bfseries Application Specific Instruction-Set Processors- ASIP\\}
+Lab (Prakitikum)
+\vskip 1.5cm
+
+Responsible/Author:  \\
+{\large\bfseries MSc. Sajjad Hussain\\}
+
+}
+\end{center}
+\vskip 3cm
+
+\textbf{Supervisors:}  \\
+{MSc. Sajjad Hussain,  Dr.-Ing. Lars Bauer, Prof. Dr.-Ing. Jörg Henkel\\}
+
+\vskip 2cm
+Chair of Embedded Systems,\\
+Building 07.21, Haid-und-Neu-Str. 7, \\
+76131 Karlsruhe, Germany. \\
+
+\vskip 1cm
+\rightline\today
+
+\vfill
+\end{titlepage}
+%% Titelseite Ende

@@ -1,0 +1,306 @@
+\hypertarget{synthesis-and-hardware-implementation}{%
+\chapter*{Synthesis and Hardware Implementation}\label{synthesis-and-hardware-implementation}}
+
+\rightline{\textbf{{1 Week}}}
+
+\section*{Motivation and introduction}
+
+In this session we synthesis our basis CPU with Xilinx ISE and execute a
+test application on real hardware. The synthesis reports tell us how
+much area and power is consumed by our CPU and what is the critical path
+of our design. In this session, we will compile a C-code application
+direct its output the LCD and UART with the help of some predefined
+libraries. This session also introduces about different peripheral where
+we forward our text/data, and how different libraries are used for
+different peripherals. For every part, that starts like ``a)'', ``b)''
+\ldots{} you have to mail the answers and asked files/tables to
+\textbf{sajjad.hussain@kit.edu} and use the topic ``asipXX-Session3'',
+with XX replaced by your group number.
+
+\section*{Exercises}
+
+\begin{enumerate}
+\item \textbf{Preparing your project}
+	\begin{enumerate}
+		\item
+		You can use the same project as in the last session, and just create
+		a separate application subdirectory the application. You can start a
+		fresh project as in the Session 1, but this would be time consuming.
+		\item
+		For the C application, you have to create two subdirectories in the
+		``\emph{Application}'' directory e.g. ``\emph{Hello\_SW}'' and
+		``\emph{Hello\_HW}''. Copy your application from
+		``\emph{/home/asip00/Sessions/Session4/app.c}'' to these. This is a
+		simple example to direct a text to some peripheral devices like LCD
+		or UART. ``\emph{Hello\_SW}'' is aimed for dlxsim and ModelSim
+		simulations and ``\emph{Hello\_HW}'' is aimed for real hardware
+		implementation.
+		\item
+		Copy a ``\emph{Makefile}'' file from the ``\emph{TestPrint}''
+		application subdirectory to each application subdirectory.
+		\item
+		Set proper parameters and settings in ``\emph{env\_settings}.
+		\item
+		For these exercises, we will be using pipeline forwarding (-pf1)
+		option which is the default one.
+		\item
+		Make sure that you already have VHDL files and GNU tools in your
+		project's meister directory.
+	\end{enumerate}
+\item \textbf{Compiling and ModelSim Simulation}
+	\begin{enumerate}
+		\item
+		First, you have to compile the application using gcc compiler to
+		compare with the later results from dlxsim and ModelSim. For
+		\emph{gcc} you can forward the printed output to a file, e.g.
+		``\emph{a.out \textgreater{} output\_gcc.txt}'' (`\emph{a.out}' is
+		the default name of the binary that is created when you compile
+		``\emph{gcc arrayloop.c}'' while `\emph{output\_gcc.txt}' then
+		contains the printed array). To compile with GCC, comment the line
+		``\emph{\#define ASIP}''.
+		\item
+		However, for compiling it, you first need to provide the required
+		libraries from /home/asip00/epp/StdLib to your respective
+		application, i.e. copy ``\emph{lib\_lcd\_dlxsim.c}'',
+		``\emph{lib\_uart.c}'', ``\emph{loadStoreByte.c}'',
+		``\emph{string.c}'' and respective header files to ``Hello\_SW''
+		directory. Also, copy ``\emph{lib\_lcd\_320.c}'',
+		``\emph{lib\_uart.c}'', ``\emph{loadStoreByte.c}'',
+		``\emph{string.c}'' and respective header files to ``Hello\_HW''
+		directory.
+		\item
+		Go to your application subdirectory ``Hello\_SW'', and type
+		``\emph{\textbf{make clean}}'' clean this directory it there are
+		previously generated files.
+		\item
+		In the directory ``Hello\_SW'', compile the C application using
+		``\emph{\textbf{make sim}}''. A directory
+		``\emph{\textbf{BUILD\_SIM}}'' is created which contains different
+		temporary files and a .dlxsim file to be simulated in dlxsim. In
+		this directory, the files ``\emph{\textbf{TestData.IM}}'' and
+		``\emph{\textbf{TestData.DM}}''are the file used during the ModelSim
+		simulation.
+		\item
+		Simulate your application in dlxsim simulator using
+		``\emph{\textbf{make dlxsim}}'', just to verify the functionality.
+		For dlxsim you can forward the LCD/UART output to a file, using the
+		``-lf'' and ``-uf'' parameters respectively, e.g. ``make dlxsim
+		DLXSIM\_PARAM=''-da0 --pf1 -lflcd.out -ufuart.out'' writes output to
+		the file ``lcd.out'' and ``uart.out'' in the application directory.
+		\item
+		In your project directory, go to the ``ModelSim'' directory and
+		start the ModelSim using ``vsim''. You can use the previous ModelSim
+		project and simulate the application. Remember to generate VCD files
+		required for power estimation while doing ModelSim simulation.
+		\item
+		After compiling, simulate the application in dlxsim and ModelSim and
+		compare whether the printed results are the same as expected. The
+		dlxsim and ModelSim will print text to a virtual LCD/UART. While
+		ModelSim automatically writes to the file ``lcd.out'' and
+		``uart.out''.
+		\begin{enumerate}[label=(\alph*)]
+			\color{red}\item\normalcolor
+			How many cycles are required to execute this program DLXsim and
+			ModelSim?
+		\end{enumerate}
+	\end{enumerate}
+\item \textbf{Xilinx ISE Framework for Hardware Implementation}
+	\begin{enumerate}
+		\item
+		Go to your application subdirectory ``Hello\_HW'', and type
+		``\emph{\textbf{make clean}}'' clean this directory it there are
+		previously generated files.
+		\item
+		In the directory ``Hello\_HW'', compile the C application using
+		``\emph{\textbf{make sim}}''.
+		\item
+		Go to the project directory and type ``ise \&'' to start Xilinx ISE.
+		\item
+		Create new project using File Menu \textgreater{} New Project with
+		following project settings:
+	\begin{lstlisting}
+Project Name: ISE_Framework
+Project Path: PATH_TO\_YOUR_PROJECT/ISE_Framework
+Device Family: Virtex5
+Device: xc5vlx110t
+Package: ff1136
+	\end{lstlisting}
+	\item
+	Add the design and framework files by selecting ``Project Menu
+	\textgreater{} Add Copy of Sources'' then brows to:
+	\begin{enumerate}
+		\item
+		``PATH\_TO\_YOUR\_PROJECT\emph{\textbf{/ ISE\_Framework}}'' and
+		select all the files
+		\item
+		``PATH\_TO\_YOUR\_PROJECT\emph{\textbf{/ ISE\_Framework/IP-Cores}}''
+		and select all the files
+		\item
+		``PATH\_TO\_YOUR\_PROJECT\emph{\textbf{/
+				meister/}}\emph{\textbf{browstd32.syn}}'' and select all the files
+	\end{enumerate}
+	\item
+	Select top level modules ``\textbf{dlx\_toplevel}'', and now you can
+	synthesize, implement and generate programming file for the design
+	using the following respectively:
+	\begin{enumerate}
+		\item
+		Processes Menu \textgreater{} Synthesize XST
+		\item
+		Processes Menu \textgreater{} Implement Design
+		\item
+		Processes Menu \textgreater{} Generate Programming File
+	\end{enumerate}
+	\item
+	Once the design is implemented you can see different reports using:
+	\begin{enumerate}
+		\item
+		Processes Menu \textgreater{} Place \& Route \textgreater{} Generate
+		Post Place \& Route Static Timing \textgreater{} Detailed Reports
+		\textgreater{} Place and Route Report
+		\item
+		Processes Menu \textgreater{} Place \& Route \textgreater{} Generate
+		Post Place \& Route Static Timing \textgreater{} Detailed Reports
+		\textgreater{} Post PAR Static Timing Report
+		\item
+		Processes Menu \textgreater{} Place \& Route \textgreater{} Analyze
+		Post Place \& Route Static Timing \textgreater{} Timing Constraints
+	\end{enumerate}
+	\item
+	In the project directory and type ``hterm \&'' to start HyperTerminal
+	to see the UART output if there is any output. and adjust its settings
+	like: Baud rate=115200, Stop bit=1, Data bits=8, Parity=None, COM
+	Port=ttyUSB0 (for example), Newline at=CR+LF,
+	\item
+	In the application subdirectory and type ``make fpga'', it will
+	combine the generate DM/IM file with your ISE generated bitstream.
+	Finally, a new bitstream file containing your hardware CPU along with
+	corresponding IM/DM files of your application will be generated in the
+	folder ``BUILD\_FPGA''. This bitstream will be used to configure the
+	FPGA.
+	\item
+	For hardware implementation you need to connect to i80labpc10 only.
+	Connect your FPGA to PC the i80labpc10, power the board. In the
+	application subdirectory type ``make upload'': to upload the existing
+	bitstream to the FPGA
+	\item
+	\color{blue}If your application does not work try to RESET the FPGA/LCD board.\normalcolor
+	\begin{enumerate}[label=(\alph*),start=2]
+		\color{red}\item\normalcolor
+		Does it work on FPGA? Do you see anything on LCD/UART?
+		ModelSim?
+	\end{enumerate}
+\end{enumerate}
+\item \textbf{Xilinx ISE Framework for Benchmarking}
+	\begin{enumerate}
+		\item
+		To accurately measure the critical path and area of the ASIPmeister
+		CPU, you can use ISE\_Benchmark folder instead of ISE\_Framework
+		folder.
+		\item
+		Go to the project directory and type ``ise \&'' to start Xilinx ISE.
+		\item
+		Create new project using File Menu \textgreater{} New Project with
+		following project settings:
+	\begin{lstlisting}
+Project Name: ISE_BenchMark
+Project Path: PATH_TO_YOUR_PROJECT/ISE_BenchMark
+Device Family: Virtex5
+Device: xc5vlx110t
+Package: ff1136
+	\end{lstlisting}
+	\item
+	Add the design and framework files by selecting ``Project Menu
+	\textgreater{} Add Copy of Sources'' then brows to:
+	\begin{enumerate}
+		\item
+		``PATH\_TO\_YOUR\_PROJECT/ ISE\_ BenchMark'' and select all the
+		files
+		\item
+		``PATH\_TO\_YOUR\_PROJECT\emph{\textbf{/ meister/ browstd32.syn}}''
+		and select all the files
+	\end{enumerate}
+	\item
+	Now you can synthesize, implement and generate programming file for
+	the design as before.
+	\item
+	Once the design is implemented you can see different reports as
+	before.
+	\begin{enumerate}[label=(\alph*),start=3]
+	\color{red}\item\normalcolor
+	Reports: P\&R Report \textgreater{} Check for "Device Utilization
+	Summary" to see \#Slices and \#LUT consumed. How many Slices and LUT are being used by the design?
+	\color{red}\item\normalcolor
+	Post PAR Static Timing Report: Check for "Timing Summary" to see the
+	minimum period and maximum frequency supported by the processor
+	architecture. What is the critical path and corresponding maximum attainable frequency?
+	\end{enumerate}
+\end{enumerate}
+\item \textbf{Xilinx ISE Framework for XPower Power Estimation}
+	\begin{enumerate}
+		\item
+		To accurately measure the power consumption of the ASIPmeister CPU,
+		you can create another folder ISE\_XPower.
+		\item
+		Go to the project directory and type ``ise \&'' to start Xilinx ISE.
+		\item
+		Create new project using File Menu \textgreater{} New Project with
+		following project settings:
+	\begin{lstlisting}
+Project Name: ISE_XPower
+Project Path: PATH_TO_YOUR_PROJECT/ISE_XPower
+Device Family: Virtex5
+Device: xc5vlx110t
+Package: ff1136
+	\end{lstlisting}
+	\item
+	Add only design files by selecting ``Project Menu \textgreater{} Add
+	Copy of Sources'' then brows to
+	``PATH\_TO\_YOUR\_PROJECT\emph{\textbf{/ browstd32.syn}}'' and select
+	all the files.
+	\item
+	Now you can synthesize and implement the design as before.
+	\item
+	Once the design is implemented you can open XPower tool using
+	Processes Menu \textgreater{} Place \& Route \textgreater{} Analyze
+	Power Distribution (xPower Analyzer)
+	\item
+	Then in XPower Tool, select ``File Menu \textgreater{} Open Design''
+	and set the properties as follows:
+	\begin{enumerate}
+		\def\labelenumii{\arabic{enumii}.}
+		\item
+		Design File: PATH\_TO\_YOUR\_PROJECT/ISE\_ XPower/ ﻿BrownieSTD32.ncd
+		\item
+		Physical Constraint File: PATH\_TO\_YOUR\_PROJECT/ ISE\_ XPower/
+		﻿BrownieSTD32.pcf
+		\item
+		Simulation Activity File: PATH\_TO\_YOUR\_PROJECT/test.vcd
+	\end{enumerate}
+	\item
+	After analyzing the activity file, the CPU power is estimated. You can
+	see total and dynamic power of the FPGA. In addition, you can confirm
+	that the VCD file is loaded properly by verify the clock value in
+	XPower.
+	\begin{enumerate}[label=(\alph*),start=5]
+	\color{red}\item\normalcolor
+	What is the total power consumed? What is the distribution of power
+	i.e., dynamic and static power?
+	\color{red}\item\normalcolor
+	Why static/quiescent/leakage power is so high?
+	\color{red}\item\normalcolor
+	What is the power distribution among On-Chip \textbf{1}) Clocks,
+	\textbf{2}) Logic, \textbf{3}) Signals, \textbf{4}) BRAMS, \textbf{5})
+	IOs?
+	\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\textbf{Next Session:} Adding Custom Instructions
+
+\textbf{Readings for the next session}:
+
+Laboratory Chapters 8.2.3, 3.2.2, 3.2.3, 4.4,
+
+ASIPmeister Tutorial
+
+ASIPmeister User Manual

@@ -1,0 +1,10 @@
+TODOs
+Add resource based instruction
+
+skeleton.fhm
+
+multicycle instruction
+
+clearing
+
+make dlxsim-test

@@ -1,0 +1,42 @@
+\pgfplotsset{compat=newest}
+
+% Settings for Titlepage
+\hypersetup{
+	colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black,
+ pdfauthor={FirstName LastName},
+ pdftitle={Title of Thesis}
+ pdfsubject={Not set},
+ pdfkeywords={Not set}
+}
+\DeclareFloatingEnvironment[fileext=frm,placement={!ht},name=Listing,within=section]{listing}
+
+% Print URLs not in Typewriter Font
+\def\UrlFont{\rm}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\newcommand\todo[1]{\textcolor{red}{TODO: #1}}
+
+\newcommand\hlcode[1]{\textcolor{red}{#1}}
+
+\newcommand\citeable[1]{\textcolor{green}{\hl{citeable: #1}}}
+
+\newcolumntype{\$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+% Comments
+\newif\ifcomment
+%\commenttrue
+
+% Leerseite ohne Seitennummer, nächste Seite rechts
+\newcommand{\blankpage}{
+ \clearpage{\pagestyle{empty}\cleardoublepage}
+}
