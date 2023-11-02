@@ -1,0 +1,20 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Makefile Options and Parameters}}{16}{table.caption.6}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces The Files in a Project Directory}}{18}{table.caption.8}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces The Configurable Settings for an ASIP Meister Project}}{19}{table.caption.9}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Brownie STD 32 Architecture Parameters}}{21}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Summary of All Assembly Instructions in the \emph {browstd32} Processor}}{24}{table.caption.12}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Summary of Helpful dlxsim Starting Parameters}}{26}{table.caption.13}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Summary of Available dlxsim Instruction Formats}}{27}{table.caption.14}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Summary of Typical dlxsim Commands}}{28}{table.caption.15}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Summary of Available dlxsim Statistics}}{30}{table.caption.16}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Explanation of the Signals in the ModelSim Waveform}}{49}{table.caption.25}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Knob Position \& Corresponding Frequencies}}{75}{table.caption.45}%

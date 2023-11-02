@@ -16,9 +16,9 @@
 	\item When you first run the X2Go client, you will be presented with a "\emph{\textbf{New session}}" dialog. You should fill this in with this information:
 	\item Session tab
 	\begin{enumerate}[label*=\arabic*.]
-		\item Session name - Any name you'd like to identify the session to yourself - if you're connecting to \emph{\textbf{i80labpc04.ira.uka.de}}, you might just want this to be " \emph{\textbf{i80labpc04}}" 
+		\item Session name - Any name you'd like to identify the session to yourself - if you're connecting to \emph{\textbf{i83labpc04.itec.kit.edu}}, you might just want this to be " \emph{\textbf{i83labpc04}}" 
 		\item Host - Full name of the server you're connecting to, e.g. 
-		\emph{\textbf{i80labpc04.ira.uka.de}}
+		\emph{\textbf{i83labpc04.itec.kit.edu}}
 		\item All of our compute machines have the X2Go server installed
 		\item Login -- Your user ID e.g. ``\emph{\textbf{asip04}}'' (be careful to use lower case)
 		\item Session type - Select XFCE (this is the only supported session type) - see below for of session types.
@@ -167,7 +167,7 @@
 	\caption{SSH Session}
 	\label{fig:fig14}
 \end{figure}
-	\item In the new windows "Session settings", enter \textbf{Remote host} as ``\emph{i80labpcXX.ira.uka.de}'', tick the box "\textbf{Specify user name}" and then enter your user name as ``\emph{asip-abcdnn}''.
+	\item In the new windows "Session settings", enter \textbf{Remote host} as ``\emph{i83labpcXX.itec.kit.edu}'', tick the box "\textbf{Specify user name}" and then enter your user name as ``\emph{asip-abcdnn}''.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{src/images/image15.JPG}
@@ -192,11 +192,11 @@
 \end{enumerate}
 \subsection{Recommended Practice.}
 \begin{enumerate}[resume]
-\item It is \textbf{recommended} to log into \textbf{i80pc57} as this PC contains the ASIPmeister software. Try to perform lab on this PC. Use \textbf{i80labpc10} when you need to implement your applications on FPGA.
+\item It is \textbf{recommended} to log into \textbf{i83pc57} as this PC contains the ASIPmeister software. Try to perform lab on this PC. Use \textbf{i83labpc10} when you need to implement your applications on FPGA.
 \item To repeatedly login to some PC and avoid password, use DSA-keys and copy to desired PC.
 \item Type "\textbf{ssh-keygen -t dsa}" and press Enter. Leave the default options. Leave the password empty.
 \begin{lstlisting}
-asip-sajjad04@i80labpc09:~:$ssh-keygen -t dsa
+asip-sajjad04@i83labpc09:~:$ssh-keygen -t dsa
 Generating public/private dsa key pair.
 Enter file in which to save the key (/home/asip-sajjad04/.ssh/id_dsa):
 /home/asip-sajjad04/.ssh/id_dsa already exists.
@@ -206,7 +206,7 @@ Enter same passphrase again:
 Your identification has been saved in /home/asip-sajjad04/.ssh/id_dsa.
 Your public key has been saved in /home/asip-sajjad04/.ssh/id_dsa.pub.
 The key fingerprint is:
-af:c3:84:62:4e:f4:e6:5e:cb:d1:03:19:ff:63:a9:ad asip-sajjad04@i80labpc09
+af:c3:84:62:4e:f4:e6:5e:cb:d1:03:19:ff:63:a9:ad asip-sajjad04@i83labpc09
 The key's randomart image is:
 +--[ DSA 1024]----+
 |                 |
@@ -222,36 +222,36 @@ The key's randomart image is:
 \end{lstlisting}
 \item Then copy this generated DSA-key to desired PC by type following command and enter your password.
 \begin{lstlisting}
-asip-sajjad04@i80labpc09:~:$ssh-copy-id -i ~/.ssh/id_dsa.pub asip-sajjad04@i80pc57
+asip-sajjad04@i83labpc09:~:$ssh-copy-id -i ~/.ssh/id_dsa.pub asip-sajjad04@i83pc57
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-asip-sajjad04@i80pc57's password:
+asip-sajjad04@i83pc57's password:
 
 Number of key(s) added: 1
 
-Now try logging into the machine, with:   "ssh 'asip-sajjad04@i80pc57'"
+Now try logging into the machine, with:   "ssh 'asip-sajjad04@i83pc57'"
 and check to make sure that only the key(s) you wanted were added.
 \end{lstlisting}
-\item Now log into i80pc57 using ``ssh -X'' it will ask for the password.
+\item Now log into i83pc57 using ``ssh -X'' it will ask for the password.
 \begin{lstlisting}[language=bash]
-asip-sajjad04@i80labpc09:~:$ssh -X i80pc57
-Last login: Wed May  6 05:11:07 2020 from i80labpc09.irf.uni-karlsruhe.de
-asip-sajjad04@i80pc57:~:$
+asip-sajjad04@i83labpc09:~:$ssh -X i83pc57
+Last login: Wed May  6 05:11:07 2020 from i83labpc09.irf.uni-karlsruhe.de
+asip-sajjad04@i83pc57:~:$
 \end{lstlisting}
 \end{enumerate}
 \subsection{Setting up .bashrc.user}
 \begin{enumerate}[resume]
 \item Whenever you are logged into any PC, this file is executed at the login. Please set different variables in this file carefully. Usually the following variables should be like this:
 \begin{lstlisting}[language=bash]
-asip-sajjad04@i80pc57:~:$cat .bashrc.user
-export ASIPS_LICENSE=29000@i80asip.ira.uka.de
+asip-sajjad04@i83pc57:~:$cat .bashrc.user
+export ASIPS_LICENSE=29000@i83asip.itec.kit.edu
 export PATH=/AM/ASIPmeister/bin:$PATH
-export ASIP_APDEV_SRCROOT=/home/asip00/epp/AM_tools
+export ASIP_APDEV_SRCROOT=/home/ces-asip00/epp/AM_tools
 export PATH=/usr/java/jre1.6.0_45/bin:$PATH
 export ASIPmeister_Home=/AM/ASIPmeister
 export ASIPmeister_HOME=/AM/ASIPmeister
 . /home/adm/modelsim_66d.setup
 . /home/adm/xilinx_13.2_32bit.setup
-asip-sajjad04@i80pc57:~:$
+asip-sajjad04@i83pc57:~:$
 \end{lstlisting}
 \end{enumerate}

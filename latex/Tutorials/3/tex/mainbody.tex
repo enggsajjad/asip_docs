@@ -2,9 +2,9 @@
 \section*{Simulation using DLXSim}
 \subsection{Simulating an Assembly file}
 \begin{enumerate}
-	\item Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using
+	\item Login to any \emph{\textbf{i83labpcXX.itec.kit.edu}} directly or using
 	SSH or using X2Go Client. For example login as \emph{\textbf{asip-sajjad04}} into
-	\emph{\textbf{i80labpc02.ira.uka.de}}
+	\emph{\textbf{i83labpc02.itec.kit.edu}}
 	\item Open shell terminal from the start menu. It should be in your default
 	home directory. Go to the directory
 	``\emph{\textbf{~/ASIP\_SS17/Session1/ASIPMeisterProjects/brownie:\$}}''
@@ -15,11 +15,11 @@
 	and type ``\emph{\textbf{make clean}}'' clean this directory it there
 	are previously generated files.
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make clean
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make clean
 /bin/rm -rf BUILD_SIM BUILD_FPGA
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
 1\_Arith.s Makefile
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$
 \end{lstlisting}
 	\item As this application subdirectory contains .s file, you can directly
 	simulate it using ``\emph{\textbf{make dlxsim}}'' without compiling
@@ -31,7 +31,7 @@ asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/
 	be simulated in dlxsim (in this case it is
 	``\emph{\textbf{Arith.dlxsim}}'').
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make dlxsim DLXSIM_PARAM="-f1_Arith.s -da0 -pf0"
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make dlxsim DLXSIM_PARAM="-f1_Arith.s -da0 -pf0"
 -----------------------------------------------
 Transforming file "1_Arith.s" for target SIMULATION.
 -----------------------------------------------
@@ -82,24 +82,24 @@ Altogether 41,0e0(41) cycles executed.
 	the same. Remember, ``\emph{\textbf{make sim}}'' only works if you
 	have already created Compiler.
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
 sim
 \end{lstlisting}
 \item You can have different parameter to ``\emph{\textbf{make sim}}'' like
 	optimization identifier and number of NOPS added for simulating your
 	application in hardware.
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
 sim GCC\_PARAM=-O3
 \end{lstlisting}
 \item	You can now start dlxsim simulation using following different
 	commands:
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make dlxsim GCC_PARAM=-O3
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make dlxsim GCC_PARAM=-O3
 \end{lstlisting}
 OR
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
 dlxsim DLXSIM_PARAM="-fBUILD_SIM/Arith.dlxsim -da0 --pf1"
 \end{lstlisting}
 \color{red}
@@ -108,7 +108,7 @@ dlxsim DLXSIM_PARAM="-fBUILD_SIM/Arith.dlxsim -da0 --pf1"
 	\emph{\textbf{``--af}}'' for LCD, UART or audio respectively as
 	following:
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$make
 dlxsim DLXSIM_PARAM="-fBUILD_SIM/Arith.dlxsim -da0
 --pf1 --lfoutput_dlxsim.txt"
 \end{lstlisting}

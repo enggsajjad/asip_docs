@@ -2,36 +2,36 @@
 \section*{An Example Directory Structure}
 \subsection{Setting up your first ASIP project directory structure}
 \begin{enumerate}
-	\item Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using SSH or using X2Go Client. For example, login as \emph{\textbf{asip-sajjad04}} into
-	\emph{\textbf{i80labpc02.ira.uka.de}}
+	\item Login to any \emph{\textbf{i83labpcXX.itec.kit.edu}} directly or using SSH or using X2Go Client. For example, login as \emph{\textbf{asip-sajjad04}} into
+	\emph{\textbf{i83labpc02.itec.kit.edu}}
 	\item Open shell terminal from the start menu. It should be in your default
 	home directory. Type ``\emph{\textbf{pwd}}''
 \begin{lstlisting}
-asip04@i80labpc04:~:$pwd
+asip04@i83labpc04:~:$pwd
 /home/asip04
 \end{lstlisting}
 	\item Create a new directory for your Lab e.g., ``\emph{\textbf{ASIP\_SS17''}}
 \begin{lstlisting}
-asip04@i80labpc04:~:$mkdir ASIP_SS17
-asip04@i80labpc04:~:$cd ASIP_SS17/
+asip04@i83labpc04:~:$mkdir ASIP_SS17
+asip04@i83labpc04:~:$cd ASIP_SS17/
 \end{lstlisting}
 	\item Create a new directory for your lab session in ``\emph{\textbf{ASIP\_SS17''}} e.g. ``\emph{\textbf{Session1''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17:$mkdir Session1
-asip04@i80labpc04:~/ASIP_SS17:$cd Session1/
+asip04@i83labpc04:~/ASIP_SS17:$mkdir Session1
+asip04@i83labpc04:~/ASIP_SS17:$cd Session1/
 \end{lstlisting}
 	\item Create a directory for your ASIP project in ``\emph{\textbf{Session1''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1:$mkdir
+asip04@i83labpc04:~/ASIP_SS17/Session1:$mkdir
 ASIPMeisterProjects
-asip04@i80labpc04:~/ASIP_SS17/Session1:$cd
+asip04@i83labpc04:~/ASIP_SS17/Session1:$cd
 ASIPMeisterProjects/
 \end{lstlisting}
 	\item Copy template project and rename it e.g. ``\emph{\textbf{brownie''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
--r /home/asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
+-r /home/ces-asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
 brownie
 \end{lstlisting}
 	\item Set the parameters and settings of the ASIP project in 
@@ -39,50 +39,50 @@ brownie
 	\item For each application, create a new directory into
 	``\emph{\textbf{Application}}'' directory e.g. for example for application ``\emph{\textbf{Arith''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cd
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cd
 brownie/Applications/
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$ls
 Bootloader TestPrint
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$mkdir
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$mkdir
 Arith
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$cd
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$cd
 Arith/
 \end{lstlisting}
 	\item Copy your application .c or .s file into ``\emph{\textbf{Arith}}''
 	e.g. in this case copy \emph{\textbf{``1\_Arith.s''}} into your
 	application directory
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$cp
-/home/asip00/Session1/1_Arith.s .
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$cp
+/home/ces-asip00/Session1/1_Arith.s .
 \end{lstlisting}
 	\item Copy the Makefile from any other application to your application
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$cp
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$cp
 ../TestPrint/Makefile .
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
 1_Arith.s Makefile
 \end{lstlisting}
 	\item For other application, create a new directory into
 	``\emph{\textbf{Application}}'' directory e.g. ``\emph{\textbf{LS}}''
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$mkdir
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$mkdir
 LS
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$cd
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications:$cd
 LS/
 \end{lstlisting}
 	\item Copy your application .c or .s file into ``\emph{\textbf{LS}}'' e.g.
 	in this case copy ``\emph{\textbf{2\_LoadStore.s}}'' into your
 	application directory
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:$cp
-/home/asip00/Session1/2_LoadStore.s .
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:$cp
+/home/ces-asip00/Session1/2_LoadStore.s .
 \end{lstlisting}
 	\item Copy the Makefile from any other application to your application
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:$cp
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/LS:$cp
 ../TestPrint/Makefile .
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/Arith:$ls
 2_LoadStore.s Makefile
 \end{lstlisting}
 \end{enumerate}
@@ -91,20 +91,20 @@ asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/Applications/
 	\item Create a new directory ``\emph{\textbf{brownieBGEU}}'' for new project
 	under ASIPMeisterProjects.
 \begin{lstlisting}
-asip04@i80labpc04:~:$cd
+asip04@i83labpc04:~:$cd
 ASIP_SS17/Session1/ASIPMeisterProjects/
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
--r /home/asip00/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownieBGEU
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
+-r /home/ces-asip00/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownieBGEU
 \end{lstlisting}
 	\item Follow the same steps (7-12) to create different application under
 	this project
 	\item \textbf{Creating new Session e.g. ``\emph{Session2}''}
 	\item Creating new directory for new session under ASIP\_SS17 directory
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17:$mkdir Session2
-asip04@i80labpc04:~/ASIP_SS17:$ls
+asip04@i83labpc04:~/ASIP_SS17:$mkdir Session2
+asip04@i83labpc04:~/ASIP_SS17:$ls
 Session1 Session2
-asip04@i80labpc04:~/ASIP_SS17:$
+asip04@i83labpc04:~/ASIP_SS17:$
 \end{lstlisting}
 	\item Follow the same steps (6-14) to create different application under
 	this project

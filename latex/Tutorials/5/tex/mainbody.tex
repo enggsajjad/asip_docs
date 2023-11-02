@@ -2,8 +2,8 @@
 \section*{VHDL Hardware SIMULATION}
 \subsection{Setting up your first ASIP project directory structure}
 \begin{enumerate}
-\item Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using SSH or using X2Go Client. For example, login as
-	\emph{\textbf{asip-sajjad04}} into \emph{\textbf{i80labpc02.ira.uka.de}}
+\item Login to any \emph{\textbf{i83labpcXX.itec.kit.edu}} directly or using SSH or using X2Go Client. For example, login as
+	\emph{\textbf{asip-sajjad04}} into \emph{\textbf{i83labpc02.itec.kit.edu}}
 \item Open shell terminal from the start menu. It should be in your default home directory. Go to the directory:
 \begin{lstlisting} 
 ~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie:$ 
@@ -24,7 +24,7 @@
 \end{lstlisting}
 Open the ASIPmeister project, modify the CPU if required, and generate VHDL files for simulation/synthesis and files for compiler generation.
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie:$ASIPmeister brownie.pdb &
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie:$ASIPmeister brownie.pdb &
 \end{lstlisting}
 This will create a meister folder in current directory having three subdirectories (brownie.sim, brownie.syn, brownie.sw) and some architectural and description files. This will also generate the compiler and assembler for the CPU.
 \item Go to the directory:
@@ -33,7 +33,7 @@ This will create a meister folder in current directory having three subdirectori
 \end{lstlisting}
 Start the ModelSim using ``\emph{\textbf{vsim}}''
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/ModelSim:$vsim &
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie/ModelSim:$vsim &
 \end{lstlisting}
 \item If ModelSim asks for ``modelsim.ini'' choose the default one like ``/Software/ModelSim/ModelSim\_6.6d/modeltech/modelsim.ini'' 
 \item Open File Menu \textgreater{} New \textgreater{} Project and enter a project name and change the project location to the ModelSim directory in your project directory. Confirm the dialog with the OK button.

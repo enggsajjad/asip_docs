@@ -2,33 +2,33 @@
 \section*{DEFINE, TEST and Add Hardware}
 \subsection{SET THE DIRECTORIES}
 \begin{enumerate}
-\item Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using SSH or using X2Go Client. For example, login as \emph{\textbf{asip-sajjad04}} into \emph{\textbf{i80labpc02.ira.uka.de}}
+\item Login to any \emph{\textbf{i83labpcXX.itec.kit.edu}} directly or using SSH or using X2Go Client. For example, login as \emph{\textbf{asip-sajjad04}} into \emph{\textbf{i83labpc02.itec.kit.edu}}
 \item Open shell terminal from the start menu. It should be in your default home directory. Type ``\emph{\textbf{pwd}}''
 \begin{lstlisting}
-sajjad@i80pc57:~:$pwd
+sajjad@i83pc57:~:$pwd
 /home/sajjad
 \end{lstlisting}
 \item Create a new directory for your Lab e.g. ``\emph{\textbf{SS21''}}
 \begin{lstlisting}
-sajjad@i80pc57:~:$mkdir SS21
-sajjad@i80pc57:~:$cd SS21/
+sajjad@i83pc57:~:$mkdir SS21
+sajjad@i83pc57:~:$cd SS21/
 \end{lstlisting}
 \item Create a directory for your ASIP project in ``\emph{\textbf{SS21''}}
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21:$mkdir ASIPMeisterProjects
-sajjad@i80pc57:~/SS21:$cd ASIPMeisterProjects/
+sajjad@i83pc57:~/SS21:$mkdir ASIPMeisterProjects
+sajjad@i83pc57:~/SS21:$cd ASIPMeisterProjects/
 \end{lstlisting}
 \item Create a new directory for your lab session in ``\emph{\textbf{ASIPMeisterProjects''}} e.g. ``\emph{\textbf{8''}}
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects:$mkdir 8
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects:$cd 8/
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects:$mkdir 8
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects:$cd 8/
 \end{lstlisting}
 \end{enumerate}
 \subsection{IMPLEMENT A NEW RESOURCE AND TEST}
 \begin{enumerate}[resume]
 \item Write a new VHDL file of the required resource, for example, \textbf{MINMAX} to calculate the minimum and maximum from given two numbers.
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects/8:$vim minmax.vhd
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects/8:$vim minmax.vhd
 \end{lstlisting}
 \begin{lstlisting}[language=vhdl,caption={"minmax.vhd"},captionpos=t]
 library IEEE;
@@ -65,7 +65,7 @@ end st;
 \end{lstlisting}
 \item Write a new VHDL or Verilog testbench file to test the new resource \textbf{MINMAX}.
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects/8:$vim
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects/8:$vim
 testbench.v
 \end{lstlisting}
 \begin{lstlisting}[language=verilog,caption={"testbench.v"},captionpos=t]
@@ -126,7 +126,7 @@ endmodule
 \item Create a new ModelSim project, add above files, compile them, and simulate the hardware to verify the functionality. Once the functionality is verified you can add it to the ASIPmeister via a FHM file.
 \begin{lstlisting}
 /home/sajjad/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb/workdb/FHM_work
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects/8:$cd
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects/8:$cd
 ASIPmeister/share/fhmdb/workdb/FHM_work
 \end{lstlisting}
 \end{enumerate}
@@ -134,14 +134,14 @@ ASIPmeister/share/fhmdb/workdb/FHM_work
 \begin{enumerate}[resume]
 \item Copy ASIPmeister Software to a new directory for example:
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$ cp -rf /AM/ASIPmeister .
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$ cp -rf /AM/ASIPmeister .
 \end{lstlisting}
 \item Create FHM file of the resource from ``minmax.vhd'' using the steps in the Laboratory Script Section 4.4.
 \item Copy this FHM file into ``\emph{ASIPmeister/share/fhmdb/workdb/FHM\_work}''
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects/8:$cd
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects/8:$cd
 ASIPmeister/share/fhmdb/workdb/FHM_work
-sajjad@i80pc57:~/SS21/ ASIPMeisterProjects/8/
+sajjad@i83pc57:~/SS21/ ASIPMeisterProjects/8/
 ASIPmeister/share/fhmdb/workdb/FHM_work:$vim minmax.fhm
 \end{lstlisting}
 \begin{lstlisting}[language=vhdl,caption={"minmax.fhm"},captionpos=t]
@@ -1528,7 +1528,7 @@ and add the line
 ``\emph{\textbf{\textless model\textgreater minmax\textless/model\textgreater{}}}''
 in the FHM\_WORK class.
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb/:$vim fhmdbstruct
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb/:$vim fhmdbstruct
 \end{lstlisting}
 \begin{lstlisting}[language=vhdl,caption={"fhmdbstruct"},captionpos=t]
 <FHM_Structure>
@@ -1589,10 +1589,10 @@ sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb/:$vim fhmdbs
 \end{lstlisting}
 \item Set the ASIPmeister PATH to this ASIPmeister either in .bashrc or manually by PATH variable each time.
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb:$cd ../../../
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$ PATH=/home/sajjad/SS21/ASIPMeisterProjects/8/ASIPmeister/bin/:$PATH
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$ which ASIPmeister
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8/ASIPmeister/share/fhmdb:$cd ../../../
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$ PATH=/home/sajjad/SS21/ASIPMeisterProjects/8/ASIPmeister/bin/:$PATH
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$ which ASIPmeister
 ~/SS21/ASIPMeisterProjects/8/ASIPmeister/bin/ASIPmeister
 \end{lstlisting}
 \end{enumerate}
@@ -1607,9 +1607,9 @@ using new resource.
 PROJECT and rename it e.g., ``\emph{\textbf{brownie''}} for
 ASIPmeister CPU ``\emph{\textbf{browstd32.pdb}}''
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$cp -r
-/home/asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8:$ls
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$cp -r
+/home/ces-asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8:$ls
 brownie
 \end{lstlisting}
 \item
@@ -1618,7 +1618,7 @@ Set the parameters and settings of the ASIP project in
 \item
 Open ASIPMeister CPU in the respective directory i.e., in brownie
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/Session1/ASIPMeisterProjects/brownie:$ASIPmeister
+sajjad@i83pc57:~/SS21/Session1/ASIPMeisterProjects/brownie:$ASIPmeister
 browstd32.pdb &
 \end{lstlisting}
 \item Modify the CPU in ASIPmeister. Resource Declaration will look like the
@@ -1679,7 +1679,7 @@ test each.
 \end{enumerate}
 \subsubsection{ORIGINAL APPLICATION}
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8/
 brownie/Applications/ testMinMaxAPP:$ vim test.c
 \end{lstlisting}
 \begin{lstlisting}[language=C,caption={"test.c using original"},captionpos=t]
@@ -1694,7 +1694,7 @@ int main() {
 \end{lstlisting}
 \subsubsection{APPLICATION WITH MMAXS (Existing Resources)}
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8/
 brownie/Applications/ testMinMaxSW:$ vim test.c
 \end{lstlisting}
 \begin{lstlisting}[language=C,caption={"test.c using existing resources"},captionpos=t]
@@ -1710,7 +1710,7 @@ int main() {
 \end{lstlisting}
 \subsubsection{APPLICATION WITH MMAX (New Resources)}
 \begin{lstlisting}
-sajjad@i80pc57:~/SS21/ASIPMeisterProjects/8/
+sajjad@i83pc57:~/SS21/ASIPMeisterProjects/8/
 brownie/Applications/ testMinMaxHW:$ vim test.c
 \end{lstlisting}
 \begin{lstlisting}[language=C,caption={"test.c using added resources"},captionpos=t]

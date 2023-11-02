@@ -92,7 +92,7 @@ explained in Chapter~2.2.2.
 \textbf{Framework Files} are important for the connection between CPU,
 Memory, UART, and all other components. They are predesigned for this
 laboratory and they are available in
-\emph{/homeasip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework}.
+\emph{/homeces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework}.
 The framework consists of the following three types of file and all of
 them have to be added to the ISE project.
 
@@ -123,7 +123,7 @@ are available as pre-synthesized net lists. These files just have to be
 copied into the directory of your ISE project (no need to actually add
 them to the project) and then they will be used during the
 implementation step. The needed files (*.edn, *.ngc) are available in
-\emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework/­IP\_­Cores}.
+\emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework/­IP\_­Cores}.
 Note: The files {inside} the IP\_Cores directory have to be copied to
 your ISE Project Directory. It is not sufficient to copy the full
 IP\_Cores directory!
@@ -190,11 +190,11 @@ the usual simulation, the stack can start at some address e.g, 0xFFFFC
 and is growing downwards. For hardware execution, this address is too
 big. For the current hardware prototype, you should use 0xEFFC. You can
 adjust the place where the stack will start in the file
-\emph{/home/asip00/epp/mkimg/Makefile} by adjusting
+\emph{/home/ces-asip00/epp/mkimg/Makefile} by adjusting
 \emph{STACK\_START\_FPGA} variable. This \emph{Makefile} is accessed
 from your local application \emph{Makefile} located in the directory of
 your application (like
-\emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­TestPrint/Makefile})
+\emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­TestPrint/Makefile})
 and it is evaluated every time you execute this local \emph{Makefile}.
 Here you can configure the address of the stack start. To work in
 hardware this value depends of the size of the available memory in
@@ -277,7 +277,7 @@ the SRAM, follow the following tutorial:
 \item
   You have to compile the \emph{bootloader.c} application (you can find
   it in
-  \emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­Bootloader/})
+  \emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­Bootloader/})
   with ``\emph{make sim}'' and initialize the bitstream with the
   application using ``\emph{make fpga}''. The resulting bit file
   contains the bootloader application in the FPGA internal BlockRAM.
@@ -294,7 +294,7 @@ the SRAM, follow the following tutorial:
   which will open the MS Windows HyperTerminal with the correct settings
   (\emph{Bits per Second=230400, Data Bits=8, Parity=None, Stop Bit=1,
   Flow Control=None}). You can find ``\emph{dlx\_uart.ht}'' in
-  \emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­Bootloader}).
+  \emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­Applications/­Bootloader}).
   However, you may have to adapt the configured COM port, depending on
   which port you are connected to the FPGA (see
  Figure \ref{fig:fig66}). Under, Ubuntu, you can start
@@ -465,7 +465,7 @@ To measure the area and delay of your CPU accurately we designed a new
 framework \emph{ISE\_Benchmark}, which consists of four files:
 \emph{bram\_dm.ngc}, \emph{brom\_im.ngc}, \emph{dlx\_toplevel.vhd}, and
 \emph{dlx\_toplevel.ucf}, which can be found in the directory
-``\emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_­Benchmark/}''.
+``\emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_­Benchmark/}''.
 The first two files are BlockRAM netlist files for data and instruction
 memories. The VHDL file is the top level for the whole project. The UCF
 file is the file, which contains the timing constraints and pins

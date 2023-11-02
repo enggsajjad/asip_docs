@@ -2,31 +2,31 @@
 \section*{Creating ASIPmeister Project}
 \subsection{Environement Settings}
 \begin{enumerate}
-\item Login to any \emph{\textbf{i80labpcXX.ira.uka.de}} directly or using
+\item Login to any \emph{\textbf{i83labpcXX.itec.kit.edu}} directly or using
 	SSH or using X2Go Client. For example, login as \emph{\textbf{asip-sajjad04}} into
-	\emph{\textbf{i80labpc02.ira.uka.de}}
+	\emph{\textbf{i83labpc02.itec.kit.edu}}
 \item Open shell terminal from the start menu. It should be in your default
 	home directory. Type ``\emph{\textbf{pwd}}''
 \begin{lstlisting}
-asip04@i80labpc04:~:$pwd
+asip04@i83labpc04:~:$pwd
 /home/asip04
 \end{lstlisting}
 \item Create a new directory for your Lab e.g., ``\emph{\textbf{ASIP\_SS17''}}
 \begin{lstlisting}
-asip04@i80labpc04:~:$mkdir ASIP_SS17
-asip04@i80labpc04:~:$cd ASIP_SS17/
+asip04@i83labpc04:~:$mkdir ASIP_SS17
+asip04@i83labpc04:~:$cd ASIP_SS17/
 \end{lstlisting}
 \item Create a new directory for your lab session in
 	``\emph{\textbf{ASIP\_SS17''}} e.g. ``\emph{\textbf{Session1''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17:$mkdir Session1
-asip04@i80labpc04:~/ASIP_SS17:$cd Session1/
+asip04@i83labpc04:~/ASIP_SS17:$mkdir Session1
+asip04@i83labpc04:~/ASIP_SS17:$cd Session1/
 \end{lstlisting}
 \item Create a directory for your ASIP project in ``\emph{\textbf{Session1''}}
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1:$mkdir
+asip04@i83labpc04:~/ASIP_SS17/Session1:$mkdir
 ASIPMeisterProjects
-asip04@i80labpc04:~/ASIP_SS17/Session1:$cd
+asip04@i83labpc04:~/ASIP_SS17/Session1:$cd
 ASIPMeisterProjects/
 \end{lstlisting}
 \item For each ASIPmeister CPU create a separate in
@@ -34,16 +34,16 @@ ASIPMeisterProjects/
 	project and rename it e.g. ``\emph{\textbf{brownie''}} for ASIPmeister
 	CPU ``\emph{\textbf{brownie.pdb}}''
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
--r /home/asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
+-r /home/ces-asip00/epp/ASIPMeisterProjects/TEMPLATE_PROJECT ./brownie
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
 brownie
 \end{lstlisting}
 \item Set the parameters and settings of the ASIP project in
 	``\emph{\textbf{env\_settings}}''
 \item Open ASIPMeister CPU in the respective directory i.e. in brownie
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie:$ASIPmeister
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownie:$ASIPmeister
 brownie.pdb &
 \end{lstlisting}
 \item Modify the CPU in ASIPmeister and generate the required files. A
@@ -53,16 +53,16 @@ brownie.pdb &
 	``\emph{\textbf{brownieOPT''}} for ASIPmeister CPU
 	``\emph{\textbf{brownieSPEED.pdb}}''
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
--r /home/asip00/ASIPMeisterProjects/TEMPLATE\_PROJECT ./brownieOPT
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$cp
+-r /home/ces-asip00/ASIPMeisterProjects/TEMPLATE\_PROJECT ./brownieOPT
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects:$ls
 brownie brownieOPT
 \end{lstlisting}
 \item Set the parameters and settings of the ASIP project in
 	``\emph{\textbf{env\_settings}}''
 \item Open ASIPMeister CPU in the respective directory i.e. in brownieOPT
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownieOPT:$ASIPmeister
+asip04@i83labpc04:~/ASIP_SS17/Session1/ASIPMeisterProjects/brownieOPT:$ASIPmeister
 brownieSPEED.pdb &
 \end{lstlisting}
 \item Modify the CPU in ASIPmeister and generate the required files. A

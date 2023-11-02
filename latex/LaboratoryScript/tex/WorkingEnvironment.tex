@@ -12,7 +12,7 @@ The programs needed to perform the laboratory tasks run under Linux. You
 will work with the computers in the lab 308.2. This room has 10
 computers with Ubuntu 14.04, 32bit installed and are named as follow:
 \begin{lstlisting}
-i80labpcXX.ira.uka.de where XX=01, 02, \ldots{} 10.
+i83labpcXX.itec.kit.edu where XX=01, 02, \ldots{} 10.
 \end{lstlisting}
 These computers can also be accessed remotely via SSH or via X2Go
 Client, see \protect\hyperlink{remote-operation}{Chapter 2.2.1} and
@@ -29,7 +29,7 @@ For ASIPmeister and GCC compiler, it is necessary to change the machine
 in order to meet the software requirements. There is one dedicated
 application workstations:
 \begin{lstlisting}
-i80pc57.ira.uka.de -- ASIPmeister system:
+i83pc57.itec.kit.edu -- ASIPmeister system:
 \end{lstlisting}
 You will use this PC for building your own customized CPU and compiler
 that is able to use the instructions you added to the instruction set of
@@ -39,7 +39,7 @@ in a reasonable amount of time.
 To run, this lab, you need to export the following variables, or you can
 add it the your /home/.bashrc.user.
 \begin{lstlisting}
-export ASIPS_LICENSE=29000@i80asip.ira.uka.de
+export ASIPS_LICENSE=29000@i83asip.itec.kit.edu
 export PATH=/AM/ASIPmeister/bin:$PATH
 export ASIP_APDEV_SRCROOT=~/AM_tools
 export PATH=/usr/java/jre1.6.0_45/bin:$PATH
@@ -69,7 +69,7 @@ clients.
 
 To switch between the machines mentioned above you have to use SSH
 (recommended). The names of the client PCs are similar to
-i80labpcXX.ira.uka.de with the `XX' replaced by the individual number of
+i83labpcXX.itec.kit.edu with the `XX' replaced by the individual number of
 the PC. Login with SSH requires authentication, which can be done with
 passwords or public keys (see
 \protect\hyperlink{remote-operation}{Chapter 2.2.1}). In order to
@@ -405,11 +405,11 @@ this in with the following information in ``\emph{Session}'' tab:
 \def\labelenumi{\alph{enumi}.}
 \item
   Session name - Any name you like to identify the session - if you're
-  connecting to the PC ``\emph{i80labpc01}'', you might just want this
-  to be " \emph{i80labpc01}"
+  connecting to the PC ``\emph{i83labpc01}'', you might just want this
+  to be " \emph{i83labpc01}"
 \item
   Host - Full name of the computer you're connecting to, e.g.
-  ``\emph{i80labpc01.ira.uka.de}''
+  ``\emph{i83labpc01.itec.kit.edu}''
 \item
   Login - Your user ID, for example ``\emph{asip01}''
 \item
@@ -431,7 +431,7 @@ this in with the following information in ``\emph{Session}'' tab:
     session. Watch the Status line to see what is happening. Once the
     status is "running," your session should launch.
   \item
-    Sometimes "\emph{i80labpcXX}" cannot be accessed remotely using
+    Sometimes "\emph{i83labpcXX}" cannot be accessed remotely using
     X2Go, while it works fine with SSH. May be there is a conflict
     between some settings in your \textasciitilde/.bashrc.user and X2Go.
     For example one temporary solution is to comment out the line ".
@@ -488,7 +488,7 @@ run the \emph{Makefile} in that particular application subdirectory. To
 see different options that \emph{Makefile} offers, execute
 ``\emph{\textbf{make}}'' in an application subdirectory, as shown below:
 \begin{lstlisting}
-asip04@i80labpc04:~/ASIPMeisterProjects/browstd32/Applications/Application1:$make
+asip04@i83labpc04:~/ASIPMeisterProjects/browstd32/Applications/Application1:$make
 /--------
 | USAGE:
 \--------
@@ -517,7 +517,7 @@ containing source code ``\emph{application1.c}'' or
 ``\emph{application1.s}''. To compile it you have to execute the
 following in the ``\emph{Application 1}'' directory:
 
-asip04@i80labpc04:\textasciitilde/ASIPMeisterProjects/browstd32/Applications/Application1:\$make
+asip04@i83labpc04:\textasciitilde/ASIPMeisterProjects/browstd32/Applications/Application1:\$make
 sim
 
 The \emph{Makefile} is expected to be executed from the directory, where
@@ -673,7 +673,7 @@ ISE project.
   actually ``\emph{add}'' them to the project) and then they will be
   used in the ``\emph{implementation}'' step. The needed *.ngc files are
   available in
-  ``\emph{/home/asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework/­IP\_­Cores}''.
+  ``\emph{/home/ces-asip00/­ASIPMeisterProjects/­TEMPLATE\_PROJECT/­ISE\_Framework/­IP\_­Cores}''.
   Note: The files {inside} the IP\_Cores directory have to be copied to
   your ISE Project Directory. It is not sufficient to copy the full
   IP\_Cores directory!
@@ -735,7 +735,7 @@ configured in the file ``\textbf{env\_settings}'' as explained in Figure
 		to change this value, according to the ASIP Meister project name in the
 		project directory.
 		\\ \hline
-		DLXSIM\_DIR = /home/asip00/epp/dlxsim & This is the full path to the
+		DLXSIM\_DIR = /home/ces-asip00/epp/dlxsim & This is the full path to the
 		dlxsim simulator directory, as explained in Chapter~3.3. If you want to
 		use a modified version of dlxsim, then you can just copy this directory
 		into your home, make your changes and adapt this setting to use your
@@ -771,7 +771,7 @@ configured in the file ``\textbf{env\_settings}'' as explained in Figure
 		name of the ISE project. You do not have to change this
 		value.
 		\\ \hline
-		MKIMG\_DIR = /home/asip00/epp/mkimg & The full directory name for the
+		MKIMG\_DIR = /home/ces-asip00/epp/mkimg & The full directory name for the
 		different ``\emph{Makefile}'' scripts, as explained in
 		Table \ref{fig:fig22}. Usually, you do not have to
 		change this value.
